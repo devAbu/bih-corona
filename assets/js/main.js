@@ -16,12 +16,6 @@
         });
     });
 
-    //Animation
-
-    $(document).ready(function () {
-        $('body.hero-anime').removeClass('hero-anime');
-    });
-
     //Menu On Hover
 
     $('body').on('mouseenter mouseleave', '.nav-item', function (e) {
@@ -34,73 +28,15 @@
         }
     });
 
-    $('#searchIcon').click(() => {
-        //moze bolji nacin al za sad nek bude ovako
-        if ($('#searchIcon').hasClass("fa-search")) {
-            $('#search').show(500)
-            $('#searchIcon').removeClass("fa-search").addClass("fa-search-minus")
-        } else {
-            $('#search').hide(500)
-            $('#searchIcon').removeClass("fa-search-minus").addClass("fa-search")
-        }
-
-    })
-
-    /*====== Price Slider Active ======*/
-    $('#slider-range').slider({
-        range: true,
-        min: 10,
-        max: 500,
-        values: [110, 400],
-        slide: function (event, ui) {
-            $('#amount').val('$' + ui.values[0] + ' - $' + ui.values[1]);
-        }
-    });
-    $('#amount').val('$' + $('#slider-range').slider('values', 0) +
-        " - $" + $('#slider-range').slider('values', 1));
-
-
 })(jQuery);
 
-///// Section-1 CSS-Slider /////    
-// Auto Switching Images for CSS-Slider
-function bannerSwitcher() {
-    next = $('.sec-1-input').filter(':checked').next('.sec-1-input');
-    if (next.length) next.prop('checked', true);
-    else $('.sec-1-input').first().prop('checked', true);
+function citys(value) {
+    if(value == "Sarajevo") {
+      document.getElementById("callNumbers").innerHTML = '<div class="container pt-3 d-flex justify-content-center"> <div class="row"> <div class="col-xs-12"> <div class="table-responsive"> <table class="table table-bordered table-hover"> <thead > <tr> <th colspan="5" class="text-center">Sarajevo - Pozivni brojevi</th></tr> <tr> <th>Ime</th><th>Broj fiksnog telefona</th><th>Broj mobilnog telfona</th></tr></thead><tbody><tr class="text-center"><td>OJ DZ Stari Grad </td><td>033 278-624</td><td>060 328 04 54</td></tr><tr class="text-center"><td>OJ DZ Centar </td><td>x</td><td>060 328 02 17</td></tr><tr class="text-center"><td>OJ DZ Novo Sarajevo </td> <td>x</td><td>061 165 219</td></tr><tr class="text-center"> <td>Higijensko- epidemiološkoj službi JU Dom zdravlja </td><td>x</td> <td>062 842 318</td></tr></tbody></table></div><!--end of .table-responsive--></div></div></div>';
+    } else if (value == "Tuzla") {
+      document.getElementById("callNumbers").innerHTML = '<h4>Tuzla</h4>';
+    }else{
+        document.getElementById("callNumbers").innerHTML = '<div class="container pt-3 d-flex justify-content-center"><h4>Nemamo informacija vezano za taj grad</h4></div>';
+    }
 }
-
-var bannerTimer = setInterval(bannerSwitcher, 5000);
-
-$('nav .controls label').click(function () {
-    clearInterval(bannerTimer);
-    bannerTimer = setInterval(bannerSwitcher, 5000)
-});
-
-//Switch images
-const activeImage = document.querySelector(".product-image .active");
-const productImages = document.querySelectorAll(".image-list img");
-const navItem = document.querySelector('a.toggle-nav');
-
-function changeImage(e) {
-    activeImage.src = e.target.src;
-}
-
-function toggleNavigation() {
-    this.nextElementSibling.classList.toggle('active');
-}
-
-productImages.forEach(image => image.addEventListener("click", changeImage));
-navItem.addEventListener('click', toggleNavigation);
-
-
-///// Anchor Smooth Scroll /////
-//   $('.main-menu a, .learn-more-button a').click(function(e){
-
-//     e.preventDefault();
-
-//     var target = $(this).attr('href');
-
-//     $('html, body').animate({scrollTop: $(target).offset().top}, 1000);
-//     return false;
-//   });
+  

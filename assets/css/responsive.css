@@ -40,3 +40,15 @@ CSS:
       font-size: 20px;
     }
   }
+
+  /* 5. Live-feed */
+  
+@media only screen and (max-width: 766px) {
+	.live-feed-container {
+		width: 480px;
+	}
+
+	.live-feed-list .live-feed-box {
+		width: 390px;
+	}
+	}

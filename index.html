@@ -84,12 +84,60 @@
 
     <!-- LIVE-FEED -->
     <section id="live-feed">
-
+        <div class="container d-flex justify-content-center">
+            <div class="row">
+                <div class="col-xl-12">
+                    <ul class="live-feed-list">
+                        <li>
+                            <div class="live-feed-main-level">
+                                <div class="live-feed-box">
+                                    <div class="live-feed-head">
+                                        <h6 class="live-feed-name">Sarajevo +1 </h6>
+                                        <h6 class="live-feed-time">prije 12 minuta</h6>
+                                    </div>
+                                    <div class="live-feed-content">
+                                        Novozaražena osoba otkrivena u Sarajevu
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="live-feed-list">
+                        <li>
+                            <div class="live-feed-main-level">
+                                <div class="live-feed-box">
+                                    <div class="live-feed-head">
+                                        <h6 class="live-feed-name">Sarajevo +1 </h6>
+                                        <h6 class="live-feed-time">prije 12 minuta</h6>
+                                    </div>
+                                    <div class="live-feed-content">
+                                        Novozaražena osoba otkrivena u Sarajevu
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="live-feed-list">
+                        <li>
+                            <div class="live-feed-main-level">
+                                <div class="live-feed-box">
+                                    <div class="live-feed-head">
+                                        <h6 class="live-feed-name">Sarajevo +1 </h6>
+                                        <h6 class="live-feed-time">prije 12 minuta</h6>
+                                    </div>
+                                    <div class="live-feed-content">
+                                        Novozaražena osoba otkrivena u Sarajevu
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
     <!-- END LIVE-FEED -->
-
     <div class="mt-4"></div>
-
     <!-- NUMBERS -->
     <section id="numbers">
         <div class="container-fluid">
@@ -483,8 +531,25 @@
     <!-- END CITY'S -->
 
     <!-- INFO -->
-    <section id="info">
+    <section id="info" class="pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section-title text-center">
+                        <h4 class="pt-4">Pozivni brojevi po gradovima</h4>
+                        <p>Odaberite željeni grad kako bi ste dobili sve brojeve vezane za DZ itd itd </p>
+                        <form action="#">
+                            <select style="margin-bottom: 30px;" name="names" onchange="citys(this.value)">
+                                <option value="Sarajevo">Sarajevo</option>
+                                <option value="Tuzla">Tuzla</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div id="callNumbers"></div>
     </section>
     <!-- END INFO -->
 
@@ -505,12 +570,6 @@
         </div>
     </section>
     <!-- END VIBER -->
-
-    <!-- RESTW -->
-    <section id="rest-w">
-
-    </section>
-    <!-- END RESTW -->
 
     <!-- NEWS -->
     <section id="news">
