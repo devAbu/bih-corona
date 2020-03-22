@@ -1,0 +1,42 @@
+/*
+CSS:
+1. Imports
+2. Main
+3. Navigation
+4. Map
+5. Live-feed
+6. City
+7. Info
+8. Viber-link
+9. Number
+10. RestW
+11. News
+12. Safety
+13. Footer
+*/
+
+/* 3. Navigation */
+@media (max-width: 767px) { 
+	h1{
+		font-size: 38px;
+	}
+	.nav-item:after{
+		display: none;
+	}
+	.nav-item::before {
+		position: absolute;
+		display: block;
+		top: 15px;
+		left: 0;
+		width: 11px;
+		height: 1px;
+		content: "";
+		border: none;
+		background-color: #000;
+	}
+}
+@media only screen and (max-width: 1919px) {
+    body {
+      font-size: 20px;
+    }
+  }
