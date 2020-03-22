@@ -3,6 +3,53 @@
 
     $('#search').hide()
 
+    $('#collapse').click(() => {
+        var collapseClass = $('#collapse').attr('class')
+
+        if (typeof collapseClass === "undefined") {
+            $('#collapse p').html("Prikaži manje")
+        } else if (collapseClass != "collapsed") {
+            $('#collapse p').html("Prikaži više gradova")
+
+            $('#collapse2 p').html("Prikaži više gradova")
+            $('#collapse2').attr("class", "collapsed")
+            $('#collapse2').attr("aria-expanded", "false")
+            $('#moreCities2').removeClass("show")
+            $('#collapse3 p').html("Prikaži ostale gradove")
+            $('#collapse3').attr("class", "collapsed")
+            $('#collapse3').attr("aria-expanded", "false")
+            $('#moreCities3').removeClass("show")
+        } else {
+            $('#collapse p').html("Prikaži manje")
+        }
+    })
+
+    $('#collapse2').click(() => {
+        var collapseClass2 = $('#collapse2').attr('class')
+        if (typeof collapseClass2 === "undefined") {
+            $('#collapse2 p').html("Prikaži manje")
+        } else if (collapseClass2 != "collapsed") {
+            $('#collapse2 p').html("Prikaži više gradova")
+            $('#collapse3 p').html("Prikaži ostale gradove")
+            $('#collapse3').attr("class", "collapsed")
+            $('#collapse3').attr("aria-expanded", "false")
+            $('#moreCities3').removeClass("show")
+        } else {
+            $('#collapse2 p').html("Prikaži manje")
+        }
+    })
+    $('#collapse3').click(() => {
+        var collapseClass3 = $('#collapse3').attr('class')
+        if (typeof collapseClass3 === "undefined") {
+            $('#collapse3 p').html("Prikaži manje")
+        } else if (collapseClass3 != "collapsed") {
+            $('#collapse3 p').html("Prikaži ostale gradove")
+        } else {
+            $('#collapse3 p').html("Prikaži manje")
+        }
+    })
+
+
     $(function () {
         var header = $(".start-style");
         $(window).scroll(function () {
@@ -29,6 +76,8 @@
     });
 
 })(jQuery);
+
+
 
 function citys(value) {
     if(value == "Sarajevo") {
