@@ -182,6 +182,7 @@ body {
     position: relative;
     transition: all 200ms linear;
 }
+
 /* Navigation END */
 
 
@@ -192,13 +193,13 @@ body {
 /* END Live-feed */
 
 /* 6. City */
-.box{
-    padding:60px 0px;
+.box {
+    padding: 60px 0px;
 }
 
-.box-part{
+.box-part {
     border: 2px solid rgb(172, 172, 172);
-    padding:5px 0px;
+    padding: 5px 0px;
 }
 
 /* END City */
@@ -208,48 +209,51 @@ body {
 
 /* 8. Viber-link */
 .viber-link {
-	position: relative;
-	z-index: 2;
-	background-image: url("../images/viber.jpg");
-	background-position: center;
-	background-size: cover;
-	padding: 50px 0;
-	color: #fff;
-	background-attachment:fixed
+    position: relative;
+    z-index: 2;
+    background-image: url("../images/viber.jpg");
+    background-position: center;
+    background-size: cover;
+    padding: 50px 0;
+    color: #fff;
+    background-attachment: fixed
 }
 
 .viber-link .section-title h4 {
-	font-size: 50px;
-	color: #fff
+    font-size: 50px;
+    color: #fff
 }
+
 .viber-link .section-title h4:before,
 .viber-link .section-title h4:after {
-	position: absolute;
-	content: "";
-	background-color: #fff;
+    position: absolute;
+    content: "";
+    background-color: #fff;
 }
 
 .viber-link:before {
-	position: absolute;
-	content: "";
-	background-color: #333;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	z-index: -1;
-	opacity: .7;
+    position: absolute;
+    content: "";
+    background-color: #333;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    opacity: .7;
 }
 
 .viber-link h4 {
-	color: #fff;
+    color: #fff;
     font-size: 50px;
     text-shadow: 2px 2px rgb(185, 0, 170);
 }
-.viber-link p{
+
+.viber-link p {
     font-size: 30px;
 }
-.viber-link a{
+
+.viber-link a {
     font-size: 30px;
 }
 
@@ -265,37 +269,40 @@ body {
 /* END News */
 
 /* 12. Safety */
-#safety{
+#safety {
     height: 50vh;
 }
-.section-title h4{
+
+.section-title h4 {
     font-family: Anton;
     font-size: 50px;
-	display: inline-block;
+    display: inline-block;
 }
+
 .section-title h4:before,
 .section-title h4:after {
-	position: absolute;
-	content: "";
-	background-color: #000;
+    position: absolute;
+    content: "";
+    background-color: #000;
 }
 
 .section-title h4:before {
-	width: 80px;
-	height: 1.5px;
-	bottom: 0;
-	left: 50%;
-	margin-left: -40px;
+    width: 80px;
+    height: 1.5px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -40px;
 }
 
 .section-title h4:after {
-	width: 40px;
-	height: 1.5px;
-	bottom: -5px;
-	left: 50%;
-	margin-left: -20px;
+    width: 40px;
+    height: 1.5px;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -20px;
 }
-.circled-number{
+
+.circled-number {
     border-radius: 50%;
     width: 36px;
     height: 36px;
@@ -303,13 +310,21 @@ body {
     text-align: center;
     padding-bottom: 40px;
 }
+
 .nav-tabs .nav-link.active {
     border-color: #fff !important;
 }
-.nav-tabs .nav-link.active h2{
+
+.nav-tabs .nav-link.active h2 {
     color: #1e3799;
 }
-.footer{
+
+.footer {
     bottom: 0;
 }
+
 /* END Safety */
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
