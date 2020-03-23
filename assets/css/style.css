@@ -189,108 +189,115 @@ body {
 /* 4. Map */
 /* END Map */
 
+.row {
+    margin: 0;
+}
+
 /* 5. Live-feed */
 .live-feed-container {
-margin: 60px auto 15px;
-width: 768px;
+    margin: 60px auto 15px;
 }
 
 .live-feed-container h1 {
-font-size: 36px;
-color: #283035;
-font-weight: 400;
+    font-size: 36px;
+    color: #283035;
+    font-weight: 400;
 }
 
 .live-feed-container h1 a {
-font-size: 18px;
-font-weight: 700;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .live-feed-list {
-margin-top: 30px;
-position: relative;
+    margin-top: 30px;
+    position: relative;
 }
 
 .live-feed-list li {
-margin-bottom: 15px;
-display: block;
-position: relative;
+    margin-bottom: 15px;
+    display: block;
+    position: relative;
 }
 
 .live-feed-list li:after {
-content: '';
-display: block;
-clear: both;
-height: 0;
-width: 0;
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+    width: 0;
 }
 
 .live-feed-list .live-feed-box {
-width: 680px;
-float: right;
-position: relative;
--webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
--moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    /* width: 680px; */
+    /* float: right; */
+    position: relative;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
 }
 
-.live-feed-list .live-feed-box:before, .live-feed-list .live-feed-box:after {
-content: '';
-height: 0;
-width: 0;
-position: absolute;
-display: block;
-border-width: 10px 12px 10px 0;
-border-style: solid;
-border-color: transparent #FCFCFC;
-top: 8px;
-left: -11px;
+.live-feed-list .live-feed-box:before,
+.live-feed-list .live-feed-box:after {
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    display: block;
+    border-width: 10px 12px 10px 0;
+    border-style: solid;
+    border-color: transparent #FCFCFC;
+    top: 8px;
+    left: -11px;
 }
 
 .live-feed-list .live-feed-box:before {
-border-width: 11px 13px 11px 0;
-border-color: transparent rgba(0,0,0,0.05);
-left: -12px;
+    border-width: 11px 13px 11px 0;
+    border-color: transparent rgba(0, 0, 0, 0.05);
+    left: -12px;
 }
+
 .live-feed-box .live-feed-head {
-background: #FCFCFC;
-padding: 10px 12px;
-border-bottom: 1px solid #E5E5E5;
-overflow: hidden;
--webkit-border-radius: 4px 4px 0 0;
--moz-border-radius: 4px 4px 0 0;
-border-radius: 4px 4px 0 0;
+    background: #FCFCFC;
+    padding: 10px 12px;
+    border-bottom: 1px solid #E5E5E5;
+    overflow: hidden;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
 }
 
 .live-feed-box .live-feed-head i {
-float: right;
-margin-left: 14px;
-position: relative;
-top: 2px;
-color: #A6A6A6;
-cursor: pointer;
--webkit-transition: color 0.3s ease;
--o-transition: color 0.3s ease;
-transition: color 0.3s ease;
+    float: right;
+    margin-left: 14px;
+    position: relative;
+    top: 2px;
+    color: #A6A6A6;
+    cursor: pointer;
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .live-feed-box .live-feed-head i:hover {
-color: #03658c;
+    color: #03658c;
 }
 
 .live-feed-box .live-feed-name {
-color: #283035;
-font-size: 18px;
-font-weight: 700;
-float: left;
-margin-right: 10px;
-}
-.live-feed-box .live-feed-name i{
+    color: #283035;
+    font-size: 18px;
+    font-weight: 700;
     float: left;
-    padding-right:8px;
+    margin-right: 10px;
+}
+
+.live-feed-box .live-feed-name i {
+    float: left;
+    padding-right: 8px;
     color: #000;
 }
-.live-feed-time{
+
+.live-feed-time {
     color: #283035;
     font-size: 18px;
     font-weight: 700;
@@ -299,26 +306,27 @@ margin-right: 10px;
 }
 
 .live-feed-box .live-feed-name a {
-color: #283035;
+    color: #283035;
 }
 
 .live-feed-box .live-feed-head span {
-float: left;
-color: #999;
-font-size: 13px;
-position: relative;
-top: 1px;
+    float: left;
+    color: #999;
+    font-size: 13px;
+    position: relative;
+    top: 1px;
 }
 
 .live-feed-box .live-feed-content {
-background: #FFF;
-padding: 12px;
-font-size: 15px;
-color: #595959;
--webkit-border-radius: 0 0 4px 4px;
--moz-border-radius: 0 0 4px 4px;
-border-radius: 0 0 4px 4px;
+    background: #FFF;
+    padding: 12px;
+    font-size: 15px;
+    color: #595959;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
 }
+
 /* END Live-feed */
 
 /* 6. City */
