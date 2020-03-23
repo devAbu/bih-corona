@@ -23,11 +23,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -72,10 +67,11 @@
     <!-- END OF NAVBAR -->
 
     <!-- MAP -->
-    <section id="map">
-        <div class="container">
+    <section id="map-section">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-xl-12"><img src="assets/images/bih-mapa.jpg" class="img-fluid" alt="Responsive image">
+                <div class="col-xl-12 d-flex justify-content-center;">
+                    <div class="text-center" id="map"></div>
                 </div>
             </div>
         </div>
@@ -84,7 +80,7 @@
 
     <!-- LIVE-FEED -->
     <section id="live-feed">
-        <div class="container d-flex justify-content-center">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-12">
                     <ul class="live-feed-list">
@@ -102,6 +98,8 @@
                             </div>
                         </li>
                     </ul>
+                </div>
+                <div class="col-xl-12">
                     <ul class="live-feed-list">
                         <li>
                             <div class="live-feed-main-level">
@@ -117,6 +115,8 @@
                             </div>
                         </li>
                     </ul>
+                </div>
+                <div class="col-xl-12">
                     <ul class="live-feed-list">
                         <li>
                             <div class="live-feed-main-level">
@@ -145,30 +145,30 @@
                 <div class="col-md-4">
                     <div class="card border-secondary mx-sm-1 p-3">
                         <div class="card border-secondary shadow text-secondary p-3">
-                            <h1 class="text-center">BROJ ZARAŽENIH</h1>
+                            <h2 class="text-center">BROJ ZARAŽENIH</h2>
                         </div>
                         <div class="text-secondary text-center mt-2">
-                            <h1>234</h1>
+                            <h2>234</h2>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card border-primary mx-sm-1 p-3">
                         <div class="card border-primary shadow text-primary p-3">
-                            <h1 class="text-center">BROJ IZLIJEČENIH</h1>
+                            <h2 class="text-center">BROJ IZLIJEČENIH</h2>
                         </div>
                         <div class="text-primary text-center mt-2">
-                            <h1>234</h1>
+                            <h2>234</h2>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card border-danger mx-sm-1 p-3">
                         <div class="card border-danger shadow text-danger p-3 my-card">
-                            <h1 class="text-center">BROJ UMRLIH</h1>
+                            <h2 class="text-center">BROJ UMRLIH</h2>
                         </div>
                         <div class="text-danger text-center mt-2">
-                            <h1>234</h1>
+                            <h2>234</h2>
                         </div>
                     </div>
                 </div>
@@ -548,7 +548,6 @@
                 </div>
             </div>
         </div>
-
         <div id="callNumbers"></div>
     </section>
     <!-- END INFO -->
@@ -573,7 +572,75 @@
 
     <!-- NEWS -->
     <section id="news">
-
+        <div class="container">
+            <div class="row pb-">
+                <div class="col-xl-12">
+                    <div class="section-title text-center">
+                        <h4 class="pt-4">Vijesti</h4>
+                        <p>Vijesti o korona virusu koje su vezane isjljučivo za teritorij Bosne i Hercegovine </p>
+                    </div>
+                </div>
+            </div>
+            <!--NEWS ARTICLE -->
+            <article>
+                <div class="row">
+                    <div class="col-xl-4 col-xs-12">
+                        <img  class="img-fluid" src="assets/images/news.png">
+                    </div>
+                    <div class="col-xl-8 col-xs-12">
+                        <h4 class="caption-heading">Koronavirus potvrđen i u Brčkom, zaražene dvije mlađe osobe</h4>
+                        <p class="news-p">Gradske vlasti Brčko distrikta potvrdile su jutros da su dvije osobe u tom gradu zaražene koronavirusom, riječ je o supružnicima.</p>
+                        <a href="#">Pogledajte cijeli članak</a>
+                        <p class="time-p">Prije 23 minute</p>
+                    </div>
+                </div>
+                <hr>
+            </article>
+            <!--NEWS ARTICLE -->
+            <article>
+                <div class="row">
+                    <div class="col-xl-4 col-xs-12">
+                        <img  class="img-fluid" src="assets/images/news.png">
+                    </div>
+                    <div class="col-xl-8 col-xs-12">
+                        <h4 class="caption-heading">Koronavirus potvrđen i u Brčkom, zaražene dvije mlađe osobe</h4>
+                        <p class="news-p">Gradske vlasti Brčko distrikta potvrdile su jutros da su dvije osobe u tom gradu zaražene koronavirusom, riječ je o supružnicima.</p>
+                        <a href="#">Pogledajte cijeli članak</a>
+                        <p class="time-p">Prije 23 minute</p>
+                    </div>
+                </div>
+                <hr>
+            </article>
+            <article>
+                <div class="row">
+                    <div class="col-xl-4 col-xs-12">
+                        <img  class="img-fluid" src="assets/images/news.png">
+                    </div>
+                    <div class="col-xl-8 col-xs-12">
+                        <h4 class="caption-heading">Koronavirus potvrđen i u Brčkom, zaražene dvije mlađe osobe</h4>
+                        <p class="news-p">Gradske vlasti Brčko distrikta potvrdile su jutros da su dvije osobe u tom gradu zaražene koronavirusom, riječ je o supružnicima.</p>
+                        <a href="#">Pogledajte cijeli članak</a>
+                        <p class="time-p">Prije 23 minute</p>
+                    </div>
+                </div>
+                <hr>
+            </article>
+            <!--NEWS ARTICLE -->
+            <article>
+                <div class="row">
+                    <div class="col-xl-4 col-xs-12">
+                        <img  class="img-fluid" src="assets/images/news.png">
+                    </div>
+                    <div class="col-xl-8 col-xs-12">
+                        <h4 class="caption-heading">Koronavirus potvrđen i u Brčkom, zaražene dvije mlađe osobe</h4>
+                        <p class="news-p">Gradske vlasti Brčko distrikta potvrdile su jutros da su dvije osobe u tom gradu zaražene koronavirusom, riječ je o supružnicima.</p>
+                        <a href="#">Pogledajte cijeli članak</a>
+                        <p class="time-p">Prije 23 minute</p>
+                    </div>
+                </div>
+                <hr>
+            </article>
+        </div>
     </section>
     <!-- END NEWS -->
 
@@ -638,6 +705,12 @@
     <!-- END SAFETY -->
 
 
+        <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzii-Rd8yNczTknnnqUlya7hzmFoJ4p40&callback=initMap"></script>
     <!--Custom JS-->
     <script src="assets/js/main.js"></script>
 </body>

@@ -41,14 +41,16 @@ CSS:
     }
   }
 
-  /* 5. Live-feed */
+  /* 11. News */
   
 @media only screen and (max-width: 766px) {
-	.live-feed-container {
-		width: 480px;
+	.time-p{
+		float: left;
 	}
-
-	.live-feed-list .live-feed-box {
-		width: 390px;
+	.caption-heading{
+		font-size: 21px;
 	}
+	.news-p{
+		font-size: 15px;
 	}
+}

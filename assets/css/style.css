@@ -25,10 +25,7 @@ body {
     line-height: 24px;
     font-weight: 400;
     color: #212112;
-    /*zbog popup-a / modal-a */
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: visible !important;
+    padding-top: 73px;
 }
 
 ::selection {
@@ -187,6 +184,10 @@ body {
 
 
 /* 4. Map */
+#map {
+    width: 100vw;
+    height: 100vh;
+  }
 /* END Map */
 
 /* 5. Live-feed */
@@ -395,6 +396,10 @@ border-radius: 0 0 4px 4px;
 /* END RestW */
 
 /* 11. News */
+.time-p{
+    float: right;
+    font-weight: bold;
+}
 /* END News */
 
 /* 12. Safety */
