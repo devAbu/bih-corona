@@ -79,7 +79,7 @@
 
 //Google maps
 // Initialize and add the map
-function initMap() {
+/* function initMap() {
     // The location of Uluru
     var uluru = {
         lat: 43.84864,
@@ -96,12 +96,12 @@ function initMap() {
         position: uluru,
         map: map
     });
-}
+} */
 
 //Call numbers
 function citys(value) {
     if (value == "Sarajevo") {
-        document.getElementById("callNumbers").innerHTML = '<div class="container pt-3 d-flex justify-content-center"> <div class="row"> <div class="col-xs-12"> <div class="table-responsive"> <table class="table table-bordered table-hover"> <thead > <tr> <th colspan="5" class="text-center">Sarajevo - Pozivni brojevi</th></tr> <tr> <th>Ime</th><th>Broj fiksnog telefona</th><th>Broj mobilnog telfona</th></tr></thead><tbody><tr class="text-center"><td>OJ DZ Stari Grad </td><td>033 278-624</td><td>060 328 04 54</td></tr><tr class="text-center"><td>OJ DZ Centar </td><td>x</td><td>060 328 02 17</td></tr><tr class="text-center"><td>OJ DZ Novo Sarajevo </td> <td>x</td><td>061 165 219</td></tr><tr class="text-center"> <td>Higijensko- epidemiološkoj službi JU Dom zdravlja </td><td>x</td> <td>062 842 318</td></tr></tbody></table></div><!--end of .table-responsive--></div></div></div>';
+        document.getElementById("callNumbers").innerHTML = '<div class="container pt-3 d-flex justify-content-center"> <div class="row" style="overflow-x:auto"> <div class="col-xs-12"> <div class="table-responsive"> <table class="table table-bordered table-hover"> <thead > <tr> <th colspan="5" class="text-center">Sarajevo - Pozivni brojevi</th></tr> <tr> <th>Ime</th><th>Broj fiksnog telefona</th><th>Broj mobilnog telfona</th></tr></thead><tbody><tr class="text-center"><td>OJ DZ Stari Grad </td><td>033 278-624</td><td>060 328 04 54</td></tr><tr class="text-center"><td>OJ DZ Centar </td><td>x</td><td>060 328 02 17</td></tr><tr class="text-center"><td>OJ DZ Novo Sarajevo </td> <td>x</td><td>061 165 219</td></tr><tr class="text-center"> <td>Higijensko- epidemiološkoj službi JU Dom zdravlja </td><td>x</td> <td>062 842 318</td></tr></tbody></table></div><!--end of .table-responsive--></div></div></div>';
     } else if (value == "Tuzla") {
         document.getElementById("callNumbers").innerHTML = '<h4>Tuzla</h4>';
     } else {
