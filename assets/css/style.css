@@ -414,61 +414,81 @@ body {
 /* END News */
 
 /* 12. Safety */
-#safety {
-    height: 50vh;
+
+#safety{
+    min-height:80vh ;
 }
 
-.section-title h4 {
-    font-family: Anton;
-    font-size: 50px;
-    display: inline-block;
-}
-
-.section-title h4:before,
-.section-title h4:after {
+.tabset > input[type="radio"] {
     position: absolute;
+    left: -200vw;
+  }
+  
+  .tabset .tab-panel {
+    display: none;
+  }
+  
+  .tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+  .tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+  .tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+  .tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+  .tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+  .tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+    display: block;
+  }
+  
+  .tabset > label {
+    position: relative;
+    display: inline-block;
+    padding: 15px 15px 25px;
+    border: 1px solid transparent;
+    border-bottom: 0;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .tabset > label::after {
     content: "";
-    background-color: #000;
-}
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    width: 22px;
+    height: 4px;
+    background: #8d8d8d;
+  }
+  
+  .tabset > label:hover,
+  .tabset > input:focus + label {
+    color: #06c;
+  }
+  
+  .tabset > label:hover::after,
+  .tabset > input:focus + label::after,
+  .tabset > input:checked + label::after {
+    background: #06c;
+  }
+  
+  .tabset > input:checked + label {
+    border-color: #ccc;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+  }
+  
+  .tab-panel {
+    padding: 30px 0;
+    border-top: 1px solid #ccc;
+  }
 
-.section-title h4:before {
-    width: 80px;
-    height: 1.5px;
-    bottom: 0;
-    left: 50%;
-    margin-left: -40px;
-}
-
-.section-title h4:after {
-    width: 40px;
-    height: 1.5px;
-    bottom: -5px;
-    left: 50%;
-    margin-left: -20px;
-}
-
-.circled-number {
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    border: 2px solid #666;
-    text-align: center;
-    padding-bottom: 40px;
-}
-
-.nav-tabs .nav-link.active {
-    border-color: #fff !important;
-}
-
-.nav-tabs .nav-link.active h2 {
-    color: #1e3799;
-}
-
-.footer {
-    bottom: 0;
-}
-
-/* END Safety */
+  #clanak1 .container{
+    padding: 20px 70px !important;
+  }
+  .clanak-p{
+      font-size: 17px;
+  }
+  .clanak-p ul{
+      list-style: none;
+  }
+  /* END Safety */
 .center {
     margin-left: auto;
     margin-right: auto;
