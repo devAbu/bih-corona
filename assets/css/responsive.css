@@ -16,13 +16,15 @@ CSS:
 */
 
 /* 3. Navigation */
-@media (max-width: 767px) { 
-	h1{
+@media (max-width: 767px) {
+	h1 {
 		font-size: 38px;
 	}
-	.nav-item:after{
+
+	.nav-item:after {
 		display: none;
 	}
+
 	.nav-item::before {
 		position: absolute;
 		display: block;
@@ -34,23 +36,36 @@ CSS:
 		border: none;
 		background-color: #000;
 	}
-}
-@media only screen and (max-width: 1919px) {
-    body {
-      font-size: 20px;
-    }
-  }
 
-  /* 11. News */
-  
+	#map {
+		transform: scale(0.55);
+		height: 60vh;
+	}
+
+	svg {
+		margin-left: -8em;
+		margin-top: -7em;
+	}
+}
+
+@media only screen and (max-width: 1919px) {
+	body {
+		font-size: 20px;
+	}
+}
+
+/* 11. News */
+
 @media only screen and (max-width: 766px) {
-	.time-p{
+	.time-p {
 		float: left;
 	}
-	.caption-heading{
+
+	.caption-heading {
 		font-size: 21px;
 	}
-	.news-p{
+
+	.news-p {
 		font-size: 15px;
 	}
 }
