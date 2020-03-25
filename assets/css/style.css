@@ -32,12 +32,9 @@ body {
     color: #fff;
     background-color: #8167a9;
 }
-
-::-moz-selection {
-    color: #fff;
-    background-color: #8167a9;
+.section-title h4{
+    font-size: 32px;
 }
-
 /* Main END */
 /* 3.Navigation */
 .start-header {
@@ -45,19 +42,6 @@ body {
     transform: translateY(0);
     padding: 10px 0;
     box-shadow: 0 10px 30px 0 rgba(138, 155, 165, 0.15);
-    -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-}
-
-.start-header.scroll-on {
-    box-shadow: 0 5px 10px 0 rgba(138, 155, 165, 0.15);
-    padding: 5px 0;
-    -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-}
-
-.start-header.scroll-on .navbar-brand img {
-    height: 28px;
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
 }
@@ -143,10 +127,6 @@ body {
     color: #1e3799 !important;
 }
 
-.nav-item.active .nav-link {
-    color: #777 !important;
-}
-
 .nav-link {
     position: relative;
     padding: 5px 0 !important;
@@ -171,10 +151,6 @@ body {
     opacity: 1;
 }
 
-.nav-item.active:hover:after {
-    opacity: 0;
-}
-
 .nav-item {
     position: relative;
     transition: all 200ms linear;
@@ -196,23 +172,11 @@ body {
 }
 
 /* 5. Live-feed */
-.live-feed-container {
-    margin: 60px auto 15px;
-}
-
-.live-feed-container h1 {
-    font-size: 36px;
-    color: #283035;
-    font-weight: 400;
-}
-
-.live-feed-container h1 a {
-    font-size: 18px;
-    font-weight: 700;
-}
 
 .live-feed-list {
     margin-top: 30px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
     margin-bottom: 2rem;
     position: relative;
 }
@@ -336,10 +300,22 @@ body {
 .box {
     padding: 60px 0px;
 }
+.col-md-4{
+    padding-top: 5px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.col-sm-3{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
 
 .box-part {
     border: 2px solid rgb(172, 172, 172);
-    padding: 5px 0px;
+    padding: 5px 0px !important;
+}
+.box .col-lg-3 .col-md-3 .col-sm-3 .col-xs-12{
+    padding: 16px 0px !important;
 }
 
 /* END City */
@@ -382,11 +358,19 @@ body {
     z-index: -1;
     opacity: .7;
 }
+.viber-link p{
+    text-shadow: 1px 1px rgb(0, 0, 0);
+    font-weight: bold;
+}
 
 .viber-link h4 {
+    font-weight: 800;
     color: #fff;
     font-size: 50px;
-    text-shadow: 2px 2px rgb(185, 0, 170);
+    text-shadow: 1px 1px rgb(185, 0, 170);
+}
+.viber-link a{
+    font-weight: bold;
 }
 
 .viber-link p {
@@ -414,10 +398,6 @@ body {
 /* END News */
 
 /* 12. Safety */
-
-#safety{
-    min-height:80vh ;
-}
 
 .tabset > input[type="radio"] {
     position: absolute;
@@ -494,7 +474,8 @@ body {
       width: 1100px !important;
   }
   /* END Safety */
-.center {
+  
+  .center {
     margin-left: auto;
     margin-right: auto;
 }
