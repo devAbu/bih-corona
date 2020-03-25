@@ -1,3 +1,4 @@
+<?php include('php/connection.php'); ?>
 <!doctype html>
 <html lang="en">
 
@@ -83,156 +84,31 @@
                     </div>
                 </div>
                 <div data-simplebar class="col-lg-4 col-12 center" style="max-height:100vh;">
+                <?php
+
+                    $sql = "SELECT * FROM live_feed ORDER BY id DESC";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) { ?>
+
                     <ul class="live-feed-list">
                         <li>
                             <div class="live-feed-main-level">
                                 <div class="live-feed-box">
                                     <div class="live-feed-head">
-                                        <h6 class="live-feed-name">Sarajevo +1 </h6>
-                                        <h6 class="live-feed-time">prije 12 minuta</h6>
+                                        <h6 class="live-feed-name"><?php echo $row['ime-grada'] ?> + 
+                                         <?php echo $row['broj'] ?></h6>
+                                        <h6 class="live-feed-time">Prije <?php echo $row['vrijeme'] ?> minuta</h6>
                                     </div>
                                     <div class="live-feed-content">
-                                        Novozaražena osoba otkrivena u Sarajevu
+                                         <?php echo $row['text'] ?> 
                                     </div>
                                 </div>
                             </div>
                         </li>
                     </ul>
-                    <ul class="live-feed-list">
-                        <li>
-                            <div class="live-feed-main-level">
-                                <div class="live-feed-box">
-                                    <div class="live-feed-head">
-                                        <h6 class="live-feed-name">Sarajevo +1 </h6>
-                                        <h6 class="live-feed-time">prije 12 minuta</h6>
-                                    </div>
-                                    <div class="live-feed-content">
-                                        Novozaražena osoba otkrivena u Sarajevu
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="live-feed-list">
-                        <li>
-                            <div class="live-feed-main-level">
-                                <div class="live-feed-box">
-                                    <div class="live-feed-head">
-                                        <h6 class="live-feed-name">Sarajevo +1 </h6>
-                                        <h6 class="live-feed-time">prije 12 minuta</h6>
-                                    </div>
-                                    <div class="live-feed-content">
-                                        Novozaražena osoba otkrivena u Sarajevu
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="live-feed-list">
-                        <li>
-                            <div class="live-feed-main-level">
-                                <div class="live-feed-box">
-                                    <div class="live-feed-head">
-                                        <h6 class="live-feed-name">Sarajevo +1 </h6>
-                                        <h6 class="live-feed-time">prije 12 minuta</h6>
-                                    </div>
-                                    <div class="live-feed-content">
-                                        Novozaražena osoba otkrivena u Sarajevu
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="live-feed-list">
-                        <li>
-                            <div class="live-feed-main-level">
-                                <div class="live-feed-box">
-                                    <div class="live-feed-head">
-                                        <h6 class="live-feed-name">Sarajevo +1 </h6>
-                                        <h6 class="live-feed-time">prije 12 minuta</h6>
-                                    </div>
-                                    <div class="live-feed-content">
-                                        Novozaražena osoba otkrivena u Sarajevu
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="live-feed-list">
-                        <li>
-                            <div class="live-feed-main-level">
-                                <div class="live-feed-box">
-                                    <div class="live-feed-head">
-                                        <h6 class="live-feed-name">Sarajevo +1 </h6>
-                                        <h6 class="live-feed-time">prije 12 minuta</h6>
-                                    </div>
-                                    <div class="live-feed-content">
-                                        Novozaražena osoba otkrivena u Sarajevu
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="live-feed-list">
-                        <li>
-                            <div class="live-feed-main-level">
-                                <div class="live-feed-box">
-                                    <div class="live-feed-head">
-                                        <h6 class="live-feed-name">Sarajevo +1 </h6>
-                                        <h6 class="live-feed-time">prije 12 minuta</h6>
-                                    </div>
-                                    <div class="live-feed-content">
-                                        Novozaražena osoba otkrivena u Sarajevu
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="live-feed-list">
-                        <li>
-                            <div class="live-feed-main-level">
-                                <div class="live-feed-box">
-                                    <div class="live-feed-head">
-                                        <h6 class="live-feed-name">Sarajevo +1 </h6>
-                                        <h6 class="live-feed-time">prije 12 minuta</h6>
-                                    </div>
-                                    <div class="live-feed-content">
-                                        Novozaražena osoba otkrivena u Sarajevu
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="live-feed-list">
-                        <li>
-                            <div class="live-feed-main-level">
-                                <div class="live-feed-box">
-                                    <div class="live-feed-head">
-                                        <h6 class="live-feed-name">Sarajevo +1 </h6>
-                                        <h6 class="live-feed-time">prije 12 minuta</h6>
-                                    </div>
-                                    <div class="live-feed-content">
-                                        Novozaražena osoba otkrivena u Sarajevu
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="live-feed-list">
-                        <li>
-                            <div class="live-feed-main-level">
-                                <div class="live-feed-box">
-                                    <div class="live-feed-head">
-                                        <h6 class="live-feed-name">Sarajevo +1 </h6>
-                                        <h6 class="live-feed-time">prije 12 minuta</h6>
-                                    </div>
-                                    <div class="live-feed-content">
-                                        Novozaražena osoba otkrivena u Sarajevu
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                    <?php }}?>
                 </div>
             </div>
         </div>
@@ -244,13 +120,20 @@
     <section id="numbers">
         <div class="container-fluid">
             <div class="row">
+            <?php
+
+            $sql = "SELECT * FROM ukupan_broj";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) { ?>
                 <div class="col-md-4">
                     <div class="card border-secondary mx-sm-1 p-3">
                         <div class="card border-secondary shadow text-secondary p-3">
                             <h2 class="text-center">BROJ ZARAŽENIH</h2>
                         </div>
                         <div class="text-secondary text-center mt-2">
-                            <h2>166</h2>
+                            <h2><?php echo $row['broj-zarazenih'] ?></h2>
                         </div>
                     </div>
                 </div>
@@ -260,7 +143,7 @@
                             <h2 class="text-center">BROJ IZLIJEČENIH</h2>
                         </div>
                         <div class="text-primary text-center mt-2">
-                            <h2>2</h2>
+                            <h2><?php echo $row['broj-izlijecenih'] ?></h2>
                         </div>
                     </div>
                 </div>
@@ -270,11 +153,12 @@
                             <h2 class="text-center">BROJ UMRLIH</h2>
                         </div>
                         <div class="text-danger text-center mt-2">
-                            <h2>3</h2>
+                            <h2><?php echo $row['broj-umrlih'] ?></h2>
                         </div>
                     </div>
                 </div>
             </div>
+                <?php }}?>
         </div>
     </section>
     <!-- END NUMBERS -->
@@ -284,6 +168,13 @@
         <div class="box">
             <div class="container-fluid">
                 <div class="row">
+                <?php
+
+                   // $sql = "SELECT * FROM gradovi";
+                    //$result = $conn->query($sql);
+
+                    //if ($result->num_rows > 0) {
+                      //  while($row = $result->fetch_assoc()) { ?>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-3">
                         <div class="box-part text-center bg-light">
                             <div class="title">
@@ -335,6 +226,7 @@
                         </a>
                     </div>
                 </div>
+                <?php //}}?>
                 <div id="moreCities" class="collapse">
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
@@ -710,6 +602,7 @@
     <!-- NEWS -->
     <section id="news">
         <div class="container">
+            
             <div class="row pb-3">
                 <div class="col-xl-12">
                     <div class="section-title text-center">
@@ -719,53 +612,28 @@
                 </div>
             </div>
             <!--NEWS ARTICLE -->
-            <article>
-                <div class="row">
-                    <div class="col-xl-4 col-xs-12">
-                        <img class="img-fluid" src="assets/images/news.png">
+            <?php
+
+                $sql = "SELECT * FROM vijesti";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) { ?>
+                <article>
+                    <div class="row">
+                        <div class="col-xl-4 col-xs-12">
+                        <?php echo '<img class="img-fluid" src="data:image/jpeg;base64,' . base64_encode($row['slika']) . '"/>' ?>
+                        </div>
+                        <div class="col-xl-8 col-xs-12">
+                            <h4 class="caption-heading"><?php echo $row['naslov']?></h4>
+                            <p class="news-p"><?php echo $row['paragraf'] ?></p>
+                            <a href="#">Pogledajte cijeli članak</a>
+                            <p class="time-p"> Izvor: <a href="https://www.klix.ba/" target=__blank>Klix.ba</a></p>
+                        </div>
                     </div>
-                    <div class="col-xl-8 col-xs-12">
-                        <h4 class="caption-heading">Koronavirus potvrđen i u Brčkom, zaražene dvije mlađe osobe</h4>
-                        <p class="news-p">Gradske vlasti Brčko distrikta potvrdile su jutros da su dvije osobe u tom
-                            gradu zaražene koronavirusom, riječ je o supružnicima.</p>
-                        <a href="#">Pogledajte cijeli članak</a>
-                        <p class="time-p"> Izvor: <a href="https://www.klix.ba/" target=__blank>Klix.ba</a></p>
-                    </div>
-                </div>
-                <hr>
-            </article>
-            <!--NEWS ARTICLE -->
-            <article>
-                <div class="row">
-                    <div class="col-xl-4 col-xs-12">
-                        <img class="img-fluid" src="assets/images/news.png">
-                    </div>
-                    <div class="col-xl-8 col-xs-12">
-                        <h4 class="caption-heading">Koronavirus potvrđen i u Brčkom, zaražene dvije mlađe osobe</h4>
-                        <p class="news-p">Gradske vlasti Brčko distrikta potvrdile su jutros da su dvije osobe u tom
-                            gradu zaražene koronavirusom, riječ je o supružnicima.</p>
-                        <a href="#">Pogledajte cijeli članak</a>
-                        <p class="time-p"> Izvor: <a href="https://www.klix.ba/" target=__blank>Klix.ba</a></p>
-                    </div>
-                </div>
-                <hr>
-            </article>
-            <!--NEWS ARTICLE -->
-            <article>
-                <div class="row">
-                    <div class="col-xl-4 col-xs-12">
-                        <img class="img-fluid" src="assets/images/news.png">
-                    </div>
-                    <div class="col-xl-8 col-xs-12">
-                        <h4 class="caption-heading">Koronavirus potvrđen i u Brčkom, zaražene dvije mlađe osobe</h4>
-                        <p class="news-p">Gradske vlasti Brčko distrikta potvrdile su jutros da su dvije osobe u tom
-                            gradu zaražene koronavirusom, riječ je o supružnicima.</p>
-                        <a href="#">Pogledajte cijeli članak</a>
-                        <p class="time-p"> Izvor: <a href="https://www.klix.ba/" target=__blank>Klix.ba</a></p>
-                    </div>
-                </div>
-                <hr>
-            </article>
+                    <hr>
+                </article>
+            <?php }}?>
         </div>
     </section>
     <!-- END NEWS -->
@@ -815,7 +683,7 @@
                                         <h2 class="text-center">Korona virus (COVID-19): Što roditelji treba da znaju?
                                         </h2>
                                         <p class="text-center">Kako zaštititi sebe i svoju djecu?</p>
-                                        <img class="img-fluid clanak-img" src="assets/images/unicef1.jpg" height="500"
+                                        <img style="height:400px; width:1000px;" class="img-fluid clanak-img" src="assets/images/unicef.jpg"
                                             alt="unicefImg">
                                         <div class="clanak-text">
                                             <h5 class="pt-3"><strong>Što je „novi“ korona virus?</strong></h5>
