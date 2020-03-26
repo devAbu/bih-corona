@@ -32,9 +32,11 @@ body {
     color: #fff;
     background-color: #8167a9;
 }
-.section-title h4{
+
+.section-title h4 {
     font-size: 32px;
 }
+
 /* Main END */
 /* 3.Navigation */
 .start-header {
@@ -203,7 +205,8 @@ body {
     -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
 }
-#scrollable{
+
+#scrollable {
     height: 100vh;
     background-color: #000 !important;
 }
@@ -304,12 +307,14 @@ body {
 .box {
     padding: 60px 0px;
 }
-.col-md-4{
+
+.col-md-4 {
     padding-top: 5px !important;
     padding-left: 0px !important;
     padding-right: 0px !important;
 }
-.col-sm-3{
+
+.col-sm-3 {
     padding-left: 0px !important;
     padding-right: 0px !important;
 }
@@ -318,7 +323,8 @@ body {
     border: 2px solid rgb(172, 172, 172);
     padding: 5px 0px !important;
 }
-.box .col-lg-3 .col-md-3 .col-sm-3 .col-xs-12{
+
+.box .col-lg-3 .col-md-3 .col-sm-3 .col-xs-12 {
     padding: 16px 0px !important;
 }
 
@@ -362,7 +368,8 @@ body {
     z-index: -1;
     opacity: .7;
 }
-.viber-link p{
+
+.viber-link p {
     text-shadow: 1px 1px rgb(0, 0, 0);
     font-weight: bold;
 }
@@ -373,7 +380,8 @@ body {
     font-size: 50px;
     text-shadow: 1px 1px rgb(185, 0, 170);
 }
-.viber-link a{
+
+.viber-link a {
     font-weight: bold;
 }
 
@@ -403,25 +411,25 @@ body {
 
 /* 12. Safety */
 
-.tabset > input[type="radio"] {
+.tabset>input[type="radio"] {
     position: absolute;
     left: -200vw;
-  }
-  
-  .tabset .tab-panel {
+}
+
+.tabset .tab-panel {
     display: none;
-  }
-  
-  .tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
-  .tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
-  .tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
-  .tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
-  .tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
-  .tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+}
+
+.tabset>input:first-child:checked~.tab-panels>.tab-panel:first-child,
+.tabset>input:nth-child(3):checked~.tab-panels>.tab-panel:nth-child(2),
+.tabset>input:nth-child(5):checked~.tab-panels>.tab-panel:nth-child(3),
+.tabset>input:nth-child(7):checked~.tab-panels>.tab-panel:nth-child(4),
+.tabset>input:nth-child(9):checked~.tab-panels>.tab-panel:nth-child(5),
+.tabset>input:nth-child(11):checked~.tab-panels>.tab-panel:nth-child(6) {
     display: block;
-  }
-  
-  .tabset > label {
+}
+
+.tabset>label {
     position: relative;
     display: inline-block;
     padding: 15px 15px 25px;
@@ -429,9 +437,9 @@ body {
     border-bottom: 0;
     cursor: pointer;
     font-weight: 600;
-  }
-  
-  .tabset > label::after {
+}
+
+.tabset>label::after {
     content: "";
     position: absolute;
     left: 15px;
@@ -439,47 +447,50 @@ body {
     width: 22px;
     height: 4px;
     background: #8d8d8d;
-  }
-  
-  .tabset > label:hover,
-  .tabset > input:focus + label {
+}
+
+.tabset>label:hover,
+.tabset>input:focus+label {
     color: #06c;
-  }
-  
-  .tabset > label:hover::after,
-  .tabset > input:focus + label::after,
-  .tabset > input:checked + label::after {
+}
+
+.tabset>label:hover::after,
+.tabset>input:focus+label::after,
+.tabset>input:checked+label::after {
     background: #06c;
-  }
-  
-  .tabset > input:checked + label {
+}
+
+.tabset>input:checked+label {
     border-color: #ccc;
     border-bottom: 1px solid #fff;
     margin-bottom: -1px;
-  }
-  
-  .tab-panel {
+}
+
+.tab-panel {
     padding: 30px 0;
     border-top: 1px solid #ccc;
-  }
+}
 
-  #clanak1 .container{
+#clanak1 .container {
     padding: 20px 70px !important;
-  }
-  .clanak-p{
-      font-size: 17px;
-  }
-  #clanak1 ul li{
-      list-style: none;
-      padding-top: 10px;
-  }
-  /* END Safety */
-  
-  .center {
+}
+
+.clanak-p {
+    font-size: 17px;
+}
+
+#clanak1 ul li {
+    list-style: none;
+    padding-top: 10px;
+}
+
+/* END Safety */
+
+.center {
     margin-left: auto;
     margin-right: auto;
 }
 
-.tooltipBroj {
-    color: red
+svg text {
+    user-select: none;
 }
