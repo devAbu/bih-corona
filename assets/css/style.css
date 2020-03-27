@@ -454,7 +454,7 @@ body {
   height: 200px;
   background: #fff;
   display: inline-block;
-  margin: 20px;
+  margin: 1px 0px !important;
   text-align: center;
   transition: 0.8s;
   box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
