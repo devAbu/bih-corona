@@ -405,17 +405,17 @@ body {
   scroll-behavior: smooth;
 }
 
-.title {
+.title-n {
   margin: 20px;
   font-weight: 600;
   font-size: 35px;
   color: #a3a3a3;
+  text-transform: uppercase;
 }
 
 .card {
   width: 200px;
   height: 200px;
-  background: #fff;
   display: inline-block;
   margin: 20px;
   text-align: center;

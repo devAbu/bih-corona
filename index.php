@@ -137,10 +137,10 @@
     <div class="mt-4"></div>
     <!-- NUMBERS -->
     <section id="numbers pt-5">
-        <div class="container-fluid">
+        <div class="container-fluid d-flex justify-content-center">
             <div class="row">
                 <div class="header">
-                    <div id="title" class="title">COVID-19 Statistkia - Bosna i Hercegovina</div>
+                    <div id="title-n" class="title-n">COVID-19 Statistkia - Bosna i Hercegovina</div>
                     <div id="total" class="card">
                     <div class="stats">
                         <div class="number">12345</div>

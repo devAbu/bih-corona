@@ -16,9 +16,9 @@ if(isset($_POST['saveLf'])){
     $lfImeGrada = $_POST['lfImeGrada'];
     $lfBroj = $_POST['lfBroj'];
     $lfParagraf = $_POST['lfParagraf'];
-    $lfVrijeme = $_POST['lfVrijeme'];
+    $lfVrijeme = $_POST['vrijeme'];
 
-    $mysqli->query("INSERT INTO live_feed (lfImeGrada,lfBroj,lfParagraf,lfVrijeme) VALUES ('$lfImeGrada', '$lfBroj' , '$lfParagraf' , '$lfVrijeme')") or die($mysqli->error);
+    $mysqli->query("INSERT INTO live_feed (lfImeGrada,lfBroj,lfParagraf,vrijeme) VALUES ('$lfImeGrada', '$lfBroj' , '$lfParagraf' , '$lfVrijeme')") or die($mysqli->error);
 
     $_SESSION['message'] = "Sačuvano";
     $_SESSION['msg_type'] = "success";

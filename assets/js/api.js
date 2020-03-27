@@ -4,7 +4,7 @@ setInterval(function(){fetch('https://thevirustracker.com/free-api?countryTotal=
   })
   .then((data) => {
   
-  document.getElementById('title').innerText = "COVID-19 Statistika - Bosna i Hercegovina";
+  document.getElementById('title-n').innerText = "COVID-19 Statistika - Bosna i Hercegovina";
   
     
   document.getElementById('total').innerHTML = `<div class="stats">
@@ -40,7 +40,7 @@ fetch('https://thevirustracker.com/free-api?countryTotal=BA')
   })
   .then((data) => {
   
-  document.getElementById('title').innerText = "COVID-19 Statistika - Bosna i Hercegovina";
+  document.getElementById('title-n').innerText = "COVID-19 Statistika - Bosna i Hercegovina";
     
   document.getElementById('total').innerHTML = `<div class="stats">
       <div class="number">${data.countrydata[0].total_cases}</div>

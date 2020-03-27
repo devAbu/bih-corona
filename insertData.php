@@ -356,7 +356,7 @@
                                                                 echo $lfBroj;?>" placeholder="Broj Zarazenih" required>
                                                             </td>
                                                             <td><input name="vrijeme" type="text" class="form-control" value="<?php  
-                                                                echo $vriheme;?>" required>
+                                                                echo $lfVrijeme;?>" placeholder="vrijeme" required>
                                                             </td>
                                                             <td>        
                                                                 <?php
