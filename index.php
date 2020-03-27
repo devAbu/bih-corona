@@ -37,7 +37,9 @@
                     <nav class="navbar navbar-expand-md navbar-light">
                         <a class="navbar-brand" href="#map"><img src="assets/images/bih-grb.png" alt="logo"></a>Bih
                         Korona
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
@@ -94,15 +96,15 @@
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) { ?>
 
-                            <ul class="live-feed-list">
-                                <li>
-                                    <div class="live-feed-main-level">
-                                        <div class="live-feed-box">
-                                            <div class="live-feed-head">
-                                                <h6 class="live-feed-name"><?php echo $row['ime-grada'] ?> +
-                                                    <?php echo $row['broj'] ?></h6>
-                                                <h6 class="live-feed-time">Prije
-                                                    <?php
+                    <ul class="live-feed-list">
+                        <li>
+                            <div class="live-feed-main-level">
+                                <div class="live-feed-box">
+                                    <div class="live-feed-head">
+                                        <h6 class="live-feed-name"><?php echo $row['lfImeGrada'] ?> +
+                                            <?php echo $row['lfBroj'] ?></h6>
+                                        <h6 class="live-feed-time">Prije
+                                            <?php
                                                     $time1 = strtotime($row['vrijeme']);
                                                     $time2 = strtotime($finalDate);
                                                     $difference = $time2 - $time1;
@@ -115,15 +117,15 @@
                                                         echo $minutes . " min";
                                                     }
                                                     ?>
-                                                </h6>
-                                            </div>
-                                            <div class="live-feed-content">
-                                                <?php echo $row['text']; ?>
-                                            </div>
-                                        </div>
+                                        </h6>
                                     </div>
-                                </li>
-                            </ul>
+                                    <div class="live-feed-content">
+                                        <?php echo $row['lfParagraf']; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                     <?php }
                     } ?>
                 </div>
@@ -134,49 +136,37 @@
     <!-- END LIVE-FEED -->
     <div class="mt-4"></div>
     <!-- NUMBERS -->
-    <section id="numbers">
+    <section id="numbers pt-5">
         <div class="container-fluid">
             <div class="row">
-                <?php
-
-                $sql = "SELECT * FROM ukupan_broj";
-                $result = $conn->query($sql);
-
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) { ?>
-                        <div class="col-md-4">
-                            <div class="card border-secondary mx-sm-1 p-3">
-                                <div class="card border-secondary shadow text-secondary p-3">
-                                    <h2 class="text-center">BROJ ZARAŽENIH</h2>
-                                </div>
-                                <div class="text-secondary text-center mt-2">
-                                    <h2><?php echo $row['broj-zarazenih'] ?></h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card border-primary mx-sm-1 p-3">
-                                <div class="card border-primary shadow text-primary p-3">
-                                    <h2 class="text-center">BROJ IZLIJEČENIH</h2>
-                                </div>
-                                <div class="text-primary text-center mt-2">
-                                    <h2><?php echo $row['broj-izlijecenih'] ?></h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card border-danger mx-sm-1 p-3">
-                                <div class="card border-danger shadow text-danger p-3 my-card">
-                                    <h2 class="text-center">BROJ UMRLIH</h2>
-                                </div>
-                                <div class="text-danger text-center mt-2">
-                                    <h2><?php echo $row['broj-umrlih'] ?></h2>
-                                </div>
-                            </div>
-                        </div>
+                <div class="header">
+                    <div id="title" class="title">COVID-19 Statistkia - Bosna i Hercegovina</div>
+                    <div id="total" class="card">
+                    <div class="stats">
+                        <div class="number">12345</div>
+                        <div class="factor">Total</div>
+                    </div>    
+                    </div>
+                    <div id="recover" class="card">
+                    <div class="stats">
+                        <div class="number">12345</div>
+                        <div class="factor">Total</div>
+                    </div> 
+                    </div>
+                    <div id="sick" class="card">
+                    <div class="stats">
+                        <div class="number">12345</div>
+                        <div class="factor">Total</div>
+                    </div> 
+                    </div>
+                    <div id="dead" class="card">
+                    <div class="stats">
+                        <div class="number">12345</div>
+                        <div class="factor">Total</div>
+                    </div> 
+                    </div>
+                </div>
             </div>
-    <?php }
-                } ?>
         </div>
     </section>
     <!-- END NUMBERS -->
@@ -188,377 +178,40 @@
                 <div class="row">
                     <?php
 
-                    // $sql = "SELECT * FROM gradovi";
-                    //$result = $conn->query($sql);
+                        $rowperpage = 16;
 
-                    //if ($result->num_rows > 0) {
-                    //  while($row = $result->fetch_assoc()) { 
-                    ?>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-3">
-                        <div class="box-part text-center bg-light">
-                            <div class="title">
-                                <h4>Banja Luka <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                            </div>
-                            <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                            <div class="text">
-                                <p>Broj zaraženih: <span class="text-danger">81</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-3">
-                        <div class="box-part text-center bg-light">
-                            <div class="title">
-                                <h4>Konjic <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                            </div>
-                            <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                            <div class="text">
-                                <p>Broj zaraženih: <span class="text-danger">15</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-3">
-                        <div class="box-part text-center bg-light">
-                            <div class="title">
-                                <h4>Mostar <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                            </div>
-                            <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                            <div class="text">
-                                <p>Broj zaraženih: <span class="text-danger">7</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-3">
-                        <div class="box-part text-center bg-light">
-                            <div class="title">
-                                <h4>Laktaši <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                            </div>
-                            <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                            <div class="text">
-                                <p>Broj zaraženih: <span class="text-danger">7</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pt-4 center" id="collapse-section">
-                        <a data-toggle="collapse" href="#moreCities" role="button" aria-expanded="false" aria-controls="moreCities" id="collapse">
-                            <p>Prikaži više gradova</p>
-                        </a>
-                    </div>
-                </div>
-                <?php //}}
-                ?>
-                <div id="moreCities" class="collapse">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Sarajevo <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">5</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Kozarska Dubica <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">5</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Bihać <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">5</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Zenica <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">4</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="center pt-4" id="collapse2-section">
-                            <a data-toggle="collapse" href="#moreCities" role="button" aria-expanded="false" aria-controls="moreCities" id="collapse1-extra">
-                                <p style="display: inline; color: orangered"> Prikaži manje </p>
-                            </a>
-                            <a data-toggle="collapse" href="#moreCities2" role="button" aria-expanded="false" aria-controls="moreCities2" id="collapse2">
-                                <p style="display:inline; padding-left: 1em">Prikaži više gradova</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div id="moreCities2" class="collapse">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Goražde <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">4</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Čelinac <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">3</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Kneževo <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">3</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Široki Brijeg <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">3</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="center pt-4" id="collapse3-section">
-                            <a data-toggle="collapse" href="#moreCities2" role="button" aria-expanded="false" aria-controls="moreCities" id="collapse2-extra">
-                                <p style="display: inline; color: orangered"> Prikaži manje </p>
-                            </a>
-                            <a data-toggle="collapse" href="#moreCities3" role="button" aria-expanded="false" aria-controls="moreCities3" id="collapse3">
-                                <p style="display: inline; padding-left: 1em">Prikaži ostale gradove</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div id="moreCities3" class="collapse">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Bijeljina <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">3</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Modriča <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">2</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Brčko <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">2</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Tešanj <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">2</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Bosanski Brod <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">2</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Prnjavor <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">2</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Bosanska Gradiška <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">1</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Derventa <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">1</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Novi Travnik <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">1</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Breza <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">1</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Orašje <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">1</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Srbac <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">1</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Teslić <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">1</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4> Bosanska Krupa <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">1</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Prijedor <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">1</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Ribnik <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">1</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-4">
-                            <div class="box-part text-center bg-light">
-                                <div class="title">
-                                    <h4>Visoko <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
-                                </div>
-                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                                <div class="text">
-                                    <p>Broj zaraženih: <span class="text-danger">1</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="center pt-4" id="collapse4-section">
-                                <a data-toggle="collapse" href="#moreCities3" role="button" aria-expanded="false" aria-controls="moreCities3" id="collapse3-extra">
-                                    <p style="color: orangered">Prikaži manje</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                        $allcount_query = "SELECT count(*) as allcount FROM gradovi";
+                        $allcount_result = mysqli_query($conn,$allcount_query);
+                        $allcount_fetch = mysqli_fetch_array($allcount_result);
+                        $allcount = $allcount_fetch['allcount'];
 
+                        $query = "select * from gradovi order by id asc limit 0,$rowperpage ";
+                        $result = mysqli_query($conn,$query);
+
+                        while($row = mysqli_fetch_array($result)){
+
+                            $id = $row['id'];
+                            $ime_grada = $row['ime_grada'];
+                            $broj_zaraznih = $row['broj_zaraznih'];                    
+                        ?>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-3 post" id="post_<?php echo $id; ?>">
+                        <div class="box-part text-center bg-light">
+                            <div class="title">
+                                <h4><?php echo $row['ime_grada'] ?><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                </h4>
+                            </div>
+                            <hr style="margin-top: 0; border-top: 1px solid darkgray">
+                            <div class="text">
+                                <p>Broj zaraženih: <span class="text-danger"><?php echo $row['broj_zaraznih'] ?></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php } ?>
                 </div>
+                <h1 class="load-more">Prikaži više</h1>
+                <input type="hidden" id="row" value="0">
+                <input type="hidden" id="all" value="<?php echo $allcount; ?>">
             </div>
         </div>
     </section>
@@ -574,7 +227,8 @@
                         <p>Ako imate bilo kakvu informaciju vezanu o osobi koja je zaražena korona virusom pozovite
                             jedan od sledećih brojeva : </p>
                         <form action="#">
-                            Odaberite kanton : <select style="margin-bottom: 30px; width: 300px;" name="names" onchange="citys(this.value)">
+                            Odaberite kanton : <select style="margin-bottom: 30px; width: 300px;" name="names"
+                                onchange="citys(this.value)">
                                 <option value="Sarajevski kanton">Sarajevski kanton</option>
                                 <option value="Zapadnohercegovački kanton">Zapadnohercegovački kanton</option>
                                 <option value="Hercegovačko-neretvanski kanton">Hercegovačko-neretvanski kanton</option>
@@ -603,7 +257,8 @@
                         <h4 class="pt-4">Viber Grupa</h4>
                         <p>Pridružite se našoj viber grupi kako bi dobili što više informacija koje su vezane za korona
                             virus</p>
-                        <a href="https://invite.viber.com/?g2=AQAezvjlfvZSpks%2FzuzlM6ctwPzatW7K2eqYBfH7GAzBNyxwpu57GHSoPRk2WdEB" target="_blank">Klinkite ovdje</a>
+                        <a href="https://invite.viber.com/?g2=AQAezvjlfvZSpks%2FzuzlM6ctwPzatW7K2eqYBfH7GAzBNyxwpu57GHSoPRk2WdEB"
+                            target="_blank">Klinkite ovdje</a>
                     </div>
                 </div>
             </div>
@@ -631,20 +286,20 @@
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) { ?>
-                    <article>
-                        <div class="row">
-                            <div class="col-xl-4 col-xs-12">
-                                <?php echo '<img class="img-fluid" src="data:image/jpeg;base64,' . base64_encode($row['slika']) . '"/>' ?>
-                            </div>
-                            <div class="col-xl-8 col-xs-12">
-                                <h4 class="caption-heading"><?php echo $row['naslov'] ?></h4>
-                                <p class="news-p"><?php echo $row['paragraf'] ?></p>
-                                <a href="#">Pogledajte cijeli članak</a>
-                                <p class="time-p"> Izvor: <a href="https://www.klix.ba/" target=__blank>Klix.ba</a></p>
-                            </div>
-                        </div>
-                        <hr>
-                    </article>
+            <article>
+                <div class="row">
+                    <div class="col-xl-4 col-xs-12">
+                        <?php echo '<img class="img-fluid" src="data:image/jpeg;base64,' . base64_encode($row['slika']) . '"/>' ?>
+                    </div>
+                    <div class="col-xl-8 col-xs-12">
+                        <h4 class="caption-heading"><?php echo $row['naslov'] ?></h4>
+                        <p class="news-p"><?php echo $row['paragraf'] ?></p>
+                        <a href="#">Pogledajte cijeli članak</a>
+                        <p class="time-p"> Izvor: <a href="https://www.klix.ba/" target=__blank>Klix.ba</a></p>
+                    </div>
+                </div>
+                <hr>
+            </article>
             <?php }
             } ?>
         </div>
@@ -681,7 +336,9 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="embed-responsive embed-responsive-16by9">
-                                                <iframe src="https://www.youtube.com/embed/Y5capFWePeE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                <iframe src="https://www.youtube.com/embed/Y5capFWePeE" frameborder="0"
+                                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowfullscreen></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -691,22 +348,28 @@
                                 <section id="clanak1" class="tab-panel">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <h2 class="text-center">Korona virus (COVID-19): Što roditelji treba da znaju?
+                                            <h2 class="text-center">Korona virus (COVID-19): Što roditelji treba da
+                                                znaju?
                                             </h2>
                                             <p class="text-center">Kako zaštititi sebe i svoju djecu?</p>
-                                            <img style="height:400px; width:1000px;" class="img-fluid clanak-img" src="assets/images/unicef.jpg" alt="unicefImg">
+                                            <img style="height:400px; width:1000px;" class="img-fluid clanak-img"
+                                                src="assets/images/unicef.jpg" alt="unicefImg">
                                             <div class="clanak-text">
                                                 <h5 class="pt-3"><strong>Što je „novi“ korona virus?</strong></h5>
 
-                                                <p class="clanak-p">„Novi” korona virus (CoV) predstavlja novi soj korona
+                                                <p class="clanak-p">„Novi” korona virus (CoV) predstavlja novi soj
+                                                    korona
                                                     virusa.</p>
 
-                                                <p class="clanak-p">Oboljenje uzrokovano novim korona virusom, koji je po
+                                                <p class="clanak-p">Oboljenje uzrokovano novim korona virusom, koji je
+                                                    po
                                                     prvi
-                                                    put identifikovan u Vuhanu u Kini, nazvano je <strong> oboljenje korona
+                                                    put identifikovan u Vuhanu u Kini, nazvano je <strong> oboljenje
+                                                        korona
                                                         virus 2019 (COVID-19)</strong> – gdje „CO” označava koronu, „VI”
                                                     virus,
-                                                    a „D” oboljenje (eng. disease). Prethodno, na ovo oboljenje upućivali su
+                                                    a „D” oboljenje (eng. disease). Prethodno, na ovo oboljenje
+                                                    upućivali su
                                                     i
                                                     nazivi novi korona virus 2019 ili 2019-nCoV.</p>
 
@@ -714,22 +377,30 @@
 
                                                 <p class="clanak-p">Virus se prenosi putem direktnog kontakta s
                                                     respiratornim kapljicama inficirane osobe (koje nastaju kašljanjem i
-                                                    kijanjem) i dodirivanjem površina kontaminiranih virusom. Virus COVID-19
-                                                    može preživjeti na površinama i po nekoliko sati, ali ga mogu uništiti i
+                                                    kijanjem) i dodirivanjem površina kontaminiranih virusom. Virus
+                                                    COVID-19
+                                                    može preživjeti na površinama i po nekoliko sati, ali ga mogu
+                                                    uništiti i
                                                     jednostavna sredstva za dezinfekciju.</p>
 
                                                 <h5><strong>Koji su simptomi korona virusa?</strong></h5>
-                                                <p class="clanak-p">Simptomi mogu uključivati groznicu, kašalj i kratak dah.
+                                                <p class="clanak-p">Simptomi mogu uključivati groznicu, kašalj i kratak
+                                                    dah.
                                                     U težim slučajevima, infekcija može uzrokovati zapaljenje pluća ili
                                                     teškoće u disanju. Rjeđe, oboljenje može biti fatalno. </p>
 
-                                                <p class="clanak-p">Navedeni simptomi slični su simptomima gripa (influence)
-                                                    ili obične prehlade, koji se češće javljaju od oboljenja COVID-19. Zbog
-                                                    toga je potrebno testiranje da bi se potvrdilo da li neko ima COVID-19.
+                                                <p class="clanak-p">Navedeni simptomi slični su simptomima gripa
+                                                    (influence)
+                                                    ili obične prehlade, koji se češće javljaju od oboljenja COVID-19.
+                                                    Zbog
+                                                    toga je potrebno testiranje da bi se potvrdilo da li neko ima
+                                                    COVID-19.
                                                     Važno je zapamtiti da su ključne mjere prevencije identične – često
-                                                    pranje ruku i respiratorna higijena (kod kašlja i kijanja pokrijte usta
+                                                    pranje ruku i respiratorna higijena (kod kašlja i kijanja pokrijte
+                                                    usta
                                                     i nos savijenim laktom ili maramicom, odbacujući potom maramicu u
-                                                    zatvorenu kantu za otpatke). Isto tako, za grip postoji vakcina – zbog
+                                                    zatvorenu kantu za otpatke). Isto tako, za grip postoji vakcina –
+                                                    zbog
                                                     čega je potrebno da Vi i Vaše dijete budete informisani o aktuelnim
                                                     vakcinacijama. </p>
 
@@ -745,9 +416,11 @@
                                                         <li>2. Prilikom kašlja i kijanja pokrijte usta i nos savijenim
                                                             laktom ili maramicom, odbacujući potom maramicu u zatvorenu
                                                             kantu za otpatke. </li>
-                                                        <li>3. Izbjegavajte blizak kontakt s bilo kim ko ima simptome koji
+                                                        <li>3. Izbjegavajte blizak kontakt s bilo kim ko ima simptome
+                                                            koji
                                                             ukazuju na prehladu ili grip. </li>
-                                                        <li>4. Posjetite ljekara ako imate groznicu, kašljete ili osjećate
+                                                        <li>4. Posjetite ljekara ako imate groznicu, kašljete ili
+                                                            osjećate
                                                             poteškoće pri disanju. </li>
                                                     </ul>
                                                 </p>
@@ -755,26 +428,32 @@
                                                 <h5><strong>Da li treba da nosim medicinsku masku?</strong></h5>
 
                                                 <p class="clanak-p">Upotreba medicinske maske savjetuje se ako imate
-                                                    respiratorne simptome (kašalj ili kijanje) kako biste zaštitili druge.
+                                                    respiratorne simptome (kašalj ili kijanje) kako biste zaštitili
+                                                    druge.
                                                     Ako nemate nikakve simptome, nema potrebe da nosite masku. </p>
 
                                                 <p class="clanak-p">U slučaju nošenja maski, iste se moraju koristiti i
                                                     odbacivati na adekvatan način kako bi se obezbijedila njihova
                                                     djelotvornost i izbjegao povećani rizik od prenošenja virusa. </p>
 
-                                                <p class="clanak-p">Korišćenje maske samo po sebi nije dovoljno da zaustavi
-                                                    infekcije i mora se kombinovati sa čestim pranjem ruku, pokrivanjem usta
-                                                    i nosa prilikom kijanja i kašlja, kao i s izbjegavanjem bliskog kontakta
+                                                <p class="clanak-p">Korišćenje maske samo po sebi nije dovoljno da
+                                                    zaustavi
+                                                    infekcije i mora se kombinovati sa čestim pranjem ruku, pokrivanjem
+                                                    usta
+                                                    i nosa prilikom kijanja i kašlja, kao i s izbjegavanjem bliskog
+                                                    kontakta
                                                     s bilo kim ko pokazuje simptome koji ukazuju na prehladu ili grip
                                                     (kašalj, kijanje, groznica). </p>
 
                                                 <h5><strong>Da li COVID-19 pogađa djecu?</strong></h5>
 
-                                                <p class="clanak-p">Radi se o novom virusu te još uvijek ne znamo dovoljno o
+                                                <p class="clanak-p">Radi se o novom virusu te još uvijek ne znamo
+                                                    dovoljno o
                                                     načinu na koji utiče na djecu ili trudnice. Znamo da ljudi bilo koje
                                                     starosti mogu biti inficirani virusom, iako je do sada zabilježen
                                                     relativno mali broj infekcije virusom COVID-19 kod djece. Virus je
-                                                    fatalan u rijetkim slučajevima, do sada uglavnom među starijim ljudima
+                                                    fatalan u rijetkim slučajevima, do sada uglavnom među starijim
+                                                    ljudima
                                                     koji su već imali određene zdravstvene probleme.</p>
 
                                                 <h5><strong>Što treba da uradim ako moje dijete ima simptome virusa
@@ -786,20 +465,25 @@
                                                     karakterišu grip ili običnu prehladu – što su bolesti koje su mnogo
                                                     učestalije. </p>
 
-                                                <p class="clanak-p">Nastavite da slijedite dobre prakse održavanja higijene
+                                                <p class="clanak-p">Nastavite da slijedite dobre prakse održavanja
+                                                    higijene
                                                     ruku i respiratornih organa, poput redovnog pranja ruku, te pratite
                                                     aktuelne informacije o vakcinacijama – kako bi vaše dijete bilo
-                                                    zaštićeno od drugih virusa i bakterija koje dovode do oboljenja. </p>
+                                                    zaštićeno od drugih virusa i bakterija koje dovode do oboljenja.
+                                                </p>
 
-                                                <p class="clanak-p">Kada su u pitanju druge respiratorne infekcije, poput
+                                                <p class="clanak-p">Kada su u pitanju druge respiratorne infekcije,
+                                                    poput
                                                     gripa, potražite pomoć u ranoj fazi ako Vi ili Vaše dijete imate
                                                     simptome te pokušajte da izbjegavate odlazak na javna mjesta (posao,
-                                                    škola, javni prevoz), kako biste spriječili širenje na druge ljude. </p>
+                                                    škola, javni prevoz), kako biste spriječili širenje na druge ljude.
+                                                </p>
 
                                                 <h5><strong>Što treba da uradim ako član moje porodice pokazuje
                                                         simptome?</strong></h5>
 
-                                                <p class="clanak-p">Potražite medicinsku pomoć u ranoj fazi ako Vi ili Vaše
+                                                <p class="clanak-p">Potražite medicinsku pomoć u ranoj fazi ako Vi ili
+                                                    Vaše
                                                     dijete imate groznicu, kašalj ili poteškoće u disanju. Razmotrite
                                                     mogućnost da pozovete svog pružaoca zdravstvene zaštite unaprijed i
                                                     obavijestite ga o simptomima ako ste putovali u područje gdje su
@@ -809,80 +493,110 @@
 
                                                 <h5><strong>Da li dijete treba da izostaje iz škole?</strong></h5>
 
-                                                <p class="clanak-p">Ako Vaše dijete pokazuje simptome, potražite medicinsku
-                                                    pomoć i slijedite uputstva pružalaca zdravstvene zaštite. U suprotnom,
-                                                    kao što je to praksa i kod drugih respiratornih infekcija, poput gripa,
-                                                    neka vaše dijete ostane kod kuće i odmara se sve dok pokazuje simptome,
-                                                    uz izbjegavanje odlaska na javna mjesta kako biste spriječili širenje na
+                                                <p class="clanak-p">Ako Vaše dijete pokazuje simptome, potražite
+                                                    medicinsku
+                                                    pomoć i slijedite uputstva pružalaca zdravstvene zaštite. U
+                                                    suprotnom,
+                                                    kao što je to praksa i kod drugih respiratornih infekcija, poput
+                                                    gripa,
+                                                    neka vaše dijete ostane kod kuće i odmara se sve dok pokazuje
+                                                    simptome,
+                                                    uz izbjegavanje odlaska na javna mjesta kako biste spriječili
+                                                    širenje na
                                                     druge ljude. </p>
 
-                                                <p class="clanak-p">Ako Vaše dijete ne pokazuje simptome poput groznice ili
-                                                    kašlja – a ne postoje nikakvi savjeti ili relevantna upozorenja organa
+                                                <p class="clanak-p">Ako Vaše dijete ne pokazuje simptome poput groznice
+                                                    ili
+                                                    kašlja – a ne postoje nikakvi savjeti ili relevantna upozorenja
+                                                    organa
                                                     nadležnih za javno zdravlje koja se odnose na školu vašeg djeteta –
                                                     najbolje je da dijete bude u svojoj školi. </p>
 
-                                                <p class="clanak-p">Umjesto da držite djecu izvan škole, naučite ih dobrim
-                                                    praksama održavanja higijene ruku i respiratornih organa, kako u školi
-                                                    tako i generalno, kao što su često pranje ruku (vidi ispod), pokrivanje
-                                                    usta i nosa savijenim laktom ili maramicom prilikom kašlja i kijanja, uz
+                                                <p class="clanak-p">Umjesto da držite djecu izvan škole, naučite ih
+                                                    dobrim
+                                                    praksama održavanja higijene ruku i respiratornih organa, kako u
+                                                    školi
+                                                    tako i generalno, kao što su često pranje ruku (vidi ispod),
+                                                    pokrivanje
+                                                    usta i nosa savijenim laktom ili maramicom prilikom kašlja i
+                                                    kijanja, uz
                                                     odbacivanje maramice u zatvorenu kantu za otpatke, te izbjegavanje
-                                                    dodirivanja očiju, usta ili nosa ako ruke prethodno nijesu dobro oprane.
+                                                    dodirivanja očiju, usta ili nosa ako ruke prethodno nijesu dobro
+                                                    oprane.
                                                 </p>
 
-                                                <h5><strong>Koji je najbolji način da se ruke ispravno operu?</strong></h5>
+                                                <h5><strong>Koji je najbolji način da se ruke ispravno operu?</strong>
+                                                </h5>
 
                                                 <p class="clanak-p">
                                                     <ul>
                                                         <li>1. Pokvasite ruke (šake) tekućom vodom.</li>
-                                                        <li>2. Primijenite dovoljno sapuna da se prekriju mokre šake.</li>
+                                                        <li>2. Primijenite dovoljno sapuna da se prekriju mokre šake.
+                                                        </li>
                                                         <li>3. Istrljajte sve površine šaka – uključujući djelove na
-                                                            pozadini, između prstiju i ispod noktiju – čineći to najmanje 20
+                                                            pozadini, između prstiju i ispod noktiju – čineći to
+                                                            najmanje 20
                                                             sekundi.</li>
                                                         <li>4. Temeljno isperite tekućom vodom.</li>
                                                         <li>5. Osušite ruke čistim ubrusom ili peškirom za jednokratnu
                                                             upotrebu.</li>
                                                     </ul>
                                                 </p>
-                                                <p class="clanak-p">Često perite ruke, naročito prije jela, nakon pražnjenja
+                                                <p class="clanak-p">Često perite ruke, naročito prije jela, nakon
+                                                    pražnjenja
                                                     nosa, kašlja ili kijanja, te nakon boravka u toaletu. </p>
-                                                <p class="clanak-p">Ako sapun i voda nijesu trenutno dostupni, upotrijebite
+                                                <p class="clanak-p">Ako sapun i voda nijesu trenutno dostupni,
+                                                    upotrijebite
                                                     sredstvo za pranje ruku s najmanje 60% alkohola. Ako su ruke vidno
                                                     prljave, uvijek ih perite sapunom i vodom.</p>
 
-                                                <h5><strong>Mogu li trudnice prenijeti korona virus svojoj nerođenoj djeci?
+                                                <h5><strong>Mogu li trudnice prenijeti korona virus svojoj nerođenoj
+                                                        djeci?
                                                     </strong></h5>
 
-                                                <p class="clanak-p">U ovom trenutku nema dovoljno dokaza da se utvrdi da li
+                                                <p class="clanak-p">U ovom trenutku nema dovoljno dokaza da se utvrdi da
+                                                    li
                                                     se virus prenosi s majke na bebu tokom trudnoće, niti kakav bi to
                                                     potencijalni uticaj moglo imati na bebu. To pitanje trenutno se
-                                                    istražuje. Trudnice treba da nastave da slijede adekvatne mjere opreza
-                                                    kako bi se zaštitile od izlaganja virusu, kao i da potraže medicinsku
-                                                    pomoć u ranoj fazi ukoliko osjete simptome poput groznice, kašlja ili
+                                                    istražuje. Trudnice treba da nastave da slijede adekvatne mjere
+                                                    opreza
+                                                    kako bi se zaštitile od izlaganja virusu, kao i da potraže
+                                                    medicinsku
+                                                    pomoć u ranoj fazi ukoliko osjete simptome poput groznice, kašlja
+                                                    ili
                                                     poteškoća u disanju. </p>
 
                                                 <h5><strong>Da li je bezbjedno da majka doji ako je zaražena korona
                                                         virusom?</strong></h5>
 
-                                                <p class="clanak-p">Sve majke u pogođenim i rizičnim oblastima koje imaju
+                                                <p class="clanak-p">Sve majke u pogođenim i rizičnim oblastima koje
+                                                    imaju
                                                     simptome groznice, kašlja ili poteškoća u disanju treba da potraže
                                                     medicinsku pomoć u ranoj fazi, kao i da slijede uputstva pružalaca
                                                     zdravstvene zaštite. </p>
 
                                                 <p class="clanak-p">Imajući u vidu benefite dojenja i beznačajnu ulogu
-                                                    majčinog mlijeka u prenošenju drugih respiratornih virusa, majke mogu
+                                                    majčinog mlijeka u prenošenju drugih respiratornih virusa, majke
+                                                    mogu
                                                     nastaviti s dojenjem uz primjenu neophodnih mjera opreza. </p>
 
-                                                <p class="clanak-p">Kada su u pitanju majke s gore navedenim simptomima koje
-                                                    se osjećaju dovoljno dobro da mogu dojiti, takve mjere opreza uključuju
+                                                <p class="clanak-p">Kada su u pitanju majke s gore navedenim simptomima
+                                                    koje
+                                                    se osjećaju dovoljno dobro da mogu dojiti, takve mjere opreza
+                                                    uključuju
                                                     nošenje maske u blizini djeteta (uključujući i situacije tokom
-                                                    hranjenja), pranje ruku prije i poslije kontakta s djetetom (uključujući
+                                                    hranjenja), pranje ruku prije i poslije kontakta s djetetom
+                                                    (uključujući
                                                     i hranjenje), te čišćenje/dezinfekciju kontaminiranih površina – što
                                                     treba raditi i inače u svim slučajevima kada je bilo ko za koga je
-                                                    potvrđeno ili se sumnja da ima virus COVID-19 u interakciji s drugima,
+                                                    potvrđeno ili se sumnja da ima virus COVID-19 u interakciji s
+                                                    drugima,
                                                     uključujući djecu.</p>
 
-                                                <p class="clanak-p">Ukoliko je majka previše bolesna, treba je ohrabriti da
-                                                    pribjegne izmlazanju i hranjenju djeteta putem čiste posude i/ili kašike
+                                                <p class="clanak-p">Ukoliko je majka previše bolesna, treba je ohrabriti
+                                                    da
+                                                    pribjegne izmlazanju i hranjenju djeteta putem čiste posude i/ili
+                                                    kašike
                                                     – a sve to uz poštovanje istih metoda za prevenciju infekcije.</p>
 
                                                 <img class="img-fluid" src="assets/images/unicef2.jpg" alt="">
@@ -890,10 +604,12 @@
                                                 <h5 class="pt-3"><strong>Što UNICEF preduzima da pomogne? </strong></h5>
 
                                                 <p class="clanak-p">Postojeći odgovor UNICEF-a fokusiran je na podršku
-                                                    vladama Kine i zemalja šireg područja istočne Azije i Pacifika, gdje je
+                                                    vladama Kine i zemalja šireg područja istočne Azije i Pacifika, gdje
+                                                    je
                                                     prijavljena većina dosadašnjih slučajeva. Od 29. januara, UNICEF je
                                                     isporučio 13 tona materijala, uključujući zaštitna odijela, maske,
-                                                    naočare i rukavice za zdravstvene radnike. Dodatne pošiljke su na putu,
+                                                    naočare i rukavice za zdravstvene radnike. Dodatne pošiljke su na
+                                                    putu,
                                                     a UNICEF unaprijed raspoređuje pošiljke na ključne lokacije. </p>
 
                                                 <p class="clanak-p">Imajući u vidu nepredvidivu prirodu virusa i njegovo
@@ -903,15 +619,21 @@
                                                     slabijim sistemima zdravstvene zaštite i ograničenim kapacitetima za
                                                     postupanje u slučaju masovne pojave oboljenja. </p>
 
-                                                <p class="clanak-p">UNICEF je 17. februara zatražio 42,3 miliona američkih
-                                                    dolara radi intenziviranja napora da se spriječi masovno širenje virusa
+                                                <p class="clanak-p">UNICEF je 17. februara zatražio 42,3 miliona
+                                                    američkih
+                                                    dolara radi intenziviranja napora da se spriječi masovno širenje
+                                                    virusa
                                                     COVID-19. Inicijalnim sredstvima podržaće se napori UNICEF-a da se
-                                                    smanji prenošenje virusa, uključujući aktivnosti usmjerene na jačanje
-                                                    komunikacije o rizicima i borbu protiv dezinformacija, kako bi djeca,
+                                                    smanji prenošenje virusa, uključujući aktivnosti usmjerene na
+                                                    jačanje
+                                                    komunikacije o rizicima i borbu protiv dezinformacija, kako bi
+                                                    djeca,
                                                     trudnice i njihove porodice znale kako spriječiti širenje virusa
                                                     COVID-19 i gdje tražiti pomoć. </p>
 
-                                                <h5 class="text-center">Tekts preuzet sa <a href="https://www.unicef.org/montenegro/price/korona-virus-covid-19-%C5%A1to-roditelji-treba-da-znaju" target="__blank">UNICEF.ORG</a></h5>
+                                                <h5 class="text-center">Tekts preuzet sa <a
+                                                        href="https://www.unicef.org/montenegro/price/korona-virus-covid-19-%C5%A1to-roditelji-treba-da-znaju"
+                                                        target="__blank">UNICEF.ORG</a></h5>
                                             </div>
                                         </div>
                                     </div>
@@ -929,31 +651,44 @@
                                                 Poštovani,
                                                 obavijest jednog milanskog liječnika: <br>
                                                 Nosite isključivo jedan par cipela kada izlazite, a po povratku ih NE
-                                                unosite u kuću. Čini se da virus preživljava 9 dana na asfaltu, zato su bila
+                                                unosite u kuću. Čini se da virus preživljava 9 dana na asfaltu, zato su
+                                                bila
                                                 sva ona dezinficiranja koja su provodili kinezi, a sada ih počinju
-                                                primjenjivati na ulicama Milana. To ne objavljuju javno kako ne bi širili
+                                                primjenjivati na ulicama Milana. To ne objavljuju javno kako ne bi
+                                                širili
                                                 paniku, već ovim putem. Molim vas uzmite u obzir preporuku.
                                             </p>
                                             <p class="clanak-p">
                                                 Poruka pulmologinje s KBC-a s više informacija o virusu:
                                                 Virus je fizicki velik, tezak i zato ne lebdi nego pada, na rukama se
-                                                zadrzava 5-10 min, na odjeci i tkaninama par sati, na metalu (brave i sl.) i
+                                                zadrzava 5-10 min, na odjeci i tkaninama par sati, na metalu (brave i
+                                                sl.) i
                                                 do 12 sati.
                                             </p>
                                             <p class="clanak-p">
                                                 Neotporan je na temperaturu >23C. Zato treba prati ruke toplom vodom,
-                                                izlagati se suncu, prati garderobu i boraviti na suncu. Zato sto je velik,
-                                                ne prolazi lako kroz zastitne maske. 5-10 min, koliko se virus zadrzava na
-                                                rukama, dug je period, za to vrijeme se moze jesti, dirati nos, oci, usta...
-                                                Zato je vazno cesto prati ruke toplom vodom. Naravno, izbjegavati guzve i
+                                                izlagati se suncu, prati garderobu i boraviti na suncu. Zato sto je
+                                                velik,
+                                                ne prolazi lako kroz zastitne maske. 5-10 min, koliko se virus zadrzava
+                                                na
+                                                rukama, dug je period, za to vrijeme se moze jesti, dirati nos, oci,
+                                                usta...
+                                                Zato je vazno cesto prati ruke toplom vodom. Naravno, izbjegavati guzve
+                                                i
                                                 boravak u malim prostorijama..
-                                                Prvo se naseljava u nosu i grlu, grebucka, drazi. Ne izaziva sekreciju iz
-                                                nosa (vazno za diferenciranje u odnosu na druge virusne infekcije!) Dok je
-                                                tu, piti tople napitke, toplu vodu, ne koristiti hladno i led. Ispirati grlo
-                                                (prijedlog Betadine za grlo), da se ne spusti dolje. Pritom se kaslje, suho,
-                                                nadrazajno, bez sekreta. Ovo traje 2-4 dana. Dakle, najvaznije NEMA SEKRETA
+                                                Prvo se naseljava u nosu i grlu, grebucka, drazi. Ne izaziva sekreciju
+                                                iz
+                                                nosa (vazno za diferenciranje u odnosu na druge virusne infekcije!) Dok
+                                                je
+                                                tu, piti tople napitke, toplu vodu, ne koristiti hladno i led. Ispirati
+                                                grlo
+                                                (prijedlog Betadine za grlo), da se ne spusti dolje. Pritom se kaslje,
+                                                suho,
+                                                nadrazajno, bez sekreta. Ovo traje 2-4 dana. Dakle, najvaznije NEMA
+                                                SEKRETA
                                                 IZ NOSA.Nakon toga, poslije 5-6 dana, virus moze sići u pluca i tada se
-                                                javlja povisena temp., Suh kasalj i plitak dah (tesko disanje) su znak da je
+                                                javlja povisena temp., Suh kasalj i plitak dah (tesko disanje) su znak
+                                                da je
                                                 virus u plucima.
                                                 Znaci, pokusati da virus ne ode u pluca.
                                                 Najsigurnija razdaljina od zarazenog je >3m. Proslijedi dalje...
@@ -966,24 +701,32 @@
                                                 </strong>
                                             </p>
                                             <p class="clanak-p">
-                                                Novi koronavirus NCP * možda neće pokazati znakove infekcije nekoliko dana,
-                                                * tokom kojeg perioda čega nije moguće znati je li osoba zaražena. Ali do
-                                                trenutka kada osoba ima temperaturu i / ili kašalj i ode u bolnicu, pluća su
+                                                Novi koronavirus NCP * možda neće pokazati znakove infekcije nekoliko
+                                                dana,
+                                                * tokom kojeg perioda čega nije moguće znati je li osoba zaražena. Ali
+                                                do
+                                                trenutka kada osoba ima temperaturu i / ili kašalj i ode u bolnicu,
+                                                pluća su
                                                 već oboljela od 50% fibroze i prekasno je!
-                                                Tajvanski stručnjaci predlažu da napravite jednostavnu provjeru koju možemo
+                                                Tajvanski stručnjaci predlažu da napravite jednostavnu provjeru koju
+                                                možemo
                                                 sami napraviti svako jutro:
-                                                Duboko udahnite i zadržite dah više od 10 sekundi. Ako ga uspješno dovršite
+                                                Duboko udahnite i zadržite dah više od 10 sekundi. Ako ga uspješno
+                                                dovršite
                                                 bez kašlja, bez nelagode, osjećaja ugnjetavanja itd., To pokazuje da u
                                                 plućima nema fibroze, što u biti znači da nema infekcije.
                                             </p>
                                             <p class="clanak-p">
-                                                U ovakvim kritičnim vremenima to provjerite svako jutro u okruženju s čistim
+                                                U ovakvim kritičnim vremenima to provjerite svako jutro u okruženju s
+                                                čistim
                                                 zrakom!
                                                 Ovo su ozbiljni i izvrsni savjeti kineskih liječnika koji su liječili
-                                                slučajeve COVID-19. Svi bi trebali biti sigurni da su im usta i grlo vlažni,
+                                                slučajeve COVID-19. Svi bi trebali biti sigurni da su im usta i grlo
+                                                vlažni,
                                                 nikako da se SUŠE. Pijte nekoliko gutljaja vode barem svakih 15 minuta.
                                                 ZAŠTO? Čak i ako vam virus dospije u usta ... voda ili druga tekućina
-                                                izbaciće ga kroz jednjak i u želudac. Jednom u trbuh ... Želučana kiselina
+                                                izbaciće ga kroz jednjak i u želudac. Jednom u trbuh ... Želučana
+                                                kiselina
                                                 želuca ubit će sav virus. Ako redovito ne pijete dovoljno vode ... virus
                                                 može ući u vaše dišne ​​putove i pluća. Vrlo je opasno.
                                             </p>
@@ -1015,7 +758,8 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <!-- <script async defer
@@ -1025,9 +769,10 @@
     <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
     <!--Custom JS-->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/api.js"></script>
 
     <script>
-        $(function() {
+        $(function () {
             $('#map').load("./map.html")
         })
     </script>

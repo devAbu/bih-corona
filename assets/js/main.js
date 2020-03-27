@@ -129,3 +129,67 @@ function citys(value) {
 }
 
 citys("Sarajevski kanton")
+
+//LOAD MROE DATA
+$(document).ready(function(){
+
+    // Load more data
+    $('.load-more').click(function(){
+        var row = Number($('#row').val());
+        var allcount = Number($('#all').val());
+        row = row + 16;
+
+        if(row <= allcount){
+            $("#row").val(row);
+
+            $.ajax({
+                url: 'getData.php',
+                type: 'post',
+                data: {row:row},
+                beforeSend:function(){
+                    $(".load-more").text(".....");
+                },
+                success: function(response){
+
+                    // Setting little delay while displaying new content
+                    setTimeout(function() {
+                        // appending posts after last post with class="post"
+                        $(".post:last").after(response).show().fadeIn("slow");
+
+                        var rowno = row + 16;
+
+                        // checking row value is greater than allcount or not
+                        if(rowno > allcount){
+
+                            // Change the text and background
+                            $('.load-more').text("Zatvori sve");
+                        }else{
+                            $(".load-more").text("Prikaži više");
+                        }
+                    }, 2000);
+
+
+                }
+            });
+        }else{
+            $('.load-more').text(".....");
+
+            // Setting little delay while removing contents
+            setTimeout(function() {
+
+                // When row is greater than allcount then remove all class='post' element after 3 element
+                $('.post:nth-child(16)').nextAll('.post').remove().fadeIn("slow");
+
+                // Reset the value of row
+                $("#row").val(0);
+
+                // Change the text and background
+                $('.load-more').text("Prikaži više");
+            }, 2000);
+
+
+        }
+
+    });
+
+});
