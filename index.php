@@ -37,9 +37,7 @@
                     <nav class="navbar navbar-expand-md navbar-light">
                         <a class="navbar-brand" href="#map"><img src="assets/images/bih-grb.png" alt="logo"></a>Bih
                         Korona
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
@@ -96,15 +94,15 @@
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) { ?>
 
-                    <ul class="live-feed-list">
-                        <li>
-                            <div class="live-feed-main-level">
-                                <div class="live-feed-box">
-                                    <div class="live-feed-head">
-                                        <h6 class="live-feed-name"><?php echo $row['lfImeGrada'] ?> +
-                                            <?php echo $row['lfBroj'] ?></h6>
-                                        <h6 class="live-feed-time">Prije
-                                            <?php
+                            <ul class="live-feed-list">
+                                <li>
+                                    <div class="live-feed-main-level">
+                                        <div class="live-feed-box">
+                                            <div class="live-feed-head">
+                                                <h6 class="live-feed-name"><?php echo $row['lfImeGrada'] ?> +
+                                                    <?php echo $row['lfBroj'] ?></h6>
+                                                <h6 class="live-feed-time">Prije
+                                                    <?php
                                                     $time1 = strtotime($row['vrijeme']);
                                                     $time2 = strtotime($finalDate);
                                                     $difference = $time2 - $time1;
@@ -117,15 +115,15 @@
                                                         echo $minutes . " min";
                                                     }
                                                     ?>
-                                        </h6>
+                                                </h6>
+                                            </div>
+                                            <div class="live-feed-content">
+                                                <?php echo $row['lfParagraf']; ?>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="live-feed-content">
-                                        <?php echo $row['lfParagraf']; ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                                </li>
+                            </ul>
                     <?php }
                     } ?>
                 </div>
@@ -143,28 +141,28 @@
                     <div class="header">
                         <div id="title-n" class="title-n">COVID-19 Statistkia - Bosna i Hercegovina</div>
                         <div id="total" class="card">
-                        <div class="stats">
-                            <div class="number">12345</div>
-                            <div class="factor">Total</div>
-                        </div>    
+                            <div class="stats">
+                                <div class="number"></div>
+                                <div class="factor">Total</div>
+                            </div>
                         </div>
                         <div id="recover" class="card">
-                        <div class="stats">
-                            <div class="number">12345</div>
-                            <div class="factor">Total</div>
-                        </div> 
+                            <div class="stats">
+                                <div class="number"></div>
+                                <div class="factor">Total</div>
+                            </div>
                         </div>
                         <div id="sick" class="card">
-                        <div class="stats">
-                            <div class="number">12345</div>
-                            <div class="factor">Total</div>
-                        </div> 
+                            <div class="stats">
+                                <div class="number"></div>
+                                <div class="factor">Total</div>
+                            </div>
                         </div>
                         <div id="dead" class="card">
-                        <div class="stats">
-                            <div class="number">12345</div>
-                            <div class="factor">Total</div>
-                        </div> 
+                            <div class="stats">
+                                <div class="number"></div>
+                                <div class="factor">Total</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -177,39 +175,39 @@
     <section id="city">
         <div class="box">
             <div class="container-fluid">
-            <div class="title-n">COVID-19 Statistkia - Gradovi</div>
+                <div class="title-n">COVID-19 Statistkia - Gradovi</div>
                 <div class="row">
                     <?php
 
-                        $rowperpage = 16;
+                    $rowperpage = 4;
 
-                        $allcount_query = "SELECT count(*) as allcount FROM gradovi";
-                        $allcount_result = mysqli_query($conn,$allcount_query);
-                        $allcount_fetch = mysqli_fetch_array($allcount_result);
-                        $allcount = $allcount_fetch['allcount'];
+                    $allcount_query = "SELECT count(*) as allcount FROM gradovi";
+                    $allcount_result = mysqli_query($conn, $allcount_query);
+                    $allcount_fetch = mysqli_fetch_array($allcount_result);
+                    $allcount = $allcount_fetch['allcount'];
 
-                        $query = "select * from gradovi order by id asc limit 0,$rowperpage ";
-                        $result = mysqli_query($conn,$query);
+                    $query = "select * from gradovi order by id asc limit 0,$rowperpage ";
+                    $result = mysqli_query($conn, $query);
 
-                        while($row = mysqli_fetch_array($result)){
+                    while ($row = mysqli_fetch_array($result)) {
 
-                            $id = $row['id'];
-                            $ime_grada = $row['ime_grada'];
-                            $broj_zaraznih = $row['broj_zaraznih'];                    
-                        ?>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-3 post" id="post_<?php echo $id; ?>">
-                        <div class="box-part text-center">
-                            <div class="title">
-                                <h4><?php echo $row['ime_grada'] ?> <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                </h4>
-                            </div>
-                            <hr style="margin-top: 0; border-top: 1px solid darkgray">
-                            <div class="text">
-                                <p>Broj zaraženih: <span class="text-danger"><?php echo $row['broj_zaraznih'] ?></span>
-                                </p>
+                        $id = $row['id'];
+                        $ime_grada = $row['ime_grada'];
+                        $broj_zaraznih = $row['broj_zaraznih'];
+                    ?>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-3 post" id="post_<?php echo $id; ?>">
+                            <div class="box-part text-center">
+                                <div class="title">
+                                    <h4><?php echo $row['ime_grada'] ?> <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    </h4>
+                                </div>
+                                <hr style="margin-top: 0; border-top: 1px solid darkgray">
+                                <div class="text">
+                                    <p>Broj zaraženih: <span class="text-danger"><?php echo $row['broj_zaraznih'] ?></span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     <?php } ?>
                 </div>
                 <h1 class="load-more">Prikaži više</h1>
@@ -230,8 +228,7 @@
                         <p>Ako imate bilo kakvu informaciju vezanu o osobi koja je zaražena korona virusom pozovite
                             jedan od sledećih brojeva : </p>
                         <form action="#">
-                            Odaberite kanton : <select style="margin-bottom: 30px; width: 300px;" name="names"
-                                onchange="citys(this.value)">
+                            Odaberite kanton : <select style="margin-bottom: 30px; width: 300px;" name="names" onchange="citys(this.value)">
                                 <option value="Sarajevski kanton">Sarajevski kanton</option>
                                 <option value="Zapadnohercegovački kanton">Zapadnohercegovački kanton</option>
                                 <option value="Hercegovačko-neretvanski kanton">Hercegovačko-neretvanski kanton</option>
@@ -260,8 +257,7 @@
                         <h4 class="pt-4">Viber Grupa</h4>
                         <p>Pridružite se našoj viber grupi kako bi dobili što više informacija koje su vezane za korona
                             virus</p>
-                        <a href="https://invite.viber.com/?g2=AQAezvjlfvZSpks%2FzuzlM6ctwPzatW7K2eqYBfH7GAzBNyxwpu57GHSoPRk2WdEB"
-                            target="_blank">Klinkite ovdje</a>
+                        <a href="https://invite.viber.com/?g2=AQAezvjlfvZSpks%2FzuzlM6ctwPzatW7K2eqYBfH7GAzBNyxwpu57GHSoPRk2WdEB" target="_blank">Klinkite ovdje</a>
                     </div>
                 </div>
             </div>
@@ -289,20 +285,20 @@
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) { ?>
-            <article>
-                <div class="row">
-                    <div class="col-xl-4 col-xs-12">
-                        <?php echo '<img class="img-fluid" src="data:image/jpeg;base64,' . base64_encode($row['slika']) . '"/>' ?>
-                    </div>
-                    <div class="col-xl-8 col-xs-12">
-                        <h4 class="caption-heading"><?php echo $row['naslov'] ?></h4>
-                        <p class="news-p"><?php echo $row['paragraf'] ?></p>
-                        <a href="#">Pogledajte cijeli članak</a>
-                        <p class="time-p"> Izvor: <a href="https://www.klix.ba/" target=__blank>Klix.ba</a></p>
-                    </div>
-                </div>
-                <hr>
-            </article>
+                    <article>
+                        <div class="row">
+                            <div class="col-xl-4 col-xs-12">
+                                <?php echo '<img class="img-fluid" src="data:image/jpeg;base64,' . base64_encode($row['slika']) . '"/>' ?>
+                            </div>
+                            <div class="col-xl-8 col-xs-12">
+                                <h4 class="caption-heading"><?php echo $row['naslov'] ?></h4>
+                                <p class="news-p"><?php echo $row['paragraf'] ?></p>
+                                <a href="#">Pogledajte cijeli članak</a>
+                                <p class="time-p"> Izvor: <a href="https://www.klix.ba/" target=__blank>Klix.ba</a></p>
+                            </div>
+                        </div>
+                        <hr>
+                    </article>
             <?php }
             } ?>
         </div>
@@ -339,9 +335,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="embed-responsive embed-responsive-16by9">
-                                                <iframe src="https://www.youtube.com/embed/Y5capFWePeE" frameborder="0"
-                                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                                    allowfullscreen></iframe>
+                                                <iframe src="https://www.youtube.com/embed/Y5capFWePeE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -355,8 +349,7 @@
                                                 znaju?
                                             </h2>
                                             <p class="text-center">Kako zaštititi sebe i svoju djecu?</p>
-                                            <img style="height:400px; width:1000px;" class="img-fluid clanak-img"
-                                                src="assets/images/unicef.jpg" alt="unicefImg">
+                                            <img style="height:400px; width:1000px;" class="img-fluid clanak-img" src="assets/images/unicef.jpg" alt="unicefImg">
                                             <div class="clanak-text">
                                                 <h5 class="pt-3"><strong>Što je „novi“ korona virus?</strong></h5>
 
@@ -634,9 +627,7 @@
                                                     trudnice i njihove porodice znale kako spriječiti širenje virusa
                                                     COVID-19 i gdje tražiti pomoć. </p>
 
-                                                <h5 class="text-center">Tekts preuzet sa <a
-                                                        href="https://www.unicef.org/montenegro/price/korona-virus-covid-19-%C5%A1to-roditelji-treba-da-znaju"
-                                                        target="__blank">UNICEF.ORG</a></h5>
+                                                <h5 class="text-center">Tekts preuzet sa <a href="https://www.unicef.org/montenegro/price/korona-virus-covid-19-%C5%A1to-roditelji-treba-da-znaju" target="__blank">UNICEF.ORG</a></h5>
                                             </div>
                                         </div>
                                     </div>
@@ -761,8 +752,7 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <!-- <script async defer
@@ -775,7 +765,7 @@
     <script src="assets/js/api.js"></script>
 
     <script>
-        $(function () {
+        $(function() {
             $('#map').load("./map.html")
         })
     </script>

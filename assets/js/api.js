@@ -1,33 +1,34 @@
 fetch('https://thevirustracker.com/free-api?countryTotal=BA')
   .then((response) => {
     return response.json();
+    console.log('juhu')
   })
   .then((data) => {
-  
-  document.getElementById('title-n').innerText = "COVID-19 Statistika - Bosna i Hercegovina";
-    
-  document.getElementById('total').innerHTML = `<div class="stats">
+    console.log('abu')
+    document.getElementById('title-n').innerText = "COVID-19 Statistika - Bosna i Hercegovina";
+
+    document.getElementById('total').innerHTML = `<div class="stats">
       <div class="number">${data.countrydata[0].total_cases}</div>
       <div class="factor text-secondary pt-2">Zaraženih</div>
     </div>`;
-  
-  document.getElementById('recover').innerHTML = `<div class="stats">
+
+    document.getElementById('recover').innerHTML = `<div class="stats">
       <div class="number">${data.countrydata[0].total_recovered}</div>
       <div class="factor text-success pt-2">Oporavljenih</div>
     </div>`;
-  
-  document.getElementById('sick').innerHTML = `<div class="stats">
+
+    document.getElementById('sick').innerHTML = `<div class="stats">
       <div class="number">${data.countrydata[0].total_active_cases}</div>
       <div class="factor text-dark pt-2">Bolesnih</div>
     </div>`;
-  
-  document.getElementById('dead').innerHTML = `<div class="stats">
+
+    document.getElementById('dead').innerHTML = `<div class="stats">
       <div class="number">${data.countrydata[0].total_deaths}</div>
       <div class="factor text-danger pt-2">Mrtvih</div>
-    </div>`;  
+    </div>`;
   });
 
-    
+
 
 /*
 total_cases: 199024
