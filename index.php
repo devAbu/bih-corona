@@ -198,9 +198,9 @@
                             $broj_zaraznih = $row['broj_zaraznih'];                    
                         ?>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pt-3 post" id="post_<?php echo $id; ?>">
-                        <div class="box-part text-center bg-light">
+                        <div class="box-part text-center">
                             <div class="title">
-                                <h4><?php echo $row['ime_grada'] ?><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <h4><?php echo $row['ime_grada'] ?> <i class="fa fa-map-marker" aria-hidden="true"></i>
                                 </h4>
                             </div>
                             <hr style="margin-top: 0; border-top: 1px solid darkgray">
