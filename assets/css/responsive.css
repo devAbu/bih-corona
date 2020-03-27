@@ -68,4 +68,7 @@ CSS:
 	.news-p {
 		font-size: 15px;
 	}
+	.tabset>label {
+		padding: 15px 0px 25px;
+	}
 }
