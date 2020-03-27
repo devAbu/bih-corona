@@ -139,31 +139,33 @@
     <section id="numbers pt-5">
         <div class="container-fluid d-flex justify-content-center">
             <div class="row">
-                <div class="header">
-                    <div id="title-n" class="title-n">COVID-19 Statistkia - Bosna i Hercegovina</div>
-                    <div id="total" class="card">
-                    <div class="stats">
-                        <div class="number">12345</div>
-                        <div class="factor">Total</div>
-                    </div>    
-                    </div>
-                    <div id="recover" class="card">
-                    <div class="stats">
-                        <div class="number">12345</div>
-                        <div class="factor">Total</div>
-                    </div> 
-                    </div>
-                    <div id="sick" class="card">
-                    <div class="stats">
-                        <div class="number">12345</div>
-                        <div class="factor">Total</div>
-                    </div> 
-                    </div>
-                    <div id="dead" class="card">
-                    <div class="stats">
-                        <div class="number">12345</div>
-                        <div class="factor">Total</div>
-                    </div> 
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="header">
+                        <div id="title-n" class="title-n">COVID-19 Statistkia - Bosna i Hercegovina</div>
+                        <div id="total" class="card">
+                        <div class="stats">
+                            <div class="number">12345</div>
+                            <div class="factor">Total</div>
+                        </div>    
+                        </div>
+                        <div id="recover" class="card">
+                        <div class="stats">
+                            <div class="number">12345</div>
+                            <div class="factor">Total</div>
+                        </div> 
+                        </div>
+                        <div id="sick" class="card">
+                        <div class="stats">
+                            <div class="number">12345</div>
+                            <div class="factor">Total</div>
+                        </div> 
+                        </div>
+                        <div id="dead" class="card">
+                        <div class="stats">
+                            <div class="number">12345</div>
+                            <div class="factor">Total</div>
+                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -175,6 +177,7 @@
     <section id="city">
         <div class="box">
             <div class="container-fluid">
+            <div class="title-n">COVID-19 Statistkia - Gradovi</div>
                 <div class="row">
                     <?php
 
