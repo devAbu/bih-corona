@@ -165,9 +165,22 @@ body {
 
 
 /* 4. Map */
-#map {
-    width: 100vw;
-    height: 90vh;
+#chartdiv {
+    width: 100%;
+    height: 74vh;
+}
+.iblue{
+    color: #64B3FB;
+}
+.ioragne{
+    color: #FFC300;
+
+}
+.ipurple{
+    color: #581845 ;
+}
+.ired{
+    color: #FF0000;
 }
 
 /* END Map */

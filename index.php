@@ -77,8 +77,15 @@
     <section id="map-section">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-8 col-12 d-flex justify-content-center;">
-                    <div class="text-center" id="map">
+                <div class="col-lg-8 col-12">
+                    <div id="chartdiv">
+                    </div>
+                    <div class="legend">
+                        <h5>Legenda</h5>
+                        <i class="fa fa-square iblue"> <span class="text-dark"> <= 10 </span></i>
+                        <i class="fa fa-square ioragne"><span class="text-dark"> <= 50 </span></i>
+                        <i class="fa fa-square ipurple"><span class="text-dark"> <= 100 </span></i>
+                        <i class="fa fa-square ired"><span class="text-dark"> <= 500 </span></i>
                     </div>
                 </div>
                 <div data-simplebar class="col-lg-4 col-12 center" style="max-height:100vh;">
@@ -763,6 +770,13 @@
     <!--Custom JS-->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/api.js"></script>
+    <!--MAP SCRIPT-->
+    <!-- Resources -->
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://www.amcharts.com/lib/4/geodata/bosniaHerzegovinaCantonsLow.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="assets/mape.js"></script>
 
     <script>
         $(function() {

@@ -63,16 +63,16 @@
                                                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                                                 <td></td>
                                                 <td><input name="lfImeGrada" type="text" class="form-control" value="<?php  
-                                                    echo $lfImeGrada;?>" placeholder="Ime Grada" required>
+                                                    echo $lfImeGrada;?>" placeholder="Ime Grada" >
                                                 </td>
                                                 <td><input name="lfParagraf" type="text" class="form-control" value="<?php  
-                                                    echo $lfParagraf;?>" placeholder="Text" required>
+                                                    echo $lfParagraf;?>" placeholder="Text" >
                                                 </td>
                                                 <td><input name="lfBroj" type="text" class="form-control" value="<?php  
-                                                    echo $lfBroj;?>" placeholder="Broj Zarazenih" required>
+                                                    echo $lfBroj;?>" placeholder="Broj Zarazenih" >
                                                 </td>
                                                 <td><input name="vrijeme" type="text" class="form-control" value="<?php  
-                                                    echo $lfVrijeme;?>" placeholder="vrijeme" required>
+                                                    echo $lfVrijeme;?>" placeholder="vrijeme" >
                                                 </td>
                                                 <td>        
                                                     <?php
@@ -137,10 +137,10 @@
                                                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                                                 <td></td>
                                                 <td><input name="ime_grada" type="text" class="form-control" value="<?php  
-                                                    echo $ime_grada;?>" placeholder="Ime Grada" required>
+                                                    echo $ime_grada;?>" placeholder="Ime Grada" >
                                                 </td>
                                                 <td><input name="broj_zaraznih" type="text" class="form-control" value="<?php  
-                                                    echo $broj_zaraznih;?>" placeholder="Broj Zarazenih" required>
+                                                    echo $broj_zaraznih;?>" placeholder="Broj Zarazenih" >
                                                 </td>
                                                 <td>        
                                                     <?php
