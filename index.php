@@ -81,11 +81,17 @@
                     <div id="chartdiv" style="overflow-y:auto;">
                     </div>
                     <div class="legend">
-                        <h5>Legenda</h5>
+                        <!-- <h5>Legenda</h5>
                         <i class="fa fa-square iblue"><span class="text-dark"> Do 10 </span></i>
                         <i class="fa fa-square iyellow"><span class="text-dark"> Do 50 </span></i>
                         <i class="fa fa-square ipurple"><span class="text-dark"> Do 100 </span></i>
-                        <i class="fa fa-square ired"><span class="text-dark"> Do 500 </span></i>
+                        <i class="fa fa-square ired"><span class="text-dark"> Do 500 </span></i> -->
+                        <div class="row">
+                            <div class="col">
+                                <div id="good-attribute-chart"></div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <div data-simplebar class="col-lg-4 col-12 center" style="max-height:100vh;">

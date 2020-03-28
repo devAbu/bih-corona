@@ -37,7 +37,9 @@ body {
     font-size: 32px;
 }
 
-*{scroll-behavior: smooth;}
+* {
+    scroll-behavior: smooth;
+}
 
 
 /* Main END */
@@ -169,17 +171,21 @@ body {
     width: 100%;
     height: 74vh;
 }
-.iblue{
+
+.iblue {
     color: #64B3FB;
 }
-.iyellow{
+
+.iyellow {
     color: #FFC300;
 
 }
-.ipurple{
-    color: #581845 ;
+
+.ipurple {
+    color: #581845;
 }
-.ired{
+
+.ired {
     color: #FF0000;
 }
 
@@ -336,7 +342,7 @@ body {
 }
 
 .box-part {
-    margin-right: 2px;    
+    margin-right: 2px;
     border: 1px solid rgb(172, 172, 172);
     padding: 5px 10px !important;
 }
@@ -344,6 +350,7 @@ body {
 .box .col-lg-3 .col-md-3 .col-sm-3 .col-xs-12 {
     padding: 16px 0px !important;
 }
+
 /* END City */
 
 /* 7. Info */
@@ -414,87 +421,93 @@ body {
 /* 9. Number */
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
-* {  
-  scroll-behavior: smooth;
+* {
+    scroll-behavior: smooth;
 }
 
 .title-n {
-  margin: 20px;
-  font-weight: 600;
-  font-size: 35px;
-  text-transform: uppercase;
-  text-align: center;
+    margin: 20px;
+    font-weight: 600;
+    font-size: 35px;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .card {
-  width: 250px;
-  height: 190px;
-  display: inline-block;
-  margin: 20px;
-  text-align: center;
-  transition: 0.8s;
-  box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
-    -7px -7px 20px rgba(255, 255, 255, 1),
-    inset 0px 0px 4px rgba(255, 255, 255, 0.2),
-    inset 7px 7px 15px rgba(55, 84, 170, 0),
-    inset -7px -7px 20px rgba(255, 255, 255, 0),
-    0px 0px 4px rgba(255, 255, 255, 0);
+    width: 250px;
+    height: 190px;
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+    transition: 0.8s;
+    box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+        -7px -7px 20px rgba(255, 255, 255, 1),
+        inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+        inset 7px 7px 15px rgba(55, 84, 170, 0),
+        inset -7px -7px 20px rgba(255, 255, 255, 0),
+        0px 0px 4px rgba(255, 255, 255, 0);
     transition: 0.8s;
 }
 
 .header .card .stats {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .number {
-  font-size: 35px;
-  font-weight: 600;
+    font-size: 35px;
+    font-weight: 600;
 }
+
 .factor {
-  color: #a3a3a3;
+    color: #a3a3a3;
 }
 
 .active {
-  box-shadow: 2px 3px 5px 0px black;
+    box-shadow: 2px 3px 5px 0px black;
 }
 
 @media screen and (max-width: 1020px) {
-.card {
-  width: 100%;
-  height: 150;
-  background: #fff;
-  display: inline-block;
-  margin: 5px 0px !important;
-  text-align: center;
-  transition: 0.8s;
-  box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
-    -7px -7px 20px rgba(255, 255, 255, 1),
-    inset 0px 0px 4px rgba(255, 255, 255, 0.2),
-    inset 7px 7px 15px rgba(55, 84, 170, 0),
-    inset -7px -7px 20px rgba(255, 255, 255, 0),
-    0px 0px 4px rgba(255, 255, 255, 0);
-    transition: 0.8s;
-}.title-n{
-    font-size: 20px;
-}
+    .card {
+        width: 100%;
+        height: 150;
+        background: #fff;
+        display: inline-block;
+        margin: 5px 0px !important;
+        text-align: center;
+        transition: 0.8s;
+        box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+            -7px -7px 20px rgba(255, 255, 255, 1),
+            inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+            inset 7px 7px 15px rgba(55, 84, 170, 0),
+            inset -7px -7px 20px rgba(255, 255, 255, 0),
+            0px 0px 4px rgba(255, 255, 255, 0);
+        transition: 0.8s;
+    }
+
+    .title-n {
+        font-size: 20px;
+    }
 }
 
 .footer {
-  text-align: center;
-  padding-bottom: 20px;
+    text-align: center;
+    padding-bottom: 20px;
 }
 
 .footer-love-icon {
-  height: 10px;
-  padding-left: 1px;
-  padding-right: 1px;
-  animation: beat .55s infinite alternate;
+    height: 10px;
+    padding-left: 1px;
+    padding-right: 1px;
+    animation: beat .55s infinite alternate;
 }
-@keyframes beat{
-  to { transform: scale(1.4); }
+
+@keyframes beat {
+    to {
+        transform: scale(1.4);
+    }
 }
 
 
@@ -598,7 +611,7 @@ svg text {
 }
 
 /* Load more */
-.load-more{
+.load-more {
     width: auto;
     text-align: center;
     color: black;
@@ -607,6 +620,84 @@ svg text {
     text-decoration: underline;
 }
 
-.load-more:hover{
+.load-more:hover {
     cursor: pointer;
+}
+
+/* LEGEND - PROGRESS */
+.attribute-list li {
+    overflow: hidden;
+    margin-bottom: 30px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.attribute-list li:nth-last-child(2) {
+    margin-bottom: 20px;
+}
+
+.attribute-list li .chart-label {
+    min-width: 142px;
+    font-size: 14px;
+    color: #848383;
+    line-height: 33px;
+    float: left;
+}
+
+.attribute-list li .progress-bar {
+    height: 33px;
+    float: right;
+    width: -webkit-calc(100% - 142px);
+    width: calc(100% - 142px);
+    line-height: 33px;
+    font-size: 18px;
+    -webkit-transition: width linear 0.3s;
+    -moz-transition: width linear 0.3s;
+    -ms-transition: width linear 0.3s;
+    transition: width linear 0.3s;
+}
+
+.attribute-list li .progress {
+    margin-left: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.attribute-list li.legend {
+    width: -webkit-calc(100% - 142px);
+    width: calc(100% - 142px);
+    float: right;
+    border-top: 1px solid #d8d9d9;
+    font-size: 14px;
+    color: #848383;
+    text-align: center;
+}
+
+.attribute-list li.legend span {
+    display: inline-block;
+    line-height: 24px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.attribute-list li.legend span i {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 0;
+}
+
+.zeroWidth {
+    width: 0 !important;
+    font-size: 0 !important;
+}
+
+/* END LEGEND*/
+
+g[aria-labelledby="id-79-title"] {
+    display: none;
 }

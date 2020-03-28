@@ -42,9 +42,16 @@ CSS:
 		height: 60vh;
 	}
 
-	svg {
-		margin-left: -8em;
-		margin-top: -7em;
+	.attribute-list li .chart-label {
+		display: none;
+	}
+
+	.attribute-list li .progress-bar {
+		font-size: 15px;
+	}
+
+	.attribute-list {
+		padding: 0;
 	}
 }
 
@@ -68,6 +75,7 @@ CSS:
 	.news-p {
 		font-size: 15px;
 	}
+
 	.tabset>label {
 		padding: 15px 0px 25px;
 	}

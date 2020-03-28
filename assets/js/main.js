@@ -193,4 +193,41 @@ $(document).ready(function () {
 
     });
 
+    /* LEGEND - PROGRESS */
+
+    if ($('#good-attribute-chart').length) {
+        var html = attributeCharts({
+            "labels": ['Hight Quality Output'],
+            "values": [
+                [10, 50, 100, 100]
+            ],
+            "colors": ["#c2e3ef", "#85d3f0", "#00b0f0", "#c2e3ef"],
+            "legends": ["Average", "Above Avg", "Top Tier", "juhu"]
+        });
+        $('#good-attribute-chart').append(html);
+    }
+
+    function attributeCharts(options) {
+        var labels = options.labels;
+        var values = options.values;
+        var colors = options.colors;
+        var legends = options.legends;
+        var html = `<ul class="attribute-list">`;
+        for (var i = 0; i < labels.length; i++) {
+            html += `
+                    <li>
+                    <span class="chart-label">${labels[i]}</span>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" data-label="${legends[0]}" style="width: 25%; background-color:${colors[0]}" aria-valuenow="${values[i][0]}" aria-valuemin="0" aria-valuemax="100">0 - ${values[i][0]}</div>
+                        <div class="progress-bar" role="progressbar" data-label="${legends[1]}" style="width: 25%; background-color:${colors[1]}" aria-valuenow="${values[i][1]}" aria-valuemin="0" aria-valuemax="100">${values[i][0]} - ${values[i][1]}</div>
+                        <div class="progress-bar" role="progressbar" data-label="${legends[2]}" style="width: 25%; background-color:${colors[2]}" aria-valuenow="${values[i][2]}" aria-valuemin="0" aria-valuemax="100">${values[i][1]} - ${values[i][2]}</div>
+
+<div class="progress-bar" role="progressbar" data-label="${legends[3]}" style="width: 25%; background-color:${colors[3]}" aria-valuenow="${values[i][3]}" aria-valuemin="0" aria-valuemax="100">${values[i][3]}+</div>
+                    </div>
+                    </li>
+            `;
+        }
+        return html;
+    }
+
 });
