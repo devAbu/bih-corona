@@ -201,7 +201,7 @@ $(document).ready(function () {
             "values": [
                 [10, 50, 100, 100]
             ],
-            "colors": ["#64B3FB", "#FFC300", "#581845", "#FF0000"],
+            "colors": ["rgba(250,255,0,0.8)", "rgba(251,186,9,0.9)", " rgba(252,117,18,0.9)", "rgba(253,29,29,0.9)"],
             "legends": ["Average", "Above Avg", "Top Tier", "juhu"]
         });
         $('#good-attribute-chart').append(html);

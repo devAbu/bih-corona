@@ -76,13 +76,13 @@ am4core.ready(function () {
 
 	//BOJEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 	//SVIJETLO PLAVA =< 10
-	blue = am4core.color("#64B3FB")
+	blue = am4core.color("#faff00")
 	//Narandzasta=<50
-	yellow = am4core.color("#FFC300");
+	yellow = am4core.color("#fbba09");
 	//Ljubicasta =<100
-	purple = am4core.color("#581845");
+	purple = am4core.color("#fc7512");
 	//crvena <=500
-	red = am4core.color("#FF0000");
+	red = am4core.color("#fd1d1d");
 
 	imageSeries.data = [{
 			"title": "Banja Luka",
