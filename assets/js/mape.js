@@ -15,6 +15,12 @@ am4core.ready(function () {
 	//enable scroll
 	chart.chartContainer.wheelable = false;
 
+	//scroll
+	chart.seriesContainer.draggable = false;
+	chart.seriesContainer.resizable = false;
+
+	chart.tapToActivate = false;
+
 	// Set projection
 	chart.projection = new am4maps.projections.Miller();
 
