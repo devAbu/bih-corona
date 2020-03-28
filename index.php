@@ -78,14 +78,14 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-8 col-12">
-                    <div id="chartdiv">
+                    <div id="chartdiv" style="overflow-y:auto;">
                     </div>
                     <div class="legend">
                         <h5>Legenda</h5>
-                        <i class="fa fa-square iblue"> <span class="text-dark"> <= 10 </span></i>
-                        <i class="fa fa-square ioragne"><span class="text-dark"> <= 50 </span></i>
-                        <i class="fa fa-square ipurple"><span class="text-dark"> <= 100 </span></i>
-                        <i class="fa fa-square ired"><span class="text-dark"> <= 500 </span></i>
+                        <i class="fa fa-square iblue"><span class="text-dark"> Do 10 </span></i>
+                        <i class="fa fa-square iyellow"><span class="text-dark"> Do 50 </span></i>
+                        <i class="fa fa-square ipurple"><span class="text-dark"> Do 100 </span></i>
+                        <i class="fa fa-square ired"><span class="text-dark"> Do 500 </span></i>
                     </div>
                 </div>
                 <div data-simplebar class="col-lg-4 col-12 center" style="max-height:100vh;">
@@ -193,7 +193,7 @@
                     $allcount_fetch = mysqli_fetch_array($allcount_result);
                     $allcount = $allcount_fetch['allcount'];
 
-                    $query = "select * from gradovi order by id asc limit 0,$rowperpage ";
+                    $query = "select * from gradovi order by broj_zaraznih desc limit 0,$rowperpage ";
                     $result = mysqli_query($conn, $query);
 
                     while ($row = mysqli_fetch_array($result)) {
@@ -329,7 +329,7 @@
                             <input type="radio" name="tabset" id="tab2" aria-controls="clanak1">
                             <label for="tab2">Članak</label>
                             <input type="radio" name="tabset" id="tab3" aria-controls="dodatneInf">
-                            <label for="tab3">Dodatne Informacije</label>
+                            <label for="tab3">Dodatne Inf.</label>
                             <!--/Tabs-->
 
                             <div class="tab-panels">
@@ -759,7 +759,7 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <!-- <script async defer
@@ -776,13 +776,8 @@
     <script src="https://www.amcharts.com/lib/4/maps.js"></script>
     <script src="https://www.amcharts.com/lib/4/geodata/bosniaHerzegovinaCantonsLow.js"></script>
     <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-    <script src="assets/mape.js"></script>
+    <script src="assets/js/mape.js"></script>
 
-    <script>
-        $(function() {
-            $('#map').load("./map.html")
-        })
-    </script>
 </body>
 
 </html>
