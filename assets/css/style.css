@@ -701,3 +701,7 @@ svg text {
 g[aria-labelledby="id-79-title"] {
     display: none;
 }
+
+small {
+    font-size: 50%;
+}
