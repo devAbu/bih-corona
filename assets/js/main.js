@@ -197,11 +197,11 @@ $(document).ready(function () {
 
     if ($('#good-attribute-chart').length) {
         var html = attributeCharts({
-            "labels": ['Hight Quality Output'],
+            "labels": [''],
             "values": [
                 [10, 50, 100, 100]
             ],
-            "colors": ["#c2e3ef", "#85d3f0", "#00b0f0", "#c2e3ef"],
+            "colors": ["#64B3FB", "#FFC300", "#581845", "#FF0000"],
             "legends": ["Average", "Above Avg", "Top Tier", "juhu"]
         });
         $('#good-attribute-chart').append(html);
@@ -216,7 +216,7 @@ $(document).ready(function () {
         for (var i = 0; i < labels.length; i++) {
             html += `
                     <li>
-                    <span class="chart-label">${labels[i]}</span>
+                    
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" data-label="${legends[0]}" style="width: 25%; background-color:${colors[0]}" aria-valuenow="${values[i][0]}" aria-valuemin="0" aria-valuemax="100">0 - ${values[i][0]}</div>
                         <div class="progress-bar" role="progressbar" data-label="${legends[1]}" style="width: 25%; background-color:${colors[1]}" aria-valuenow="${values[i][1]}" aria-valuemin="0" aria-valuemax="100">${values[i][0]} - ${values[i][1]}</div>
