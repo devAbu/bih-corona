@@ -12,6 +12,9 @@ am4core.ready(function () {
 	// Set map definition
 	chart.geodata = am4geodata_bosniaHerzegovinaCantonsLow;
 
+	//enable scroll
+	chart.chartContainer.wheelable = false;
+
 	// Set projection
 	chart.projection = new am4maps.projections.Miller();
 
