@@ -100,18 +100,18 @@ am4core.ready(function () {
 			"longitude": 17.18556,
 			"color": red
 		}, {
-			"title": "Sarajevo",
-			"value": "13",
-			"latitude": 43.84864,
-			"longitude": 18.35644,
-			"color": yellow
-		}, {
 			"title": "Konjic",
 			"value": "21",
 			"latitude": 43.65126,
 			"longitude": 17.96082,
 			"color": yellow
 		}, {
+			"title": "Sarajevo",
+			"value": "15",
+			"latitude": 43.84864,
+			"longitude": 18.35644,
+			"color": yellow
+		},{
 			"title": "Laktaši",
 			"value": "10",
 			"latitude": 44.90857,
@@ -222,7 +222,7 @@ am4core.ready(function () {
 		},
 		{
 			"title": "Brčko",
-			"value": "1",
+			"value": "3",
 			"latitude": 44.87278,
 			"longitude": 18.80833,
 			"color": blue
@@ -234,7 +234,7 @@ am4core.ready(function () {
 			"color": blue
 		}, {
 			"title": "Čitluk",
-			"value": "1",
+			"value": "2",
 			"latitude": 43.2286,
 			"longitude": 17.7008,
 			"color": blue

@@ -1,4 +1,5 @@
-        Banja Luka : 104
+        GRADOVI :                       UKUPAN BROJ
+        Banja Luka : 104                262 5 6
         Konjic : 21
         Sarajevo : 15
         Široki Brijeg : 12

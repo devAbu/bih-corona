@@ -3,7 +3,6 @@ fetch('https://thevirustracker.com/free-api?countryTotal=BA')
     return response.json();
   })
   .then((data) => {
-    document.getElementById('title-n').innerText = "COVID-19 Statistika - Bosna i Hercegovina";
 
     if (data.countrydata[0].total_new_cases_today > 0) {
       document.getElementById('total').innerHTML = `<div class="stats">
@@ -20,11 +19,6 @@ fetch('https://thevirustracker.com/free-api?countryTotal=BA')
     document.getElementById('recover').innerHTML = `<div class="stats">
       <div class="number">${data.countrydata[0].total_recovered}</small></div>
       <div class="factor text-success pt-2">Oporavljenih</div>
-    </div>`;
-
-    document.getElementById('sick').innerHTML = `<div class="stats">
-      <div class="number">${data.countrydata[0].total_active_cases}</small></div>
-      <div class="factor text-dark pt-2">Bolesnih</div>
     </div>`;
 
     if (data.countrydata[0].total_new_deaths_today > 0) {

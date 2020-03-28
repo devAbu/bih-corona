@@ -1,4 +1,4 @@
-<?php include ('php/crud.php'); ?>
+<?php require('php/crud.php') ?>
 <!doctype html>
 <html lang="en">
 
@@ -12,13 +12,6 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-    <!--Our Style-->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
     <title>BiH-Baza</title>
 
 </head>
@@ -35,150 +28,90 @@
         ?>
     </div>
     <?php endif ?>
-    <div class="container">
+    <div class="container-fluid" style="width:100vw;">
         <div class="row">
             <!--Live Feed Tab-->
             <div class="col-12"></div>
-                <section id="live-feed" class="tab-panel">
-                    <div class="container d-flex justify-content-center">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th colspan="10" class="text-center">Live Feed</th>
-                                            </tr>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Ime grada</th>
-                                                <th>Paragraf</th>
-                                                <th>Broj</th>
-                                                <th>Vrijeme</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+            <section id="live-feed" class="tab-panel">
+                <div class="container d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
                                         <tr>
-                                            <form action="php/crud.php" method="POST">
+                                            <th colspan="10" class="text-center">Vijesti</th>
+                                        </tr>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Naslov</th>
+                                            <th>Paragraf</th>
+                                            <th>Link</th>
+                                            <th>Izvor</th>
+                                            <th>Slika</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <form action="php/crud.php" method="POST" enctype="multipart/form-data">
                                                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                                                 <td></td>
-                                                <td><input name="lfImeGrada" type="text" class="form-control" value="<?php  
-                                                    echo $lfImeGrada;?>" placeholder="Ime Grada" >
+                                                <td><input name="naslov" type="text" class="form-control" value="<?php  
+                                                    echo $naslov;?>" placeholder="Naslov">
                                                 </td>
-                                                <td><input name="lfParagraf" type="text" class="form-control" value="<?php  
-                                                    echo $lfParagraf;?>" placeholder="Text" >
+                                                <td><input name="paragraf" type="text" class="form-control" value="<?php  
+                                                    echo $paragraf;?>" placeholder="Paragraf">
                                                 </td>
-                                                <td><input name="lfBroj" type="text" class="form-control" value="<?php  
-                                                    echo $lfBroj;?>" placeholder="Broj Zarazenih" >
+                                                <td><input name="link" type="text" class="form-control" value="<?php  
+                                                    echo $link;?>" placeholder="Link">
                                                 </td>
-                                                <td><input name="vrijeme" type="text" class="form-control" value="<?php  
-                                                    echo $lfVrijeme;?>" placeholder="vrijeme" >
+                                                <td><input name="izvor" type="text" class="form-control" value="<?php  
+                                                    echo $izvor;?>" placeholder="Izvor">
                                                 </td>
-                                                <td>        
+                                                <td><input name="slika" type="text" value="<?php  
+                                                    echo $slika;?>" placeholder="Slika">
+                                                </td>
+                                                <td>
                                                     <?php
                                                         if($update==true): ?>
-                                                    <input type="submit" class="btn btn-info" name="update" value="Izmjena">
+                                                    <input type="submit" class="btn btn-info" name="update"
+                                                        value="Izmjena">
                                                     <?php else: ?>
-                                                    <input type="submit" class="btn btn-success" name="saveLf" value="Dodaj">
+                                                    <input type="submit" class="btn btn-success" name="saveLf"
+                                                        value="Dodaj">
                                                     <?php endif; ?>
                                                 </td>
                                             </form>
-                                            </tr>
-                                            <?php
-                                            $sql = "SELECT * FROM live_feed ORDER BY id DESC";
+                                        </tr>
+                                        <?php
+                                            $sql = "SELECT * FROM vijesti ORDER BY id DESC";
                                             $result = $mysqli->query($sql);
 
                                             if ($result->num_rows > 0) {
                                                 while($row = $result->fetch_assoc()) { ?>
 
-                                            <tr>
-                                                <td><?php echo $row['id']?></td>
-                                                <td><?php echo $row['lfImeGrada']?></td>
-                                                <td><?php echo $row['lfBroj']?></td>
-                                                <td><?php echo $row['lfParagraf']?></td>
-                                                <td><?php echo $row['vrijeme']?></td>
-                                                <td>
-                                                    <a href="insertData.php?edit=<?php echo $row['id']; ?>"
-                                                        class="btn btn-info">Izmjena</a>
-                                                    <a href="php/crud.php?delete=<?php echo $row['id']; ?>"
-                                                        class="btn btn danger">Izbrisi</a>
-                                                </td>
-                                            </tr>
-                                            <?php }} ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <div class="col-12">
-            <!--Gradovi Tab-->
-                <section class="tab-panel">
-                    <div class="container d-flex justify-content-center">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th colspan="10" class="text-center">Gradovi</th>
-                                            </tr>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Ime grada</th>
-                                                <th>Broj zarazenih</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
                                         <tr>
-                                            <form action="php/crud.php" method="POST">
-                                                <input type="hidden" name="id" value="<?php echo $id; ?>">
-                                                <td></td>
-                                                <td><input name="ime_grada" type="text" class="form-control" value="<?php  
-                                                    echo $ime_grada;?>" placeholder="Ime Grada" >
-                                                </td>
-                                                <td><input name="broj_zaraznih" type="text" class="form-control" value="<?php  
-                                                    echo $broj_zaraznih;?>" placeholder="Broj Zarazenih" >
-                                                </td>
-                                                <td>        
-                                                    <?php
-                                                        if($update==true): ?>
-                                                    <input type="submit" class="btn btn-info" name="updateG" value="Izmjena">
-                                                    <?php else: ?>
-                                                    <input type="submit" class="btn btn-success" name="saveG" value="Dodaj">
-                                                    <?php endif; ?>
-                                                </td>
-                                            </form>
-                                            </tr>
-                                            <?php
-                                            $sql = "SELECT * FROM gradovi ORDER BY broj_zaraznih DESC";
-                                            $result = $mysqli->query($sql);
-
-                                            if ($result->num_rows > 0) {
-                                                while($row = $result->fetch_assoc()) { ?>
-
-                                            <tr>
-                                                <td><?php echo $row['id']?></td>
-                                                <td><?php echo $row['ime_grada']?></td>
-                                                <td><?php echo $row['broj_zaraznih']?></td>
-                                                <td>
-                                                    <a href="insertData.php?editG=<?php echo $row['id']; ?>"
-                                                        class="btn btn-info">Izmjena</a>
-                                                    <a href="php/crud.php?delete=<?php echo $row['id']; ?>"
-                                                        class="btn btn danger">Izbrisi</a>
-                                                </td>
-                                            </tr>
-                                            <?php }} ?>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                            <td><?php echo $row['id']?></td>
+                                            <td><?php echo $row['naslov']?></td>
+                                            <td><?php echo $row['paragraf']?></td>
+                                            <td><?php echo $row['link']?></td>
+                                            <td><?php echo $row['izvor']?></td>
+                                            <td><?php echo $row['slika'] ?></td>
+                                            <td>
+                                                <a href="insertData.php?edit=<?php echo $row['id']; ?>"
+                                                    class="btn btn-info">Izmjena</a>
+                                                <a href="php/crud.php?delete=<?php echo $row['id']; ?>"
+                                                    class="btn btn danger">Izbrisi</a>
+                                            </td>
+                                        </tr>
+                                        <?php }} ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
         </div>
     </div>
     <!-- Optional JavaScript -->

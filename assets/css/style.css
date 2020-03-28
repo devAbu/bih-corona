@@ -139,8 +139,9 @@ body {
     padding: 5px 0 !important;
     display: inline-block;
 }
-
-
+.nav-link{
+    font-size:16px !important;
+}
 .nav-item:after {
     position: absolute;
     bottom: -5px;
@@ -171,24 +172,6 @@ body {
     width: 100%;
     height: 74vh;
 }
-
-.iblue {
-    color: #64B3FB;
-}
-
-.iyellow {
-    color: #FFC300;
-
-}
-
-.ipurple {
-    color: #581845;
-}
-
-.ired {
-    color: #FF0000;
-}
-
 /* END Map */
 
 .row {
@@ -326,31 +309,12 @@ body {
 /* END Live-feed */
 
 /* 6. City */
-.box {
-    padding: 60px 0px;
+#cartContainer{
+    width: 100%;
+    height: 70vh;
+    margin: 0;
+    padding: 0;
 }
-
-.col-md-4 {
-    padding-top: 5px !important;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-}
-
-.col-sm-3 {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-}
-
-.box-part {
-    margin-right: 2px;
-    border: 1px solid rgb(172, 172, 172);
-    padding: 5px 10px !important;
-}
-
-.box .col-lg-3 .col-md-3 .col-sm-3 .col-xs-12 {
-    padding: 16px 0px !important;
-}
-
 /* END City */
 
 /* 7. Info */
@@ -434,8 +398,8 @@ body {
 }
 
 .card {
-    width: 250px;
-    height: 190px;
+    width: 260px;
+    height: 120px;
     display: inline-block;
     margin: 20px;
     text-align: center;
@@ -489,6 +453,61 @@ body {
 
     .title-n {
         font-size: 20px;
+    }
+}
+
+.card2 {
+    width: 260px;
+    height: 120px;
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+    transition: 0.8s;
+    box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+        -7px -7px 20px rgba(255, 255, 255, 1),
+        inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+        inset 7px 7px 15px rgba(55, 84, 170, 0),
+        inset -7px -7px 20px rgba(255, 255, 255, 0),
+        0px 0px 4px rgba(255, 255, 255, 0);
+    transition: 0.8s;
+}
+
+.header2 .card2 .stats2 {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.number2 {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.factor2{
+    color: #a3a3a3;
+}
+
+.active2 {
+    box-shadow: 2px 3px 5px 0px black;
+}
+
+@media screen and (max-width: 1020px) {
+    .card2 {
+        width: 100%;
+        height: 150;
+        background: #fff;
+        display: inline-block;
+        margin: 5px 0px !important;
+        text-align: center;
+        transition: 0.8s;
+        box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+            -7px -7px 20px rgba(255, 255, 255, 1),
+            inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+            inset 7px 7px 15px rgba(55, 84, 170, 0),
+            inset -7px -7px 20px rgba(255, 255, 255, 0),
+            0px 0px 4px rgba(255, 255, 255, 0);
+        transition: 0.8s;
     }
 }
 
