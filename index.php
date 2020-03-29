@@ -145,12 +145,12 @@
     <div class="mt-4"></div>
 
     <!-- CITY'S -->
-    <section id="city" style="height:100vh;">
-        <div id="cartContainer"></div>
+    <section id="city">
+        <div id="cartContainer" class="web"></div>
     </section>
 
-    <section id="city" style="height:100vh;">
-        <div id="cartContainerMobile"></div>
+    <section id="city">
+        <div id="cartContainerMobile" class="mobile"></div>
     </section>
     <!-- END CITY'S -->
 
