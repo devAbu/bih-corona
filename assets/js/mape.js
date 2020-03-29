@@ -246,7 +246,7 @@ am4core.ready(function () {
 			"color": blue
 		}, {
 			"title": "Tuzla",
-			"value": "17",
+			"value": "18",
 			"latitude": 44.53842,
 			"longitude": 18.66709,
 			"color": yellow

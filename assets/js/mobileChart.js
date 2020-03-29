@@ -11,7 +11,7 @@ anychart.onDocumentReady(function () {
         ["Konjic", 25, 1, "#fbba09", "#fbba09", null, {
             enabled: true
         }],
-        ["Tuzla", 17, 1, "#fbba09", "#faff00", null, {
+        ["Tuzla", 18, 1, "#fbba09", "#faff00", null, {
             enabled: true
         }],
         ["Sarajevo", 15, 1, "#fbba09", "#fbba09", null, {
