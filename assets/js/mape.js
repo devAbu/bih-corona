@@ -112,6 +112,12 @@ am4core.ready(function () {
 			"longitude": 18.35644,
 			"color": yellow
 		},{
+			"title": "Široki Brijeg",
+			"value": "13",
+			"latitude": 43.3829,
+			"longitude": 17.59416,
+			"color": yellow
+		},{
 			"title": "Laktaši",
 			"value": "12",
 			"latitude": 44.90857,
@@ -123,18 +129,18 @@ am4core.ready(function () {
 			"latitude": 43.34333,
 			"longitude": 17.80806,
 			"color": yellow
-		}, {
+		},{
+			"title": "Bosanska Gradiška",
+			"value": "10",
+			"latitude": 45.14484,
+			"longitude": 17.25453,
+			"color": blue
+		},{
 			"title": "Kozarska Dubica",
 			"value": "8",
 			"latitude": 45.1767,
 			"longitude": 16.8094,
 			"color": blue
-		}, {
-			"title": "Široki Brijeg",
-			"value": "13",
-			"latitude": 43.3829,
-			"longitude": 17.59416,
-			"color": yellow
 		}, {
 			"title": "Bihać",
 			"value": "7",
@@ -160,18 +166,24 @@ am4core.ready(function () {
 			"longitude": 17.6626,
 			"color": blue
 		}, {
-			"title": "Bijeljina",
-			"value": "4",
-			"latitude": 44.7587395,
-			"longitude": 19.2143707,
-			"color": blue
-		}, {
 			"title": "Zenica",
 			"value": "5",
 			"latitude": 44.2016907,
 			"longitude": 17.9039707,
 			"color": blue
-		}, {
+		},{
+			"title": "Kneževo",
+			"value": "5",
+			"latitude": 43.9159,
+			"longitude": 17.6791,
+			"color": blue
+		},{
+			"title": "Bijeljina",
+			"value": "4",
+			"latitude": 44.7587395,
+			"longitude": 19.2143707,
+			"color": blue
+		},{
 			"title": "Grude",
 			"value": "4",
 			"latitude": 43.551914,
@@ -184,12 +196,6 @@ am4core.ready(function () {
 			"longitude": 18.297176,
 			"color": blue
 		}, {
-			"title": "Kneževo",
-			"value": "5",
-			"latitude": 43.9159,
-			"longitude": 17.6791,
-			"color": blue
-		}, {
 			"title": "Bosanski Brod",
 			"value": "2",
 			"latitude": 45.13747,
@@ -200,12 +206,6 @@ am4core.ready(function () {
 			"value": "3",
 			"latitude": 44.7399788,
 			"longitude": 17.3188095,
-			"color": blue
-		}, {
-			"title": "Bosanska Gradiška",
-			"value": "10",
-			"latitude": 45.14484,
-			"longitude": 17.25453,
 			"color": blue
 		}, {
 			"title": "Prijedor",
