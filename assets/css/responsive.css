@@ -15,6 +15,13 @@ CSS:
 13. Footer
 */
 
+@media (max-width: 1024px) {
+	svg text {
+		font-size: 9px;
+		font-weight: 800;
+	}
+}
+
 /* 3. Navigation */
 @media (max-width: 767px) {
 	h1 {
@@ -76,6 +83,7 @@ CSS:
 	.time-p {
 		float: left;
 	}
+
 
 	.caption-heading {
 		font-size: 21px;
