@@ -19,6 +19,7 @@
         Bijeljina : 4
         Grude : 4
 
+        Posušje : 3
         Čelinac : 3
         Brčko : 3
         Modriča : 3
@@ -37,6 +38,5 @@
         Zavidovići : 1
         Novi Travnik : 1
         Bosanska Krupa : 1
-        Posušje : 1
         Derventa : 1
         Doboj 1
