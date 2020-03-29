@@ -37,9 +37,7 @@
                     <nav class="navbar navbar-expand-md navbar-light">
                         <a class="navbar-brand" href="#map"><img src="assets/images/bih-grb.png" alt="logo"></a>Bih
                         Korona
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
@@ -162,8 +160,7 @@
                         <p>Ako imate bilo kakvu informaciju vezanu o osobi koja je zaražena korona virusom pozovite
                             jedan od sledećih brojeva : </p>
                         <form action="#">
-                            <strong>Odaberite kanton</strong> : <select style="margin-bottom: 30px; width: 300px;" name="names"
-                                onchange="citys(this.value)">
+                            <strong>Odaberite kanton</strong> : <select style="margin-bottom: 30px; width: 300px;" name="names" onchange="citys(this.value)">
                                 <option value="Sarajevski kanton">Sarajevski kanton</option>
                                 <option value="Zapadnohercegovački kanton">Zapadnohercegovački kanton</option>
                                 <option value="Hercegovačko-neretvanski kanton">Hercegovačko-neretvanski kanton</option>
@@ -184,7 +181,7 @@
     <!-- END INFO -->
 
     <!-- VIBER -->
-    <section class="viber-link">
+    <section class="viber-link" id="viber-link">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -192,8 +189,7 @@
                         <h4 class="pt-4">Viber Grupa</h4>
                         <p>Pridružite se našoj viber grupi kako bi dobili što više informacija koje su vezane za korona
                             virus</p>
-                        <a href="https://invite.viber.com/?g2=AQAezvjlfvZSpks%2FzuzlM6ctwPzatW7K2eqYBfH7GAzBNyxwpu57GHSoPRk2WdEB"
-                            target="_blank">Klinkite ovdje</a>
+                        <a href="https://invite.viber.com/?g2=AQAezvjlfvZSpks%2FzuzlM6ctwPzatW7K2eqYBfH7GAzBNyxwpu57GHSoPRk2WdEB" target="_blank">Klinkite ovdje</a>
                     </div>
                 </div>
             </div>
@@ -221,20 +217,20 @@
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) { ?>
-            <article>
-                <div class="row">
-                    <div class="col-xl-4 col-xs-12">
-                        <img src="<?php echo $row['slika'] ?>" style="img-fluid" width=350 height=200 alt="">
-                    </div>
-                    <div class="col-xl-8 col-xs-12">
-                        <h4 class="caption-heading"><?php echo $row['naslov'] ?></h4>
-                        <p class="news-p"><?php echo $row['paragraf'] ?></p>
-                        <a href="<?php echo $row['link'] ?>" target=__blank>Pogledajte cijeli članak</a>
-                        <p class="time-p"> Izvor: <a href="<?php echo $row['link'] ?>" target=__blank><?php echo $row['izvor'] ?></a></p>
-                    </div>
-                </div>
-                <hr>
-            </article>
+                    <article>
+                        <div class="row">
+                            <div class="col-xl-4 col-xs-12">
+                                <img src="<?php echo $row['slika'] ?>" style="img-fluid" width=350 height=200 alt="">
+                            </div>
+                            <div class="col-xl-8 col-xs-12">
+                                <h4 class="caption-heading"><?php echo $row['naslov'] ?></h4>
+                                <p class="news-p"><?php echo $row['paragraf'] ?></p>
+                                <a href="<?php echo $row['link'] ?>" target=__blank>Pogledajte cijeli članak</a>
+                                <p class="time-p"> Izvor: <a href="<?php echo $row['link'] ?>" target=__blank><?php echo $row['izvor'] ?></a></p>
+                            </div>
+                        </div>
+                        <hr>
+                    </article>
             <?php }
             } ?>
         </div>
@@ -271,9 +267,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="embed-responsive embed-responsive-16by9">
-                                                <iframe src="https://www.youtube.com/embed/Y5capFWePeE" frameborder="0"
-                                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                                    allowfullscreen></iframe>
+                                                <iframe src="https://www.youtube.com/embed/Y5capFWePeE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -287,8 +281,7 @@
                                                 znaju?
                                             </h2>
                                             <p class="text-center">Kako zaštititi sebe i svoju djecu?</p>
-                                            <img style="height:400px; width:1000px;" class="img-fluid clanak-img"
-                                                src="assets/images/unicef.jpg" alt="unicefImg">
+                                            <img style="height:400px; width:1000px;" class="img-fluid clanak-img" src="assets/images/unicef.jpg" alt="unicefImg">
                                             <div class="clanak-text">
                                                 <h5 class="pt-3"><strong>Što je „novi“ korona virus?</strong></h5>
 
@@ -566,9 +559,7 @@
                                                     trudnice i njihove porodice znale kako spriječiti širenje virusa
                                                     COVID-19 i gdje tražiti pomoć. </p>
 
-                                                <h5 class="text-center">Tekts preuzet sa <a
-                                                        href="https://www.unicef.org/montenegro/price/korona-virus-covid-19-%C5%A1to-roditelji-treba-da-znaju"
-                                                        target="__blank">UNICEF.ORG</a></h5>
+                                                <h5 class="text-center">Tekts preuzet sa <a href="https://www.unicef.org/montenegro/price/korona-virus-covid-19-%C5%A1to-roditelji-treba-da-znaju" target="__blank">UNICEF.ORG</a></h5>
                                             </div>
                                         </div>
                                     </div>

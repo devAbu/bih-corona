@@ -1,7 +1,7 @@
 (function ($) {
     "use strict";
 
-    $('#search').hide()
+    /* $('#search').hide()
 
     $('#collapse, #collapse1-extra').click(() => {
         var collapseClass = $('#collapse').attr('class')
@@ -73,7 +73,7 @@
         $('#collapse2 p').show()
         $('#collapse3 p').show()
         $('#collapse p').show()
-    })
+    }) */
 
     $(function () {
         var header = $(".start-style");
@@ -133,7 +133,7 @@ citys("Sarajevski kanton")
 $(document).ready(function () {
 
     // Load more data
-    $('.load-more').click(function () {
+    /* $('.load-more').click(function () {
         var row = Number($('#row').val());
         var allcount = Number($('#all').val());
         row = row + 28;
@@ -191,7 +191,33 @@ $(document).ready(function () {
 
         }
 
+    }); */
+
+
+    $('nav ul li a').click(function () {
+        event.preventDefault();
+        var sectionTo = $(this).attr('href');
+        $('html').animate({
+            scrollTop: $(sectionTo).offset().top - 60
+        }, 0);
     });
+
+    /* $(function () {
+        // This will select everything with the class smoothScroll
+        // This should prevent problems with carousel, scrollspy, etc...
+        $('.smoothScroll').click(function () {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top - 60
+                    }, 1000); // The number here represents the speed of the scroll in milliseconds
+                    return false;
+                }
+            }
+        });
+    }); */
 
     /* LEGEND - PROGRESS */
 
@@ -231,24 +257,3 @@ $(document).ready(function () {
     }
 
 });
-
-$(function() {
-    // This will select everything with the class smoothScroll
-    // This should prevent problems with carousel, scrollspy, etc...
-    $('.smoothScroll').click(function() {
-      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-        if (target.length) {
-          $('html,body').animate({
-            scrollTop: target.offset().top
-          }, 1000); // The number here represents the speed of the scroll in milliseconds
-          return false;
-        }
-      }
-    });
-  });
-  
-  // Change the speed to whatever you want
-  // Personally i think 1000 is too much
-  // Try 800 or below, it seems not too much but it will make a difference
