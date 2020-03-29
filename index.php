@@ -149,9 +149,9 @@
         <div id="cartContainer" class="web"></div>
     </section>
 
-    <section id="city">
+    <!-- <section id="city">
         <div id="cartContainerMobile" class="mobile"></div>
-    </section>
+    </section> -->
     <!-- END CITY'S -->
 
     <!-- INFO --->
@@ -224,7 +224,7 @@
                     <article>
                         <div class="row">
                             <div class="col-xl-4 col-xs-12">
-                                <img src="<?php echo $row['slika'] ?>" style="img-fluid" width=350 height=200 alt="">
+                                <img src="<?php echo $row['slika'] ?>" class="img-fluid" style="width:100%" height=200 alt="">
                             </div>
                             <div class="col-xl-8 col-xs-12">
                                 <h4 class="caption-heading"><?php echo $row['naslov'] ?></h4>
@@ -708,8 +708,8 @@
     <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-base.min.js"></script>
     <script src="assets/js/mape.js"></script>
     <script src="assets/js/chart.js"></script>
-    <script src="assets/js/mobileChart.js"></script>
-
+    <!-- <script src="assets/js/mobileChart.js"></script>
+ -->
 </body>
 
 </html>

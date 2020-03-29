@@ -319,13 +319,14 @@ body {
     padding: 0;
 }
 
-#cartContainerMobile {
+/* #cartContainerMobile {
     width: 100%;
     height: 70vh !important;
     margin: 0;
     padding: 0;
-}
-@media screen and (min-width: 1024px) {
+} */
+
+/* @media screen and (min-width: 1024px) {
     .mobile {
         display: none !important;
     }
@@ -334,7 +335,7 @@ body {
     .web {
         display: none !important;
     }
-}
+} */
 
 /* END City */
 
