@@ -145,8 +145,12 @@
     <div class="mt-4"></div>
 
     <!-- CITY'S -->
-    <section id="city" style="height=100vh;">
+    <section id="city" style="height:100vh;">
         <div id="cartContainer"></div>
+    </section>
+
+    <section id="city" style="height:100vh;">
+        <div id="cartContainerMobile"></div>
     </section>
     <!-- END CITY'S -->
 
@@ -704,6 +708,7 @@
     <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-base.min.js"></script>
     <script src="assets/js/mape.js"></script>
     <script src="assets/js/chart.js"></script>
+    <script src="assets/js/mobileChart.js"></script>
 
 </body>
 
