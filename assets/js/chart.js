@@ -71,7 +71,7 @@ anychart.onDocumentReady(function () {
     }],
     ["Posušje", 3, 1, "#faff00", "#009933", null, {
       enabled: true
-    }]
+    }],
     ["Prijedor", 2, 1, "#faff00", "#009933", null, {
       enabled: true
     }],
