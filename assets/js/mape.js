@@ -95,13 +95,13 @@ am4core.ready(function () {
 
 	imageSeries.data = [{
 			"title": "Banja Luka",
-			"value": "104",
+			"value": "133",
 			"latitude": 44.77583,
 			"longitude": 17.18556,
 			"color": red
 		}, {
 			"title": "Konjic",
-			"value": "21",
+			"value": "25",
 			"latitude": 43.65126,
 			"longitude": 17.96082,
 			"color": yellow
@@ -113,16 +113,16 @@ am4core.ready(function () {
 			"color": yellow
 		},{
 			"title": "Laktaši",
-			"value": "10",
+			"value": "12",
 			"latitude": 44.90857,
 			"longitude": 17.30135,
-			"color": blue
+			"color": yellow
 		}, {
 			"title": "Mostar",
-			"value": "10",
+			"value": "12",
 			"latitude": 43.34333,
 			"longitude": 17.80806,
-			"color": blue
+			"color": yellow
 		}, {
 			"title": "Kozarska Dubica",
 			"value": "8",
@@ -131,7 +131,7 @@ am4core.ready(function () {
 			"color": blue
 		}, {
 			"title": "Široki Brijeg",
-			"value": "12",
+			"value": "13",
 			"latitude": 43.3829,
 			"longitude": 17.59416,
 			"color": yellow
@@ -143,19 +143,19 @@ am4core.ready(function () {
 			"color": blue
 		}, {
 			"title": "Teslić",
-			"value": "5",
+			"value": "6",
 			"latitude": 44.6064,
 			"longitude": 17.8597,
 			"color": blue
 		}, {
 			"title": "Goražde",
-			"value": "5",
+			"value": "6",
 			"latitude": 43.66795,
 			"longitude": 18.97564,
 			"color": blue
 		}, {
 			"title": "Prnjavor",
-			"value": "4",
+			"value": "5",
 			"latitude": 44.8702,
 			"longitude": 17.6626,
 			"color": blue
@@ -167,7 +167,7 @@ am4core.ready(function () {
 			"color": blue
 		}, {
 			"title": "Zenica",
-			"value": "4",
+			"value": "5",
 			"latitude": 44.2016907,
 			"longitude": 17.9039707,
 			"color": blue
@@ -185,7 +185,7 @@ am4core.ready(function () {
 			"color": blue
 		}, {
 			"title": "Kneževo",
-			"value": "3",
+			"value": "5",
 			"latitude": 43.9159,
 			"longitude": 17.6791,
 			"color": blue
@@ -203,7 +203,7 @@ am4core.ready(function () {
 			"color": blue
 		}, {
 			"title": "Bosanska Gradiška",
-			"value": "9",
+			"value": "10",
 			"latitude": 45.14484,
 			"longitude": 17.25453,
 			"color": blue
@@ -228,13 +228,13 @@ am4core.ready(function () {
 			"color": blue
 		}, {
 			"title": "Kotor Varoš",
-			"value": "1",
+			"value": "2",
 			"latitude": 44.6722986,
 			"longitude": 17.379073,
 			"color": blue
 		}, {
 			"title": "Čitluk",
-			"value": "2",
+			"value": "7",
 			"latitude": 43.2286,
 			"longitude": 17.7008,
 			"color": blue
@@ -246,10 +246,10 @@ am4core.ready(function () {
 			"color": blue
 		}, {
 			"title": "Tuzla",
-			"value": "8",
+			"value": "17",
 			"latitude": 44.53842,
 			"longitude": 18.66709,
-			"color": blue
+			"color": yellow
 		}, {
 			"title": "Visoko",
 			"value": "1",
@@ -258,7 +258,7 @@ am4core.ready(function () {
 			"color": blue
 		}, {
 			"title": "Ribnik",
-			"value": "1",
+			"value": "2",
 			"latitude": 44.572135,
 			"longitude": 16.794551,
 			"color": blue
@@ -303,6 +303,18 @@ am4core.ready(function () {
 			"value": "1",
 			"latitude": 44.543839,
 			"longitude": 18.525934,
+			"color": blue
+		}, {
+			"title": "Posušje",
+			"value": "1",
+			"latitude": 43.4666648,
+			"longitude": 17.333332,
+			"color": blue
+		},{
+			"title": "Zavidovići",
+			"value": "1",
+			"latitude": 44.44583,
+			"longitude": 18.14972,
 			"color": blue
 		}
 	];

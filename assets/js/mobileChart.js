@@ -5,28 +5,28 @@ anychart.onDocumentReady(function () {
 
     // create a data set
     var data = anychart.data.set([
-        ["Banja Luka", 104, 1, "#fd1d1d", null, {
+        ["Banja Luka", 133, 1, "#fd1d1d", null, {
             enabled: true
         }],
-        ["Konjic", 21, 1, "#fbba09", "#fbba09", null, {
+        ["Konjic", 25, 1, "#fbba09", "#fbba09", null, {
             enabled: true
         }],
         ["Sarajevo", 15, 1, "#fbba09", "#fbba09", null, {
             enabled: true
         }],
-        ["Široki Brijeg", 12, 1, "#fbba09", "#fbba09", null, {
+        ["Široki Brijeg", 13, 1, "#fbba09", "#fbba09", null, {
             enabled: true
         }],
-        ["Laktaši", 10, 1, "#faff00", "#faff00", null, {
+        ["Laktaši", 12, 1, "#fbba09", "#faff00", null, {
             enabled: true
         }],
-        ["Mostar", 10, 1, "#faff00", "#faff00", null, {
+        ["Mostar", 12, 1, "#fbba09", "#faff00", null, {
             enabled: true
         }],
-        ["Bosanska Gradiška", 9, 1, "#faff00", "#faff00", null, {
+        ["Bosanska Gradiška", 10, 1, "#faff00", "#faff00", null, {
             enabled: true
         }],
-        ["Tuzla", 8, 1, "#faff00", "#faff00", null, {
+        ["Tuzla", 17, 1, "#fbba09", "#faff00", null, {
             enabled: true
         }],
         ["Kozarska Dubica", 8, 1, "#faff00", "#faff00", null, {
@@ -38,22 +38,22 @@ anychart.onDocumentReady(function () {
         ["Goražde", 6, 1, "#faff00", "#faff00", null, {
             enabled: true
         }],
-        ["Teslić", 5, 1, "#faff00", "#faff00", null, {
+        ["Teslić", 6, 1, "#faff00", "#faff00", null, {
             enabled: true
         }],
-        ["Zenica", 4, 1, "#faff00", "#faff00", null, {
+        ["Zenica", 5, 1, "#faff00", "#faff00", null, {
             enabled: true
         }],
         ["Bijeljina", 4, 1, "#faff00", "#faff00", null, {
             enabled: true
         }],
-        ["Prnjavor", 4, 1, "#faff00", "#faff00", null, {
+        ["Prnjavor", 5, 1, "#faff00", "#faff00", null, {
             enabled: true
         }],
         ["Grude", 4, 1, "#faff00", "#faff00", null, {
             enabled: true
         }],
-        ["Kneževo", 3, 1, "#faff00", "#faff00", null, {
+        ["Kneževo", 5, 1, "#faff00", "#faff00", null, {
             enabled: true
         }],
         ["Čelinac", 3, 1, "#faff00", "#faff00", null, {
@@ -65,7 +65,7 @@ anychart.onDocumentReady(function () {
         ["Modriča", 3, 1, "#faff00", "#faff00", null, {
             enabled: true
         }],
-        ["Čitluk", 2, 1, "#faff00", "#faff00", null, {
+        ["Čitluk", 7, 1, "#faff00", "#faff00", null, {
             enabled: true
         }],
         ["Prijedor", 2, 1, "#faff00", "#faff00", null, {
@@ -86,7 +86,7 @@ anychart.onDocumentReady(function () {
         ["Breza", 1, 1, "#faff00", "#faff00", null, {
             enabled: true
         }],
-        ["Kotor Varoš", 1, 1, "#faff00", "#faff00", null, {
+        ["Kotor Varoš", 2, 1, "#faff00", "#faff00", null, {
             enabled: true
         }],
         ["Lukavac", 1, 1, "#faff00", "#faff00", null, {
@@ -95,7 +95,10 @@ anychart.onDocumentReady(function () {
         ["Orašje", 1, 1, "#faff00", "#faff00", null, {
             enabled: true
         }],
-        ["Ribnik", 1, 1, "#faff00", "#faff00", null, {
+        ["Zavidovići", 1, 1, "#faff00", "#faff00", null, {
+            enabled: true
+        }],
+        ["Ribnik", 2, 1, "#faff00", "#faff00", null, {
             enabled: true
         }],
         ["Novi Travnik", 1, 1, "#faff00", "#faff00", null, {
@@ -105,6 +108,9 @@ anychart.onDocumentReady(function () {
             enabled: true
         }],
         ["Derventa", 1, 1, "#faff00", "#faff00", null, {
+            enabled: true
+        }],
+        ["Posušje", 1, 1, "#faff00", "#faff00", null, {
             enabled: true
         }],
         ["Doboj", 1, 1, "#faff00", "#faff00", null, {
