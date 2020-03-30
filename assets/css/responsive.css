@@ -1,20 +1,4 @@
-/*
-CSS:
-1. Imports
-2. Main
-3. Navigation
-4. Map
-5. Live-feed
-6. City
-7. Info
-8. Viber-link
-9. Number
-10. RestW
-11. News
-12. Safety
-13. Footer
-*/
-
+/* Chart txt */
 @media (max-width: 1024px) {
 	svg text {
 		font-size: 9px;
@@ -22,12 +6,12 @@ CSS:
 	}
 }
 
-/* 3. Navigation */
+/* Navigation, Map, Chart*/
 @media (max-width: 767px) {
 	h1 {
 		font-size: 38px;
 	}
-
+	/*nAV*/
 	.nav-item:after {
 		display: none;
 	}
@@ -43,7 +27,7 @@ CSS:
 		border: none;
 		background-color: #000;
 	}
-
+	/* Map */
 	#map {
 		transform: scale(0.55);
 		height: 60vh;
@@ -65,9 +49,13 @@ CSS:
 	.attribute-list li .progress {
 		width: 100%;
 	}
-
+	/* Chart */
 	#chartdiv {
 		margin-top: -100px;
+	}
+	/* Safety tabs */
+	.tabset>label {
+		padding: 15px 0px 25px;
 	}
 }
 
@@ -77,23 +65,44 @@ CSS:
 	}
 }
 
-/* 11. News */
+@media screen and (max-width: 1020px) {
+    .card {
+        width: 100%;
+        height: 150;
+        background: #fff;
+        display: inline-block;
+        margin: 5px 0px !important;
+        text-align: center;
+        transition: 0.8s;
+        box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+            -7px -7px 20px rgba(255, 255, 255, 1),
+            inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+            inset 7px 7px 15px rgba(55, 84, 170, 0),
+            inset -7px -7px 20px rgba(255, 255, 255, 0),
+            0px 0px 4px rgba(255, 255, 255, 0);
+        transition: 0.8s;
+    }
 
-@media only screen and (max-width: 766px) {
-	.time-p {
-		float: left;
-	}
+    .title-n {
+        font-size: 20px;
+    }
+}
 
-
-	.caption-heading {
-		font-size: 21px;
-	}
-
-	.news-p {
-		font-size: 15px;
-	}
-
-	.tabset>label {
-		padding: 15px 0px 25px;
-	}
+@media screen and (max-width: 1020px) {
+    .card2 {
+        width: 100%;
+        height: 150;
+        background: #fff;
+        display: inline-block;
+        margin: 5px 0px !important;
+        text-align: center;
+        transition: 0.8s;
+        box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+            -7px -7px 20px rgba(255, 255, 255, 1),
+            inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+            inset 7px 7px 15px rgba(55, 84, 170, 0),
+            inset -7px -7px 20px rgba(255, 255, 255, 0),
+            0px 0px 4px rgba(255, 255, 255, 0);
+        transition: 0.8s;
+    }
 }

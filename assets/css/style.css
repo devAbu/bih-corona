@@ -1,24 +1,21 @@
 /*
 CSS:
-1. Imports
-2. Main
-3. Navigation
-4. Map
-5. Live-feed
-6. City
-7. Info
-8. Viber-link
-9. Number
-10. RestW
-11. News
-12. Safety
+Imports
+Main
+Navigation
+Map and Chart
+Viber-link
+Number
+Safety
+
 */
-/* 1. Imports */
+/* Imports */
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 /*END Imports*/
 
-/* 2. Main */
+/* Main */
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
@@ -40,10 +37,26 @@ body {
 * {
     scroll-behavior: smooth;
 }
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+svg text {
+    user-select: none;
+}
 
 
+g[aria-labelledby="id-79-title"] {
+    display: none;
+}
+
+small {
+    font-size: 50%;
+}
 /* Main END */
-/* 3.Navigation */
+
+/* Navigation */
 .start-header {
     opacity: 1;
     transform: translateY(0);
@@ -169,180 +182,94 @@ body {
 /* Navigation END */
 
 
-/* 4. Map */
+/* Map Legend, Progres, and Chart */
+.attribute-list li {
+    overflow: hidden;
+    margin-bottom: 30px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.attribute-list li:nth-last-child(2) {
+    margin-bottom: 20px;
+}
+
+.attribute-list li .chart-label {
+    min-width: 142px;
+    font-size: 14px;
+    color: #848383;
+    line-height: 33px;
+    float: left;
+}
+
+.attribute-list li .progress-bar {
+    height: 33px;
+    float: right;
+    width: -webkit-calc(100% - 142px);
+    width: calc(100% - 142px);
+    line-height: 33px;
+    font-size: 18px;
+    -webkit-transition: width linear 0.3s;
+    -moz-transition: width linear 0.3s;
+    -ms-transition: width linear 0.3s;
+    transition: width linear 0.3s;
+}
+
+.attribute-list li .progress {
+    margin-left: 10px;
+    width: 80%;
+    height: 100%;
+    margin-top: 10px;
+}
+
+.attribute-list li.legend {
+    width: -webkit-calc(100% - 142px);
+    width: calc(100% - 142px);
+    float: right;
+    border-top: 1px solid #d8d9d9;
+    font-size: 14px;
+    color: #848383;
+    text-align: center;
+}
+
+.attribute-list li.legend span {
+    display: inline-block;
+    line-height: 24px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.attribute-list li.legend span i {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 0;
+}
+
+.zeroWidth {
+    width: 0 !important;
+    font-size: 0 !important;
+}
 #chartdiv {
     width: 100%;
     height: 74vh;
 }
-
-/* END Map */
-
-.row {
-    margin: 0;
-}
-
-/* 5. Live-feed */
-
-.live-feed-list {
-    margin-top: 30px;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-    margin-bottom: 2rem;
-    position: relative;
-}
-
-.live-feed-list li {
-    margin-bottom: 15px;
-    display: block;
-    position: relative;
-}
-
-.live-feed-list li:after {
-    content: '';
-    display: block;
-    clear: both;
-    height: 0;
-    width: 0;
-}
-
-.live-feed-list .live-feed-box {
-    /* width: 680px; */
-    /* float: right; */
-    position: relative;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-}
-
-#scrollable {
-    height: 100vh;
-    background-color: #000 !important;
-}
-
-.live-feed-list .live-feed-box:before,
-.live-feed-list .live-feed-box:after {
-    content: '';
-    height: 0;
-    width: 0;
-    position: absolute;
-    display: block;
-    border-width: 10px 12px 10px 0;
-    border-style: solid;
-    border-color: transparent #FCFCFC;
-    top: 8px;
-    left: -11px;
-}
-
-.live-feed-list .live-feed-box:before {
-    border-width: 11px 13px 11px 0;
-    border-color: transparent rgba(0, 0, 0, 0.05);
-    left: -12px;
-}
-
-.live-feed-box .live-feed-head {
-    background: #FCFCFC;
-    padding: 10px 12px;
-    border-bottom: 1px solid #E5E5E5;
-    overflow: hidden;
-    -webkit-border-radius: 4px 4px 0 0;
-    -moz-border-radius: 4px 4px 0 0;
-    border-radius: 4px 4px 0 0;
-}
-
-.live-feed-box .live-feed-head i {
-    float: right;
-    margin-left: 14px;
-    position: relative;
-    top: 2px;
-    color: #A6A6A6;
-    cursor: pointer;
-    -webkit-transition: color 0.3s ease;
-    -o-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-}
-
-.live-feed-box .live-feed-head i:hover {
-    color: #03658c;
-}
-
-.live-feed-box .live-feed-name {
-    color: #283035;
-    font-size: 18px;
-    font-weight: 700;
-    float: left;
-    margin-right: 10px;
-}
-
-.live-feed-box .live-feed-name i {
-    float: left;
-    padding-right: 8px;
-    color: #000;
-}
-
-.live-feed-time {
-    color: #283035;
-    font-size: 18px;
-    font-weight: 700;
-    float: right;
-    margin-right: 10px;
-}
-
-.live-feed-box .live-feed-name a {
-    color: #283035;
-}
-
-.live-feed-box .live-feed-head span {
-    float: left;
-    color: #999;
-    font-size: 13px;
-    position: relative;
-    top: 1px;
-}
-
-.live-feed-box .live-feed-content {
-    background: #FFF;
-    padding: 12px;
-    font-size: 15px;
-    color: #595959;
-    -webkit-border-radius: 0 0 4px 4px;
-    -moz-border-radius: 0 0 4px 4px;
-    border-radius: 0 0 4px 4px;
-}
-
-/* END Live-feed */
-
-/* 6. City */
 #cartContainer {
     width: 100%;
     height: 70vh;
     margin: 0;
     padding: 0;
 }
-
-/* #cartContainerMobile {
-    width: 100%;
-    height: 70vh !important;
+.row {
     margin: 0;
-    padding: 0;
-} */
-
-/* @media screen and (min-width: 1024px) {
-    .mobile {
-        display: none !important;
-    }
 }
-@media screen and (max-width: 1024px) {
-    .web {
-        display: none !important;
-    }
-} */
+/* END Map and chart*/
 
-/* END City */
-
-/* 7. Info */
-/* END Info */
-
-/* 8. Viber-link */
+/* Viber-link */
 .viber-link {
     position: relative;
     z-index: 2;
@@ -404,12 +331,7 @@ body {
 
 /* END Viber-link */
 
-/* 9. Number */
-@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
-
-* {
-    scroll-behavior: smooth;
-}
+/* Numbers */
 
 .title-n {
     margin: 20px;
@@ -455,29 +377,6 @@ body {
     box-shadow: 2px 3px 5px 0px black;
 }
 
-@media screen and (max-width: 1020px) {
-    .card {
-        width: 100%;
-        height: 150;
-        background: #fff;
-        display: inline-block;
-        margin: 5px 0px !important;
-        text-align: center;
-        transition: 0.8s;
-        box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
-            -7px -7px 20px rgba(255, 255, 255, 1),
-            inset 0px 0px 4px rgba(255, 255, 255, 0.2),
-            inset 7px 7px 15px rgba(55, 84, 170, 0),
-            inset -7px -7px 20px rgba(255, 255, 255, 0),
-            0px 0px 4px rgba(255, 255, 255, 0);
-        transition: 0.8s;
-    }
-
-    .title-n {
-        font-size: 20px;
-    }
-}
-
 .card2 {
     width: 260px;
     height: 120px;
@@ -514,25 +413,6 @@ body {
     box-shadow: 2px 3px 5px 0px black;
 }
 
-@media screen and (max-width: 1020px) {
-    .card2 {
-        width: 100%;
-        height: 150;
-        background: #fff;
-        display: inline-block;
-        margin: 5px 0px !important;
-        text-align: center;
-        transition: 0.8s;
-        box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
-            -7px -7px 20px rgba(255, 255, 255, 1),
-            inset 0px 0px 4px rgba(255, 255, 255, 0.2),
-            inset 7px 7px 15px rgba(55, 84, 170, 0),
-            inset -7px -7px 20px rgba(255, 255, 255, 0),
-            0px 0px 4px rgba(255, 255, 255, 0);
-        transition: 0.8s;
-    }
-}
-
 .footer {
     text-align: center;
     padding-bottom: 20px;
@@ -554,18 +434,7 @@ body {
 
 /* END Number */
 
-/* 10. RestW */
-/* END RestW */
-
-/* 11. News */
-.time-p {
-    float: right;
-    font-weight: bold;
-}
-
-/* END News */
-
-/* 12. Safety */
+/* Safety */
 
 .tabset>input[type="radio"] {
     position: absolute;
@@ -641,109 +510,3 @@ body {
 }
 
 /* END Safety */
-
-.center {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-svg text {
-    user-select: none;
-}
-
-/* Load more */
-.load-more {
-    width: auto;
-    text-align: center;
-    color: black;
-    padding: 10px 0px;
-    font-family: sans-serif;
-    text-decoration: underline;
-}
-
-.load-more:hover {
-    cursor: pointer;
-}
-
-/* LEGEND - PROGRESS */
-.attribute-list li {
-    overflow: hidden;
-    margin-bottom: 30px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.attribute-list li:nth-last-child(2) {
-    margin-bottom: 20px;
-}
-
-.attribute-list li .chart-label {
-    min-width: 142px;
-    font-size: 14px;
-    color: #848383;
-    line-height: 33px;
-    float: left;
-}
-
-.attribute-list li .progress-bar {
-    height: 33px;
-    float: right;
-    width: -webkit-calc(100% - 142px);
-    width: calc(100% - 142px);
-    line-height: 33px;
-    font-size: 18px;
-    -webkit-transition: width linear 0.3s;
-    -moz-transition: width linear 0.3s;
-    -ms-transition: width linear 0.3s;
-    transition: width linear 0.3s;
-}
-
-.attribute-list li .progress {
-    margin-left: 10px;
-    width: 80%;
-    height: 100%;
-    margin-top: 10px;
-}
-
-.attribute-list li.legend {
-    width: -webkit-calc(100% - 142px);
-    width: calc(100% - 142px);
-    float: right;
-    border-top: 1px solid #d8d9d9;
-    font-size: 14px;
-    color: #848383;
-    text-align: center;
-}
-
-.attribute-list li.legend span {
-    display: inline-block;
-    line-height: 24px;
-    margin: 0 15px;
-    cursor: pointer;
-}
-
-.attribute-list li.legend span i {
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 5px;
-    margin-bottom: 0;
-}
-
-.zeroWidth {
-    width: 0 !important;
-    font-size: 0 !important;
-}
-
-/* END LEGEND*/
-
-g[aria-labelledby="id-79-title"] {
-    display: none;
-}
-
-small {
-    font-size: 50%;
-}
