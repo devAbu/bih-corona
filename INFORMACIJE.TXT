@@ -1,26 +1,40 @@
-        GRADOVI :                       UKUPAN BROJ
-        Banja Luka : 133               324 (55) 8 6
+        GRADOVI :  
+                                       UKUPAN BROJ
+        Banja Luka : 133               354 (27) 17 8
+        
         Konjic : 25
-        Tuzla : 17 
-        Sarajevo : 15
+
+        Tuzla : 20
+
         Široki Brijeg : 13
+
         Laktaši : 12
+        Zenica : 12
         Mostar : 12
 
         Bosanska Gradiška : 10
+
         Kozarska Dubica : 8
-        Čitluk : 7
-        Bihać : 7
+        Bihać : 8
+        Srebrenik : 8
+        Čitluk : 8
+
+        Sarajevo : 7
+        Ilidža : 7 
+
         Goražde : 6
         Teslić : 6
+
         Kneževo : 5
-        Zenica : 5
         Prnjavor : 5
-        Bijeljina : 4
+        Bijeljina : 5
+
         Grude : 4
 
         Posušje : 3
+        Kakanj : 3
         Čelinac : 3
+        Zavidovići : 3
         Brčko : 3
         Modriča : 3
         
@@ -29,14 +43,19 @@
         Bosanski Brod : 2
         Ribnik : 2
         Tešanj : 2
+        Novi Travnik : 2
 
         Visoko : 1
+        Žepče : 1
         Srbac : 1
         Breza : 1
-        Lukavac : 1
+        Vogošća : 1
+        Cazin : 1 
+        Gornji Vakuf : 1
         Orašje : 1
-        Zavidovići : 1
-        Novi Travnik : 1
+        Lukavac : 1
+        Ilijaš : 1
         Bosanska Krupa : 1
         Derventa : 1
-        Doboj 1
+        Doboj : 1
+        Živinice : 1

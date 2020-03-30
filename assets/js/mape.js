@@ -107,9 +107,15 @@ am4core.ready(function () {
 			"color": yellow
 		}, {
 			"title": "Sarajevo",
-			"value": "15",
+			"value": "7",
 			"latitude": 43.84864,
 			"longitude": 18.35644,
+			"color": blue
+		},{
+			"title": "Ilidža",
+			"value": "7",
+			"latitude": 43.831406,
+			"longitude": 18.300211,
 			"color": yellow
 		},{
 			"title": "Široki Brijeg",
@@ -141,11 +147,23 @@ am4core.ready(function () {
 			"latitude": 45.1767,
 			"longitude": 16.8094,
 			"color": blue
+		},{
+			"title": "Kakanj",
+			"value": "3",
+			"latitude": 44.13311,
+			"longitude": 18.12292,
+			"color": blue
 		}, {
 			"title": "Bihać",
-			"value": "7",
+			"value": "8",
 			"latitude": 44.81694,
 			"longitude": 15.87083,
+			"color": blue
+		}, {
+			"title": "Srebrenik",
+			"value": "8",
+			"latitude": 44.70819,
+			"longitude": 18.48834,
 			"color": blue
 		}, {
 			"title": "Teslić",
@@ -167,7 +185,7 @@ am4core.ready(function () {
 			"color": blue
 		}, {
 			"title": "Zenica",
-			"value": "5",
+			"value": "12",
 			"latitude": 44.2016907,
 			"longitude": 17.9039707,
 			"color": blue
@@ -179,7 +197,7 @@ am4core.ready(function () {
 			"color": blue
 		},{
 			"title": "Bijeljina",
-			"value": "4",
+			"value": "5",
 			"latitude": 44.7587395,
 			"longitude": 19.2143707,
 			"color": blue
@@ -234,7 +252,7 @@ am4core.ready(function () {
 			"color": blue
 		}, {
 			"title": "Čitluk",
-			"value": "7",
+			"value": "8",
 			"latitude": 43.2286,
 			"longitude": 17.7008,
 			"color": blue
@@ -244,9 +262,15 @@ am4core.ready(function () {
 			"latitude": 44.73179,
 			"longitude": 18.08698,
 			"color": blue
+		},{
+			"title": "Živinice",
+			"value": "1",
+			"latitude": 44.44929,
+			"longitude": 18.64978,
+			"color": blue
 		}, {
 			"title": "Tuzla",
-			"value": "18",
+			"value": "20",
 			"latitude": 44.53842,
 			"longitude": 18.66709,
 			"color": yellow
@@ -287,8 +311,26 @@ am4core.ready(function () {
 			"longitude": 18.273720,
 			"color": blue
 		}, {
-			"title": "Novi Travnik",
+			"title": "Vogošća",
 			"value": "1",
+			"latitude": 43.90225,
+			"longitude": 18.34438,
+			"color": blue
+		}, {
+			"title": "Cazin",
+			"value": "1",
+			"latitude": 44.96694,
+			"longitude": 15.94306,
+			"color": blue
+		}, {
+			"title": "Gornji Vakuf",
+			"value": "1",
+			"latitude": 43.93806,
+			"longitude": 17.58833,
+			"color": blue
+		}, {
+			"title": "Novi Travnik",
+			"value": "2",
 			"latitude": 44.17133,
 			"longitude": 17.65816,
 			"color": blue
@@ -305,14 +347,26 @@ am4core.ready(function () {
 			"longitude": 18.525934,
 			"color": blue
 		}, {
-			"title": "Posušje",
+			"title": "Ilijaš",
 			"value": "1",
+			"latitude": 43.95128,
+			"longitude": 18.27128,
+			"color": blue
+		}, {
+			"title": "Žepće",
+			"value": "1",
+			"latitude": 44.42667,
+			"longitude": 18.03778,
+			"color": blue
+		}, {
+			"title": "Posušje",
+			"value": "3",
 			"latitude": 43.4666648,
 			"longitude": 17.333332,
 			"color": blue
 		},{
 			"title": "Zavidovići",
-			"value": "1",
+			"value": "3",
 			"latitude": 44.44583,
 			"longitude": 18.14972,
 			"color": blue
