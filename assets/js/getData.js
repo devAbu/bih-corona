@@ -1,4 +1,4 @@
-$.get("https://", function (data) {
+$.get("https://covid-bih.abocdev.com/php/getData.php", function (data) {
     var juhu = data.split('\n')
 
     document.getElementById('total').innerHTML = `<div class="stats">
@@ -23,8 +23,7 @@ $.get("https://", function (data) {
 });
 
 setInterval(() => {
-    console.log('juhu')
-    $.get("http://localhost/github/bih-corona/php/getData.php", function (data) {
+    $.get("https://covid-bih.abocdev.com/php/getData.php", function (data) {
         var juhu = data.split('\n')
 
         document.getElementById('total').innerHTML = `<div class="stats">

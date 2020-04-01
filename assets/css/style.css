@@ -1,18 +1,18 @@
 /*
 CSS:
-Imports
-Main
-Navigation
-Map and Chart
-Viber-link
-Number
-Safety
-
+ Imports
+ Main
+ Navigation
+ Map and chart
+ Viber-link
+ Number
+ Safety
 */
 /* Imports */
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
 /*END Imports*/
 
 /* Main */
@@ -31,31 +31,65 @@ body {
 }
 
 .section-title h4 {
-    font-size: 32px;
+    font-size: 29px;
 }
 
 * {
     scroll-behavior: smooth;
 }
-.center {
-    margin-left: auto;
-    margin-right: auto;
+
+.p-under{
+    font-size:17px;
+    font-style:italic;
 }
 
-svg text {
-    user-select: none;
+/* Lodaer  */
+.loader_bg{
+    position:fixed;
+    z-index:999999;
+    background:#fff;
+    width:100%;
+    height:100%;
+}
+.loader{
+    border: 0 solid transparent;
+    border-radius:50%;
+    width:150px;
+    height:150px;
+    position:absolute;
+    top:calc(50vh - 150px);
+    left:calc(50vw - 75px);
+}
+.loader:before, .loader:after{
+    content:'';
+    border: 1em solid #0076FF;
+    border-radius:50%;
+    width : inherit;
+    height: inherit;
+    position: absolute;
+    top:0;
+    left:0;
+    animation: loader 2s linear infinite;
+    opacity:0;
+}
+.loader:before{
+    animation-delay:.5s;
+}
+@keyframes loader{
+    0%{
+        transform: scale(0);
+        opacity:0;
+    }
+    50%{
+        opacity:1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
 }
 
-
-g[aria-labelledby="id-79-title"] {
-    display: none;
-}
-
-small {
-    font-size: 50%;
-}
 /* Main END */
-
 /* Navigation */
 .start-header {
     opacity: 1;
@@ -182,92 +216,27 @@ small {
 /* Navigation END */
 
 
-/* Map Legend, Progres, and Chart */
-.attribute-list li {
-    overflow: hidden;
-    margin-bottom: 30px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.attribute-list li:nth-last-child(2) {
-    margin-bottom: 20px;
-}
-
-.attribute-list li .chart-label {
-    min-width: 142px;
-    font-size: 14px;
-    color: #848383;
-    line-height: 33px;
-    float: left;
-}
-
-.attribute-list li .progress-bar {
-    height: 33px;
-    float: right;
-    width: -webkit-calc(100% - 142px);
-    width: calc(100% - 142px);
-    line-height: 33px;
-    font-size: 18px;
-    -webkit-transition: width linear 0.3s;
-    -moz-transition: width linear 0.3s;
-    -ms-transition: width linear 0.3s;
-    transition: width linear 0.3s;
-}
-
-.attribute-list li .progress {
-    margin-left: 10px;
-    width: 80%;
-    height: 100%;
-    margin-top: 10px;
-}
-
-.attribute-list li.legend {
-    width: -webkit-calc(100% - 142px);
-    width: calc(100% - 142px);
-    float: right;
-    border-top: 1px solid #d8d9d9;
-    font-size: 14px;
-    color: #848383;
-    text-align: center;
-}
-
-.attribute-list li.legend span {
-    display: inline-block;
-    line-height: 24px;
-    margin: 0 15px;
-    cursor: pointer;
-}
-
-.attribute-list li.legend span i {
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 5px;
-    margin-bottom: 0;
-}
-
-.zeroWidth {
-    width: 0 !important;
-    font-size: 0 !important;
-}
+/*  Map */
 #chartdiv {
     width: 100%;
     height: 74vh;
 }
-#cartContainer {
-    width: 100%;
-    height: 70vh;
-    margin: 0;
-    padding: 0;
-}
+
+/* END Map */
+
 .row {
     margin: 0;
 }
-/* END Map and chart*/
+
+/* City */
+#cartContainer {
+    width: 100%;
+    height: 80vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* END City */
 
 /* Viber-link */
 .viber-link {
@@ -306,6 +275,8 @@ small {
 }
 
 .viber-link p {
+    font-style:italic;
+    font-size:20px;
     text-shadow: 1px 1px rgb(0, 0, 0);
     font-weight: bold;
 }
@@ -319,20 +290,12 @@ small {
 
 .viber-link a {
     font-weight: bold;
+    font-size: 35px;
 }
-
-.viber-link p {
-    font-size: 30px;
-}
-
-.viber-link a {
-    font-size: 30px;
-}
-
 /* END Viber-link */
 
-/* Numbers */
-
+/* Number */
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 .title-n {
     margin: 20px;
     font-weight: 600;
@@ -377,6 +340,29 @@ small {
     box-shadow: 2px 3px 5px 0px black;
 }
 
+@media screen and (max-width: 1020px) {
+    .card {
+        width: 100%;
+        height: 150;
+        background: #fff;
+        display: inline-block;
+        margin: 5px 0px !important;
+        text-align: center;
+        transition: 0.8s;
+        box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+            -7px -7px 20px rgba(255, 255, 255, 1),
+            inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+            inset 7px 7px 15px rgba(55, 84, 170, 0),
+            inset -7px -7px 20px rgba(255, 255, 255, 0),
+            0px 0px 4px rgba(255, 255, 255, 0);
+        transition: 0.8s;
+    }
+
+    .title-n {
+        font-size: 20px;
+    }
+}
+
 .card2 {
     width: 260px;
     height: 120px;
@@ -413,6 +399,25 @@ small {
     box-shadow: 2px 3px 5px 0px black;
 }
 
+@media screen and (max-width: 1020px) {
+    .card2 {
+        width: 100%;
+        height: 150;
+        background: #fff;
+        display: inline-block;
+        margin: 5px 0px !important;
+        text-align: center;
+        transition: 0.8s;
+        box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+            -7px -7px 20px rgba(255, 255, 255, 1),
+            inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+            inset 7px 7px 15px rgba(55, 84, 170, 0),
+            inset -7px -7px 20px rgba(255, 255, 255, 0),
+            0px 0px 4px rgba(255, 255, 255, 0);
+        transition: 0.8s;
+    }
+}
+
 .footer {
     text-align: center;
     padding-bottom: 20px;
@@ -431,11 +436,11 @@ small {
     }
 }
 
-
 /* END Number */
 
-/* Safety */
 
+
+/* Safety */
 .tabset>input[type="radio"] {
     position: absolute;
     visibility: hidden;
@@ -510,3 +515,207 @@ small {
 }
 
 /* END Safety */
+
+
+/* LEGEND - PROGRESS */
+.attribute-list li {
+    overflow: hidden;
+    margin-bottom: 30px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.attribute-list li:nth-last-child(2) {
+    margin-bottom: 20px;
+}
+
+.attribute-list li .chart-label {
+    min-width: 142px;
+    font-size: 14px;
+    color: #848383;
+    line-height: 33px;
+    float: left;
+}
+
+.attribute-list li .progress-bar {
+    height: 33px;
+    float: right;
+    width: -webkit-calc(100% - 142px);
+    width: calc(100% - 142px);
+    line-height: 33px;
+    font-size: 18px;
+    -webkit-transition: width linear 0.3s;
+    -moz-transition: width linear 0.3s;
+    -ms-transition: width linear 0.3s;
+    transition: width linear 0.3s;
+}
+
+.attribute-list li .progress {
+    margin:auto;
+    padding:auto;
+    width: 80%;
+    height: 100%;
+}
+
+.attribute-list li.legend {
+    width: -webkit-calc(100% - 142px);
+    width: calc(100% - 142px);
+    float: right;
+    border-top: 1px solid #d8d9d9;
+    font-size: 14px;
+    color: #848383;
+    text-align: center;
+}
+
+.attribute-list li.legend span {
+    display: inline-block;
+    line-height: 24px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.attribute-list li.legend span i {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 0;
+}
+
+.zeroWidth {
+    width: 0 !important;
+    font-size: 0 !important;
+}
+
+/* END LEGEND*/
+
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+svg text {
+    user-select: none;
+}
+
+g[aria-labelledby="id-79-title"] {
+    display: none;
+}
+
+small {
+    font-size: 50%;
+}
+
+@media (max-width: 1024px) {
+	svg text {
+		font-size: 9px;
+		font-weight: 800;
+	}
+}
+
+/* Navigation, Map, Chart */
+@media (max-width: 767px) {
+	h1 {
+		font-size: 38px;
+	}
+
+    /*nav*/
+	.nav-item:after {
+		display: none;
+	}
+
+	.nav-item::before {
+		position: absolute;
+		display: block;
+		top: 15px;
+		left: 0;
+		width: 11px;
+		height: 1px;
+		content: "";
+		border: none;
+		background-color: #000;
+	}
+
+    /*Map*/
+	#map {
+		transform: scale(0.55);
+		height: 60vh;
+		margin-top: -100px;
+	}
+
+	.attribute-list li .chart-label {
+		display: none;
+	}
+
+	.attribute-list li .progress-bar {
+		font-size: 15px;
+	}
+
+	.attribute-list {
+		padding: 0;
+	}
+
+	.attribute-list li .progress {
+		width: 100%;
+	}
+    /* Chart */
+	#chartdiv {
+		margin-top: -100px;
+	}
+	
+	/* Safety tabs */
+	.tabset>label {
+		padding: 15px 0 25px;
+	}
+}
+
+@media only screen and (max-width: 1919px) {
+	body {
+		font-size: 20px;
+	}
+}
+
+@media screen and (max-width: 1020px) {
+    .card {
+        width: 100%;
+        height: 150;
+        background: #fff;
+        display: inline-block;
+        margin: 5px 0px !important;
+        text-align: center;
+        transition: 0.8s;
+        box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+            -7px -7px 20px rgba(255, 255, 255, 1),
+            inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+            inset 7px 7px 15px rgba(55, 84, 170, 0),
+            inset -7px -7px 20px rgba(255, 255, 255, 0),
+            0px 0px 4px rgba(255, 255, 255, 0);
+        transition: 0.8s;
+    }
+
+    .title-n {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .card2 {
+        width: 100%;
+        height: 150;
+        background: #fff;
+        display: inline-block;
+        margin: 5px 0px !important;
+        text-align: center;
+        transition: 0.8s;
+        box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+            -7px -7px 20px rgba(255, 255, 255, 1),
+            inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+            inset 7px 7px 15px rgba(55, 84, 170, 0),
+            inset -7px -7px 20px rgba(255, 255, 255, 0),
+            0px 0px 4px rgba(255, 255, 255, 0);
+    }
+}

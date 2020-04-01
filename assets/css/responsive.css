@@ -1,4 +1,3 @@
-/* Chart txt */
 @media (max-width: 1024px) {
 	svg text {
 		font-size: 9px;
@@ -6,12 +5,13 @@
 	}
 }
 
-/* Navigation, Map, Chart*/
+/* Navigation, Map, Chart */
 @media (max-width: 767px) {
 	h1 {
 		font-size: 38px;
 	}
-	/*nAV*/
+
+    /*nav*/
 	.nav-item:after {
 		display: none;
 	}
@@ -27,7 +27,8 @@
 		border: none;
 		background-color: #000;
 	}
-	/* Map */
+
+    /*Map*/
 	#map {
 		transform: scale(0.55);
 		height: 60vh;
@@ -49,13 +50,14 @@
 	.attribute-list li .progress {
 		width: 100%;
 	}
-	/* Chart */
+    /* Chart */
 	#chartdiv {
 		margin-top: -100px;
 	}
+	
 	/* Safety tabs */
 	.tabset>label {
-		padding: 15px 0px 25px;
+		padding: 15px 0 25px;
 	}
 }
 
@@ -103,6 +105,5 @@
             inset 7px 7px 15px rgba(55, 84, 170, 0),
             inset -7px -7px 20px rgba(255, 255, 255, 0),
             0px 0px 4px rgba(255, 255, 255, 0);
-        transition: 0.8s;
     }
 }

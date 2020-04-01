@@ -1,79 +1,45 @@
 (function ($) {
     "use strict";
 
-    /* $('#search').hide()
+    document.onreadystatechange = function() { 
+    if (document.readyState !== "complete") { 
+        document.querySelector("body").style.visibility = "hidden"; 
+        document.querySelector("#loader_bg").style.visibility = "visible"; 
+    } else { 
+        document.querySelector("#loader_bg").style.display = "none"; 
+        document.querySelector("body").style.visibility = "visible"; 
+    } 
+}; 
+/* Lazy Images */
+const images = document.querySelectorAll("[data-src]");
 
-    $('#collapse, #collapse1-extra').click(() => {
-        var collapseClass = $('#collapse').attr('class')
+function preloadImage(img){
+    const src = img.getAttribute("data-src");
+    if(!src){
+        return;
+    }
+    
+    img.src=src
+}
 
-        if (typeof collapseClass === "undefined") {
-            $('#collapse p').html("")
-            $('#collapse p').hide()
-        } else if (collapseClass != "collapsed") {
-            $('#collapse p').html("Prikaži više gradova")
-
-            $('#collapse2 p').html("Prikaži više gradova")
-            $('#collapse2').attr("class", "collapsed")
-            $('#collapse2').attr("aria-expanded", "false")
-            $('#moreCities2').removeClass("show")
-            $('#collapse3 p').html("Prikaži ostale gradove")
-            $('#collapse3').attr("class", "collapsed")
-            $('#collapse3').attr("aria-expanded", "false")
-            $('#moreCities3').removeClass("show")
-        } else {
-            $('#collapse p').html("")
-            $('#collapse p').hide()
+const imgOptions= {
+    treshold : 0,
+    rootMargin : "0px 0px 400px 0px"
+};
+const imgObserver = new IntersectionObserver((entries, imgObserver) =>{
+    entries.forEach( entry =>{
+        if (!entry.isIntersecting){
+            return;
+        }else{
+            preloadImage(entry.target);
+            imgObserver.unobserve(entry.target)
         }
     })
+},imgOptions)
 
-    $('#collapse2, #collapse2-extra').click(() => {
-        var collapseClass2 = $('#collapse2').attr('class')
-        if (typeof collapseClass2 === "undefined") {
-            $('#collapse2 p').html("")
-            $('#collapse2 p').hide()
-            $('#collapse1-extra p').html("")
-        } else if (collapseClass2 != "collapsed") {
-            $('#collapse2 p').html("Prikaži više gradova")
-            $('#collapse3 p').html("Prikaži ostale gradove")
-            $('#collapse3').attr("class", "collapsed")
-            $('#collapse3').attr("aria-expanded", "false")
-            $('#moreCities3').removeClass("show")
-        } else {
-            $('#collapse2 p').html("")
-            $('#collapse2 p').hide()
-            $('#collapse1-extra p').html("")
-        }
-    })
-    $('#collapse3, #collapse3-extra').click(() => {
-        var collapseClass3 = $('#collapse3').attr('class')
-        if (typeof collapseClass3 === "undefined") {
-            $('#collapse3 p').html("")
-            $('#collapse3 p').hide()
-            $('#collapse2-extra p').html("")
-        } else if (collapseClass3 != "collapsed") {
-            $('#collapse3 p').html("Prikaži ostale gradove")
-        } else {
-            $('#collapse3 p').html("")
-            $('#collapse3 p').hide()
-            $('#collapse2-extra p').html("")
-        }
-    })
-
-    $('#collapse1-extra, #collapse2-extra, #collapse3-extra').click(() => {
-        $('#moreCities, #moreCities2, #moreCities3').collapse('hide')
-
-        $('#collapse p').html("Prikaži više gradova")
-        $('#collapse2 p').html("Prikaži više gradova")
-        $('#collapse3 p').html("Prikaži ostale gradove")
-
-        $('#collapse1-extra p').html("Prikaži manje")
-        $('#collapse2-extra p').html("Prikaži manje")
-        $('#collapse3-extra p').html("Prikaži manje")
-
-        $('#collapse2 p').show()
-        $('#collapse3 p').show()
-        $('#collapse p').show()
-    }) */
+images.forEach(image =>{
+    imgObserver.observe(image);
+});
 
     $(function () {
         var header = $(".start-style");
@@ -87,9 +53,7 @@
             }
         });
     });
-
-    //Menu On Hover
-
+    
     $('body').on('mouseenter mouseleave', '.nav-item', function (e) {
         if ($(window).width() > 750) {
             var _d = $(e.target).closest('.nav-item');
@@ -102,7 +66,6 @@
 
 })(jQuery);
 
-//Call numbers
 function citys(value) {
     if (value == "Sarajevski kanton") {
         document.getElementById("callNumbers").innerHTML = ' <div class="container pt-3 d-flex justify-content-center"> <div class="row" style="overflow-x:auto"> <div class="col-xs-12"> <div class="table-responsive"> <table class="table table-bordered table-hover"> <thead> <tr> <th colspan="5" class="text-center">Sarajevski kanton</th> </tr> <tr> <th>RB</th> <th>Ime</th> <th>Broj telefona</th> </tr> </thead> <tbody> <tr class="text-center"> <td>1. </td> <td>HES (Higijensko-epidemiološka služba JU DZKS)</td> <td>033 623 416/lok 220</td> </tr> <tr class="text-center"> <td>2.</td> <td>OJ Dom zdravlja Stari Grad</td> <td>060 32 80 454; 033 278 624</td> </tr> <tr class="text-center"> <td>3.</td> <td>OJ Dom zdravlja Centar</td> <td>033 292 524</td> </tr> <tr class="text-center"> <td>4.</td> <td>OJ Dom zdravlja Novo Sarajevo</td> <td>061 165 219</td> </tr> <tr class="text-center"> <td>5.</td> <td>OJ Dom zdravlja Novi Grad</td> <td>033 704 937</td> </tr> <tr class="text-center"> <td>6.</td> <td>OJ Dom zdravlja Ilidža </td> <td>033 625 859; 033 623 416/lok 227</td> </tr> <tr class="text-center"> <td>7.</td> <td>OJ Dom zdravlja Vogošća </td> <td>033 432 518</td> </tr> <tr class="text-center"> <td>8.</td> <td>OJ Dom zdravlja Ilijaš </td> <td>033 584 352; 033 584 350</td> </tr> <tr class="text-center"> <td>9.</td> <td>OJ Dom zdravlja Trnovo </td> <td>033 439 047</td> </tr> <tr class="text-center"> <td>10.</td> <td>OJ Dom zdravlja Hadžići </td> <td>033 580 360; 033 421 247</td> </tr> </tbody><thead> <tr> <th colspan="5" class="text-center">Ako imate bilo koji koristan broj molimo vas da nam pošaljete u viber grupu</th> </tr>  </thead> </table> </div> <!--end of .table-responsive--> </div> </div> </div>';
@@ -132,67 +95,6 @@ citys("Sarajevski kanton")
 //LOAD MROE DATA
 $(document).ready(function () {
 
-    // Load more data
-    /* $('.load-more').click(function () {
-        var row = Number($('#row').val());
-        var allcount = Number($('#all').val());
-        row = row + 28;
-
-        if (row <= allcount) {
-            $("#row").val(row);
-
-            $.ajax({
-                url: 'getData.php',
-                type: 'post',
-                data: {
-                    row: 4
-                },
-                beforeSend: function () {
-                    $(".load-more").text(".....");
-                },
-                success: function (response) {
-
-                    // Setting little delay while displaying new content
-                    setTimeout(function () {
-                        // appending posts after last post with class="post"
-                        $(".post:last").after(response).show().fadeIn("slow");
-
-                        var rowno = row + 28;
-
-                        // checking row value is greater than allcount or not
-                        if (rowno > allcount) {
-
-                            // Change the text and background
-                            $('.load-more').text("Zatvori sve");
-                        } else {
-                            $(".load-more").text("Prikaži više");
-                        }
-                    }, 2000);
-
-
-                }
-            });
-        } else {
-            $('.load-more').text(".....");
-
-            // Setting little delay while removing contents
-            setTimeout(function () {
-
-                // When row is greater than allcount then remove all class='post' element after 3 element
-                $('.post:nth-child(4)').nextAll('.post').remove().fadeIn("slow");
-
-                // Reset the value of row
-                $("#row").val(0);
-
-                // Change the text and background
-                $('.load-more').text("Prikaži više");
-            }, 2000);
-
-
-        }
-
-    }); */
-
 
     $('nav ul li a').click(function () {
         event.preventDefault();
@@ -202,24 +104,6 @@ $(document).ready(function () {
         }, 0);
     });
 
-    /* $(function () {
-        // This will select everything with the class smoothScroll
-        // This should prevent problems with carousel, scrollspy, etc...
-        $('.smoothScroll').click(function () {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top - 60
-                    }, 1000); // The number here represents the speed of the scroll in milliseconds
-                    return false;
-                }
-            }
-        });
-    }); */
-
-    /* LEGEND - PROGRESS */
 
     if ($('#good-attribute-chart').length) {
         var html = attributeCharts({

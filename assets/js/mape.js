@@ -83,296 +83,400 @@ am4core.ready(function () {
 		})
 	}
 
-	//BOJEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-	//SVIJETLO PLAVA =< 10
-	blue = am4core.color("#faff00")
-	//Narandzasta=<50
-	yellow = am4core.color("#fbba09");
-	//Ljubicasta =<100
-	purple = am4core.color("#fc7512");
-	//crvena <=500
-	red = am4core.color("#fd1d1d");
+	$.get("https://covid-bih.abocdev.com/php/getDataCities.php", function (data) {
+		var replace = data.replace("\n", "");
 
-	imageSeries.data = [{
-			"title": "Banja Luka",
-			"value": "133",
-			"latitude": 44.77583,
-			"longitude": 17.18556,
-			"color": red
-		}, {
-			"title": "Konjic",
-			"value": "25",
-			"latitude": 43.65126,
-			"longitude": 17.96082,
-			"color": yellow
-		}, {
-			"title": "Sarajevo",
-			"value": "7",
-			"latitude": 43.84864,
-			"longitude": 18.35644,
-			"color": blue
-		},{
-			"title": "Ilidža",
-			"value": "7",
-			"latitude": 43.831406,
-			"longitude": 18.300211,
-			"color": yellow
-		},{
-			"title": "Široki Brijeg",
-			"value": "13",
-			"latitude": 43.3829,
-			"longitude": 17.59416,
-			"color": yellow
-		},{
-			"title": "Laktaši",
-			"value": "12",
-			"latitude": 44.90857,
-			"longitude": 17.30135,
-			"color": yellow
-		}, {
-			"title": "Mostar",
-			"value": "12",
-			"latitude": 43.34333,
-			"longitude": 17.80806,
-			"color": yellow
-		},{
-			"title": "Bosanska Gradiška",
-			"value": "10",
-			"latitude": 45.14484,
-			"longitude": 17.25453,
-			"color": blue
-		},{
-			"title": "Kozarska Dubica",
-			"value": "8",
-			"latitude": 45.1767,
-			"longitude": 16.8094,
-			"color": blue
-		},{
-			"title": "Kakanj",
-			"value": "3",
-			"latitude": 44.13311,
-			"longitude": 18.12292,
-			"color": blue
-		}, {
-			"title": "Bihać",
-			"value": "8",
-			"latitude": 44.81694,
-			"longitude": 15.87083,
-			"color": blue
-		}, {
-			"title": "Srebrenik",
-			"value": "8",
-			"latitude": 44.70819,
-			"longitude": 18.48834,
-			"color": blue
-		}, {
-			"title": "Teslić",
-			"value": "6",
-			"latitude": 44.6064,
-			"longitude": 17.8597,
-			"color": blue
-		}, {
-			"title": "Goražde",
-			"value": "6",
-			"latitude": 43.66795,
-			"longitude": 18.97564,
-			"color": blue
-		}, {
-			"title": "Prnjavor",
-			"value": "5",
-			"latitude": 44.8702,
-			"longitude": 17.6626,
-			"color": blue
-		}, {
-			"title": "Zenica",
-			"value": "12",
-			"latitude": 44.2016907,
-			"longitude": 17.9039707,
-			"color": blue
-		},{
-			"title": "Kneževo",
-			"value": "5",
-			"latitude": 43.9159,
-			"longitude": 17.6791,
-			"color": blue
-		},{
-			"title": "Bijeljina",
-			"value": "5",
-			"latitude": 44.7587395,
-			"longitude": 19.2143707,
-			"color": blue
-		},{
-			"title": "Grude",
-			"value": "4",
-			"latitude": 43.551914,
-			"longitude": 17.377458,
-			"color": blue
-		}, {
-			"title": "Modriča",
-			"value": "3",
-			"latitude": 44.9975338,
-			"longitude": 18.297176,
-			"color": blue
-		}, {
-			"title": "Bosanski Brod",
-			"value": "2",
-			"latitude": 45.13747,
-			"longitude": 17.98722,
-			"color": blue
-		}, {
-			"title": "Čelinac",
-			"value": "3",
-			"latitude": 44.7399788,
-			"longitude": 17.3188095,
-			"color": blue
-		}, {
-			"title": "Prijedor",
-			"value": "2",
-			"latitude": 44.97991,
-			"longitude": 16.71401,
-			"color": blue
-		}, {
-			"title": "Tešanj",
-			"value": "2",
-			"latitude": 44.6119,
-			"longitude": 17.9855,
-			"color": blue
-		},
-		{
-			"title": "Brčko",
-			"value": "3",
-			"latitude": 44.87278,
-			"longitude": 18.80833,
-			"color": blue
-		}, {
-			"title": "Kotor Varoš",
-			"value": "2",
-			"latitude": 44.6722986,
-			"longitude": 17.379073,
-			"color": blue
-		}, {
-			"title": "Čitluk",
-			"value": "8",
-			"latitude": 43.2286,
-			"longitude": 17.7008,
-			"color": blue
-		}, {
-			"title": "Doboj",
-			"value": "1",
-			"latitude": 44.73179,
-			"longitude": 18.08698,
-			"color": blue
-		},{
-			"title": "Živinice",
-			"value": "1",
-			"latitude": 44.44929,
-			"longitude": 18.64978,
-			"color": blue
-		}, {
-			"title": "Tuzla",
-			"value": "20",
-			"latitude": 44.53842,
-			"longitude": 18.66709,
-			"color": yellow
-		}, {
-			"title": "Visoko",
-			"value": "1",
-			"latitude": 43.98889,
-			"longitude": 18.17806,
-			"color": blue
-		}, {
-			"title": "Ribnik",
-			"value": "2",
-			"latitude": 44.572135,
-			"longitude": 16.794551,
-			"color": blue
-		}, {
-			"title": "Bosanska Krupa",
-			"value": "1",
-			"latitude": 44.8825,
-			"longitude": 16.15139,
-			"color": blue
-		}, {
-			"title": "Srbac",
-			"value": "1",
-			"latitude": 45.0973,
-			"longitude": 17.5233,
-			"color": blue
-		}, {
-			"title": "Orašje",
-			"value": "1",
-			"latitude": 45.058720,
-			"longitude": 18.694768,
-			"color": blue
-		}, {
-			"title": "Breza",
-			"value": "1",
-			"latitude": 44.096139,
-			"longitude": 18.273720,
-			"color": blue
-		}, {
-			"title": "Vogošća",
-			"value": "1",
-			"latitude": 43.90225,
-			"longitude": 18.34438,
-			"color": blue
-		}, {
-			"title": "Cazin",
-			"value": "1",
-			"latitude": 44.96694,
-			"longitude": 15.94306,
-			"color": blue
-		}, {
-			"title": "Gornji Vakuf",
-			"value": "1",
-			"latitude": 43.93806,
-			"longitude": 17.58833,
-			"color": blue
-		}, {
-			"title": "Novi Travnik",
-			"value": "2",
-			"latitude": 44.17133,
-			"longitude": 17.65816,
-			"color": blue
-		}, {
-			"title": "Derventa",
-			"value": "1",
-			"latitude": 44.97839,
-			"longitude": 17.90779,
-			"color": blue
-		}, {
-			"title": "Lukavac",
-			"value": "1",
-			"latitude": 44.543839,
-			"longitude": 18.525934,
-			"color": blue
-		}, {
-			"title": "Ilijaš",
-			"value": "1",
-			"latitude": 43.95128,
-			"longitude": 18.27128,
-			"color": blue
-		}, {
-			"title": "Žepće",
-			"value": "1",
-			"latitude": 44.42667,
-			"longitude": 18.03778,
-			"color": blue
-		}, {
-			"title": "Posušje",
-			"value": "3",
-			"latitude": 43.4666648,
-			"longitude": 17.333332,
-			"color": blue
-		},{
-			"title": "Zavidovići",
-			"value": "3",
-			"latitude": 44.44583,
-			"longitude": 18.14972,
-			"color": blue
+		var res = replace.split("\n");
+		var array = res.filter(function (res) {
+			return /\S/.test(res);
+		});
+
+		var i = array.length;
+
+		while (i--) {
+			(i + 1) % 3 === 0 && array.splice(i, 1);
 		}
-	];
+
+
+		BanjaLukaLat = 44.77583;
+		BanjaLkaLong = 17.18556;
+
+		KonjicLat = 43.65126;
+		KonjicLong = 17.96082;
+
+		SarajevoLat = 43.84864;
+		SarajevoLong = 18.35644;
+
+		IlidzaLat = 43.831406;
+		IlidzaLong = 18.300211;
+
+		SirokiBrijegLat = 43.3829;
+		SirokiBrijegLong = 17.59416;
+
+		LaktasiLat = 44.90857;
+		LaktasiLong = 17.30135;
+
+		MostarLat = 43.34333;
+		MostarLong = 17.80806;
+
+		BosanskaGradiskaLat = 45.14484;
+		BosanskaGradiskaLong = 17.25453;
+
+		KozarskaDubicaLat = 45.1767;
+		KozarskaDubicaLong = 16.8094;
+
+		KakanjLat = 44.13311;
+		KakanjLong = 18.12292
+
+		BihacLat = 44.81694;
+		BihacLong = 15.87083;
+
+		SrebrenikLat = 44.70819;
+		SrebrenikLong = 18.48834;
+
+		TeslicLat = 44.6064;
+		TeslicLong = 17.8597;
+
+		GorazdeLat = 43.66795;
+		GorazdeLong = 18.9756;
+
+		PrnjavorLat = 44.8702;
+		PrnjavorLong = 17.6626;
+
+		ZenicaLat = 44.2016907;
+		ZenicaLong = 17.9039707;
+
+		KnezevoLat = 43.9159;
+		KnezevoLong = 17.6791;
+
+		BijeljinaLat = 44.7587395;
+		BijeljinaLong = 19.2143707;
+
+		GrudeLat = 43.551914;
+		GrudeLong = 17.377458;
+
+		ModricaLat = 44.9975338;
+		ModricaLong = 18.297176;
+
+		BosanskiBrodLat = 45.13747;
+		BosanskiBrodLong = 17.98722;
+
+		CelinacLat = 44.7399788;
+		CelinacLong = 17.3188095
+
+		PrijedorLat = 44.97991;
+		PrijedorLong = 16.71401;
+
+		TesanjLat = 44.6119;
+		TesanjLong = 17.9855;
+
+		BrckoLat = 44.87278;
+		BrckoLong = 18.80833;
+
+		KotorVarosLat = 44.6722986;
+		KotorVarosLong = 17.379073;
+
+		CitlukLat = 43.2286;
+		CitlukLong = 17.7008;
+
+		DobojLat = 44.73179;
+		DobojLong = 18.08698;
+
+		ZiviniceLat = 44.44929;
+		ZiviniceLong = 18.64978;
+
+		TuzlaLat = 44.53842;
+		TuzlaLong = 18.66709;
+
+		VisokoLat = 43.98889;
+		VisokoLong = 18.17806;
+
+		RibnikLat = 44.572135;
+		RibnikLong = 16.794551;
+
+		BosanskaKrupaLat = 44.8825;
+		BosanskaKrupaLong = 16.15139;
+
+		SrbacLat = 45.0973;
+		SrbacLong = 17.5233;
+
+		OrasjeLat = 45.008762;
+		OrasjeLong = 18.687014;
+
+		BrezaLat = 44.096139;
+		BrezaLong = 18.273720;
+
+		VogoscaLat = 43.90225;
+		VogoscaLong = 18.34438;
+
+		CazinLat = 44.96694;
+		CazinLong = 15.94306;
+
+		GornjiVakufLat = 43.93806;
+		GornjiVakufLong = 17.58833;
+
+		NoviTravnikLat = 44.17133;
+		NoviTravnikLong = 17.65816;
+
+		DerventaLat = 44.97839;
+		DerventaLong = 17.90779;
+
+		LukavacLat = 44.543839;
+		LukavacLong = 18.525934;
+
+		IlijasLat = 43.95128;
+		IlijasLong = 18.27128;
+
+		ZepceLat = 44.42667;
+		ZepceLong = 18.03778;
+
+		PosusjeLat = 43.4666648;
+		PosusjeLong = 17.333332;
+
+		ZavidoviciLat = 44.44583;
+		ZavidoviciLong = 18.14972;
+
+		IstocnaIlidzaLat = 43.756194;
+		IstocnaIlidzaLong = 18.268770;
+
+		PaleLat = 43.817244;
+		PaleLong = 18.568508;
+
+		MiliciLat = 44.167391;
+		MiliciLong = 19.075715;
+
+		VitezLat = 44.158541;
+		VitezLong = 17.782145;
+
+		GracanicaLat = 44.705293;
+		GracanicaLong = 18.308144;
+
+		SekoviciLat = 44.297118;
+		SekoviciLong = 18.854044;
+
+		VelikaKladusaLat = 45.185453;
+		VelikaKladusaLong = 15.805206;
+
+		MrkonjicGradLat = 44.417627;
+		MrkonjicGradLong = 17.084829;
+
+		SipovoLat = 44.284349;
+		SipovoLong = 17.087946;
+
+		JablanicaLat = 43.657049;
+		JablanicaLong = 17.758448;
+
+		ZvornikLat = 44.386185;
+		ZvornikLong = 19.102832;
+
+		var colorFill;
+
+		var dataArray2 = []
+		for (var i = 0; i < array.length; i++) {
+
+
+			if (array[i + 1] < 10) {
+				colorFill = am4core.color("#faff00")
+			} else if (array[i + 1] < 50) {
+				colorFill = am4core.color("#fbba09");
+			} else if (array[i + 1] < 100) {
+				colorFill = am4core.color("#fc7512");
+			} else {
+				colorFill = am4core.color("#fd1d1d");
+			}
+
+			if (array[i] == "Banja Luka") {
+				lat = BanjaLukaLat
+				long = BanjaLkaLong
+			} else if (array[i] == "Konjic") {
+				lat = KonjicLat
+				long = KonjicLong
+			} else if (array[i] == "Tuzla") {
+				lat = TuzlaLat
+				long = TuzlaLong
+			} else if (array[i] == "Mostar") {
+				lat = MostarLat
+				long = MostarLong
+			} else if (array[i] == "Čitluk") {
+				lat = CitlukLat
+				long = CitlukLong
+			} else if (array[i] == "Laktaši") {
+				lat = LaktasiLat
+				long = LaktasiLong
+			} else if (array[i] == "Široki Brijeg") {
+				lat = SirokiBrijegLat
+				long = SirokiBrijegLong
+			} else if (array[i] == "Zenica") {
+				lat = ZenicaLat
+				long = ZenicaLong
+			} else if (array[i] == "Srebrenik") {
+				lat = SrebrenikLat
+				long = SrebrenikLong
+			} else if (array[i] == "Sarajevo") {
+				lat = SarajevoLat
+				long = SarajevoLong
+			} else if (array[i] == "Ilidža") {
+				lat = IlidzaLat
+				long = IlidzaLong
+			} else if (array[i] == "Bihać") {
+				lat = BihacLat
+				long = BihacLong
+			} else if (array[i] == "Bosanska Gradiška") {
+				lat = BosanskaGradiskaLat
+				long = BosanskaGradiskaLong
+			} else if (array[i] == "Bijeljina") {
+				lat = BijeljinaLat
+				long = BijeljinaLong
+			} else if (array[i] == "Kozarska Dubica") {
+				lat = KozarskaDubicaLat
+				long = KozarskaDubicaLong
+			} else if (array[i] == "Teslić") {
+				lat = TeslicLat
+				long = TeslicLong
+			} else if (array[i] == "Goražde") {
+				lat = GorazdeLat
+				long = GorazdeLong
+			} else if (array[i] == "Brčko") {
+				lat = BrckoLat
+				long = BrckoLong
+			} else if (array[i] == "Kneževo") {
+				lat = KnezevoLat
+				long = KnezevoLong
+			} else if (array[i] == "Prnjavo") {
+				lat = PrnjavorLat
+				long = PrnjavorLong
+			} else if (array[i] == "Kotor Varoš") {
+				lat = KotorVarosLat
+				long = KotorVarosLong
+			} else if (array[i] == "Zavidovići") {
+				lat = ZavidoviciLat
+				long = ZavidoviciLong
+			} else if (array[i] == "Grude") {
+				lat = GrudeLat
+				long = GrudeLong
+			} else if (array[i] == "Posušje") {
+				lat = PosusjeLat
+				long = PosusjeLong
+			} else if (array[i] == "Čelinac") {
+				lat = CelinacLat
+				long = CelinacLong
+			} else if (array[i] == "Ribnik") {
+				lat = RibnikLat
+				long = RibnikLong
+			} else if (array[i] == "Kakanj") {
+				lat = KakanjLat
+				long = KakanjLong
+			} else if (array[i] == "Modriča") {
+				lat = ModricaLat
+				long = ModricaLong
+			} else if (array[i] == "Žepče") {
+				lat = ZepceLat
+				long = ZepceLong
+			} else if (array[i] == "Prijedor") {
+				lat = PrijedorLat
+				long = PrijedorLong
+			} else if (array[i] == "Bosanski Brod") {
+				lat = BosanskiBrodLat
+				long = BosanskiBrodLong
+			} else if (array[i] == "Orašje") {
+				lat = OrasjeLat
+				long = OrasjeLong
+			} else if (array[i] == "Gornji Vakuf - Uskoplje") {
+				lat = GornjiVakufLat
+				long = GornjiVakufLong
+			} else if (array[i] == "Istočna Ilidža") {
+				lat = IstocnaIlidzaLat
+				long = IstocnaIlidzaLong
+			} else if (array[i] == "Tešanj") {
+				lat = TesanjLat
+				long = TesanjLong
+			} else if (array[i] == "Novi Travnik") {
+				lat = NoviTravnikLat
+				long = NoviTravnikLong
+			} else if (array[i] == "Lukavac") {
+				lat = LukavacLat
+				long = LukavacLong
+			} else if (array[i] == "Pale") {
+				lat = PaleLat
+				long = PaleLong
+			} else if (array[i] == "Visoko") {
+				lat = VisokoLat
+				long = VisokoLong
+			} else if (array[i] == "Doboj") {
+				lat = DobojLat
+				long = DobojLong
+			} else if (array[i] == "Živinice") {
+				lat = ZiviniceLat
+				long = ZiviniceLong
+			} else if (array[i] == "Milići") {
+				lat = MiliciLat
+				long = MiliciLong
+			} else if (array[i] == "Vitez") {
+				lat = VitezLat
+				long = VitezLong
+			} else if (array[i] == "Srbac") {
+				lat = SrbacLat
+				long = SrbacLong
+			} else if (array[i] == "Breza") {
+				lat = BrezaLat
+				long = BrezaLong
+			} else if (array[i] == "Zvornik") {
+				lat = ZvornikLat
+				long = ZvornikLong
+			} else if (array[i] == "Gračanica") {
+				lat = GracanicaLat
+				long = GracanicaLong
+			} else if (array[i] == "Vogošća") {
+				lat = VogoscaLat
+				long = VogoscaLong
+			} else if (array[i] == "Šekovići") {
+				lat = SekoviciLat
+				long = SekoviciLong
+			} else if (array[i] == "Cazin") {
+				lat = CazinLat
+				long = CazinLong
+			} else if (array[i] == "Velika Kladuša") {
+				lat = VelikaKladusaLat
+				long = VelikaKladusaLong
+			} else if (array[i] == "Bosanska Krupa") {
+				lat = BosanskaKrupaLat
+				long = BosanskaKrupaLong
+			} else if (array[i] == "Ilijaš") {
+				lat = IlijasLat
+				long = IlijasLong
+			} else if (array[i] == "Derventa") {
+				lat = DerventaLat
+				long = DerventaLong
+			} else if (array[i] == "Mrkonjić Grad") {
+				lat = MrkonjicGradLat
+				long = MrkonjicGradLong
+			} else if (array[i] == "Šipovo") {
+				lat = SipovoLat
+				long = SipovoLong
+			} else if (array[i] == "Jablanica") {
+				lat = JablanicaLat
+				long = JablanicaLong
+			}
+
+
+			dataArray2.push({
+				"title": `${array[i]}`,
+				"value": `${array[i + 1]}`,
+				"latitude": lat,
+				"longitude": long,
+				"color": `${colorFill}`
+			})
+
+
+			i++;
+		}
 
 
 
-}); // end am4core.ready()
+		imageSeries.data =
+			dataArray2;
+
+
+
+	}); // end am4core.ready()
+});

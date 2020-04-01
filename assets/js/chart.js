@@ -1,284 +1,131 @@
 var w = window.innerWidth ||
   document.documentElement.clientWidth ||
   document.body.clientWidth;
+$.get("https://covid-bih.abocdev.com/php/getDataCities.php", function (data) {
+  $(".juhu").html(data);
+  var replace = data.replace("\n", "");
 
-anychart.onDocumentReady(function () {
+  var res = replace.split("\n");
+  var array = res.filter(function (res) {
+    return /\S/.test(res);
+  });
 
-  // create a data set
-  var data = anychart.data.set([
-    ["Banja Luka", 133, 1, "#fd1d1d", "#009933", null, {
-      enabled: true
-    }],
+  var i = array.length;
 
-
-    ["Konjic", 25, 1, "#fbba09", "#009933", null, {
-      enabled: true
-    }],
-
-
-    ["Tuzla", 20, 1, "#fbba09", "#009933", null, {
-      enabled: true
-    }],
-
-
-    ["Široki Brijeg", 13, 1, "#fbba09", "#009933", null, {
-      enabled: true
-    }],
-
-
-    ["Laktaši", 12, 1, "#fbba09", "#009933", null, {
-      enabled: true
-    }],
-    ["Zenica", 12, 1, "#fbba09", "#009933", null, {
-      enabled: true
-    }],
-    ["Mostar", 12, 1, "#fbba09", "#009933", null, {
-      enabled: true
-    }],
-
-
-    ["Bosanska Gradiška", 10, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-
-
-    ["Kozarska Dubica", 8, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Bihać", 8, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Srebrenik", 8, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }], 
-    ["Čitluk", 8, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-
-
-
-    ["Sarejvo", 7, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }], 
-    ["Ilidža", 7, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }], 
-
-    
-
-    ["Goražde", 6, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Teslić", 6, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-
-
-    ["Kneževo", 5, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Prnjavor", 5, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Bijeljina", 5, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-
-
-    ["Grude", 4, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-
-
-    ["Posušje", 3, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Kakanj", 3, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],   
-    ["Čelinac", 3, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Zavidovići", 3, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Brčko", 3, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }], 
-    ["Modriča", 3, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-
-
-    ["Prijedor", 2, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Bosanski Brod", 2, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Tešanj", 2, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Kotor Varoš", 2, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Ribnik", 2, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Novi Travnik", 2, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-
-
-    ["Visoko", 1, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Žepče", 1, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Srbac", 1, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Breza", 1, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Vogošća", 1, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Cazin", 1, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Gornji Vakuf", 1, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Lukavac", 1, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Orašje", 1, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Ilijaš", 1, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Bosanska Krupa", 1, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Derventa", 1, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Doboj", 1, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }],
-    ["Živinice", 1, 1, "#faff00", "#009933", null, {
-      enabled: true
-    }]
-  ]);
-
-
-  // map the data
-
-
-  if (w <= 1024) {
-    console.log("juhu")
-    var chart = anychart.bar();
-
-    // map the data
-    var seriesData_1 = data.mapAs({
-      x: 0,
-      value: 1,
-      fill: 3,
-      stroke: 0,
-      label: 20
-    });
-
-    // create the first series, set the data and name
-    var series1 = chart.bar(seriesData_1);
-    series1.name("Broj zaraženih");
-
-    series1.labels(true);
-    /* labels = series1.labels();
-    labels.position("center-top");
-    labels.anchor("left"); */
-
-    chart.pointWidth(11);
-    chart.barGroupsPadding(1);
-
-    // set the chart title
-    chart.title("Bosna i Hercegovina - Gradovi");
-
-
-
-    // set the titles of the axes
-    var xAxis = chart.xAxis();
-    var yAxis = chart.yAxis();
-    yAxis.title("Broj Zaraženih");
-
-    /* chart.xAxis().labels().rotation(-90) */
-    xAxis.overlapMode("allowOverlap");
-
-    // set the container id
-    chart.container("cartContainer");
-
-    // initiate drawing the chart
-    chart.draw();
-  } else {
-    var seriesData_1 = data.mapAs({
-      x: 0,
-      value: 1,
-      fill: 3,
-      stroke: 5,
-      label: 20
-    });
-    var chart = anychart.column();
-    chart.pointWidth(30);
-    var series1 = chart.column(seriesData_1);
-    series1.name("Broj zaraženih");
-    series1.labels(true);
-    labels = series1.labels();
-    labels.position("center-top");
-    labels.anchor("left");
-    chart.title("Bosna i Hercegovina - Gradovi");
-    var xAxis = chart.xAxis();
-    var yAxis = chart.yAxis();
-    yAxis.title("Broj Zaraženih");
-
-    chart.xAxis().labels().rotation(-90)
-    xAxis.overlapMode("allowOverlap");
-    chart.container("cartContainer");
-
-    // initiate drawing the chart
-    chart.draw();
+  while (i--) {
+    (i + 1) % 3 === 0 && array.splice(i, 1);
   }
 
-  // create a chart
-  /* var chart = anychart.column();
-  chart.pointWidth(30);
+  blue = "#faff00"
+  //Narandzasta=<50
+  yellow = "#fbba09";
+  //Ljubicasta =<100
+  purple = "#fc7512";
+  //crvena <=500
+  red = "#fd1d1d";
+  anychart.onDocumentReady(function () {
 
-  // create the first series, set the data and name
-  var series1 = chart.column(seriesData_1);
-  series1.name("Broj zaraženih");
+    var dataArray = []
 
-  series1.labels(true);
-  labels = series1.labels();
-  labels.position("center-top");
-  labels.anchor("left");
+    for (var i = 0; i < array.length; i++) {
+      if (array[i + 1] < 10) {
+        dataArray.push([array[i], array[i + 1], 1, blue, "#009933", null, {
+          enabled: true
+        }])
+      } else if (array[i + 1] < 50) {
+        dataArray.push([array[i], array[i + 1], 1, yellow, "#009933", null, {
+          enabled: true
+        }])
+      } else if (array[i + 1] < 100) {
+        dataArray.push([array[i], array[i + 1], 1, puprle, "#009933", null, {
+          enabled: true
+        }])
+      } else {
+        dataArray.push([array[i], array[i + 1], 1, red, "#009933", null, {
+          enabled: true
+        }])
+
+      }
 
 
-  // set the chart title
-  chart.title("Bosna i Hercegovina - Gradovi");
+      i++;
+    }
 
-  // set the titles of the axes
-  var xAxis = chart.xAxis();
-  var yAxis = chart.yAxis();
-  yAxis.title("Broj Zaraženih");
-
-  chart.xAxis().labels().rotation(-90)
-  xAxis.overlapMode("allowOverlap");
+    var data = anychart.data.set(
+      dataArray
+    )
 
 
-  // set the container id
-  chart.container("cartContainer");
 
-  // initiate drawing the chart
-  chart.draw(); */
+    // map the data
+
+
+    if (w <= 1024) {
+      console.log("juhu")
+      var chart = anychart.bar();
+
+      // map the data
+      var seriesData_1 = data.mapAs({
+        x: 0,
+        value: 1,
+        fill: 3,
+        stroke: 0,
+        label: 20
+      });
+
+      // create the first series, set the data and name
+      var series1 = chart.bar(seriesData_1);
+      series1.name("Broj zaraženih");
+
+      series1.labels(true);
+
+      chart.pointWidth(11);
+      chart.barGroupsPadding(1);
+
+      // set the chart title
+      chart.title("Bosna i Hercegovina - Gradovi");
+
+      // set the titles of the axes
+      var xAxis = chart.xAxis();
+      var yAxis = chart.yAxis();
+      yAxis.title("Broj Zaraženih");
+
+      /* chart.xAxis().labels().rotation(-90) */
+      xAxis.overlapMode("allowOverlap");
+
+      // set the container id
+      chart.container("cartContainer");
+
+      // initiate drawing the chart
+      chart.draw();
+    } else {
+      var seriesData_1 = data.mapAs({
+        x: 0,
+        value: 1,
+        fill: 3,
+        stroke: 5,
+        label: 20
+      });
+      var chart = anychart.column();
+      chart.pointWidth(30);
+      var series1 = chart.column(seriesData_1);
+      series1.name("Broj zaraženih");
+      series1.labels(true);
+      labels = series1.labels();
+      labels.position("center-top");
+      labels.anchor("left");
+      chart.title("Bosna i Hercegovina - Gradovi");
+      var xAxis = chart.xAxis();
+      var yAxis = chart.yAxis();
+      yAxis.title("Broj Zaraženih");
+
+      chart.xAxis().labels().rotation(-90)
+      xAxis.overlapMode("allowOverlap");
+      chart.container("cartContainer");
+
+      // initiate drawing the chart
+      chart.draw();
+    }
+
+  });
 });
