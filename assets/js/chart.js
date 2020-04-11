@@ -1,7 +1,7 @@
 var w = window.innerWidth ||
   document.documentElement.clientWidth ||
   document.body.clientWidth;
-$.get("https://covid-bih.abocdev.com/php/getDataCities.php", function (data) {
+$.get("http://localhost/github/bih-corona/php/getDataCities.php", function (data) {
   $(".juhu").html(data);
   var replace = data.replace("\n", "");
 

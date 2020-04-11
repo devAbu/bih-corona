@@ -83,7 +83,7 @@ am4core.ready(function () {
 		})
 	}
 
-	$.get("https://covid-bih.abocdev.com/php/getDataCities.php", function (data) {
+	$.get("http://localhost/github/bih-corona/php/getDataCities.php", function (data) {
 		var replace = data.replace("\n", "");
 
 		var res = replace.split("\n");
